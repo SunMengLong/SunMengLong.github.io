@@ -185,7 +185,7 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>384</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1025</span>
     </div>
   </div>
 </section>
@@ -196,7 +196,9 @@
 <li>stop()方法会直接杀死线程，一点喘息的机会都不给，如果被杀死的线程持有sychronized隐式锁，你就再也不会释放掉这个锁了，接下来的线程也都不会获得这个锁了，同样suspend()和resume()方法也不建议使用</li>
 <li>interrupt()方法相比于stop()方法就柔和很多，它只是通知线程后续的操作可以不用执行了，线程可以选择继续执行，也可以选择立即停止，也可以选择过一段时间再停止。interrupt()只是通知一下线程而已。就比如你做火车去一个地方，突然通知你这个火车晚点了，你可以选择无视这个通知继续等待，或者选择另一个火车，但是不管你做什么，和火车站都没有关系，它通知的责任尽到了。</li>
 </ol>
-<h3 id="java进程的生命周期"><a href="#java进程的生命周期" class="headerlink" title="java进程的生命周期"></a>java进程的生命周期</h3>
+<h3 id="java进程的生命周期"><a href="#java进程的生命周期" class="headerlink" title="java进程的生命周期"></a>java进程的生命周期</h3><p>系统/java的线程通用生命周期：<br>\1. new ：线程被创建，没有分配到CPU，因为这个状态只是说明这个线程在编程语言层面被创建了，操作系统层面还没有被创建。<br>\2. ready ：在操作系统层面创建了，接下来就是等待分配CPU执行了。<br>\3. running ：分配了CPU，开始执行的状态。<br>\4. wating ： 正在执行的时候，需要进行I/O操作，或者需要等待一段时间再执行，此时会释放掉CPU资源。<br>\5. terminoted ：线程执行完毕/遇到异常，此状态不能再切换到任何状态了。</p>
+<p>java线程的生命周期：<br>\1. new ： 同上<br>\2. runnable ：thread调用了start方法，java线程正在执行时的状态<br>\3. blocked ：线程等待synchronized隐式锁时，就会从runnable状态转换为blocked状态，也就是等待持有锁的线程释放锁，获得锁的时候会切换到runnable状态。此时在操作系统层面还是runnable状态。<br>\4. waiting ：执行wait方法进入等待状态<br>\5. timed_wating ：超时限等待状态，与wating相比就是多了个时间限制<br>\6. terminoted ：同上<br>在java的生命周期中，runnable状态是将ready和running状态合并到了一起。<br>而blocked/waiting/timed_waiting这三种状态其实就是waiting，也就是线程要等待某些事件发生，才能继续执行下去。</p>
+
       </section>
       <section class="extra">
         
@@ -222,8 +224,8 @@
         
         
   <nav class="nav">
-    <a href="/2021/07/23/github/github/"><i class="iconfont iconleft"></i>新手提示</a>
-    <a href="/2021/07/23/resume/resume_1/">彩色创意风格行政管理求职简历模板<i class="iconfont iconright"></i></a>
+    <a href="/2021/07/23/resume/resume_9/"><i class="iconfont iconleft"></i>经典风格行政文秘求职简历蓝优雅绿word简历模板</a>
+    <a href="/2021/07/23/tool/tool/">在线图片压缩<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
