@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原生view - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="1.Bitmap的内存计算方式？名词解释：densit...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+    </div>
+    <div class="center">原生view</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">原生view</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>6895</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <p>1.Bitmap的内存计算方式？<br>名词解释：<br>density ：表示每英寸有多少个显示点，与分辨率是两个不同的概念。<br>手机屏幕英寸：表示手机屏幕对角线的长度，1英寸 = 2.54cm<br>px ： 像素 分辨率的单位<br>dp ： 在每英寸160点的显示屏上，1dp = 1px，即px = dp(dpi / 160)<br>sp ： 通常用于指定字体的大小，当用户修改手机显示的字体时，字体大小会随之改变。<br>dpi ：每英寸的点数，也称像素密度，即屏幕对角线像素值÷英寸值。<br>ppi ： 每英寸上的像素数</p>
+<p>不同资源文件夹对应的手机屏幕密度值：<br>m : 160<br>h : 240<br>xh : 320<br>xxh : 480<br>xxxh : 640</p>
+<p>图片编码格式：<br>ARGB_8888 ： 4byte<br>ARGB_4444 ： 2byte<br>RGB_565 ： 2byte</p>
+<p>Bitmap大小计算方式：</p>
+<ol>
+<li><p>直接创建一个Bitmap对象<br>Bitmap bitmap = Bitmap.createBitmap(100,100,Bitmap.Config.ARGB_8888);<br>计算公式：像素数据的内存=图片宽 x 图片高 x 单个像素内存大小，<br>100 * 100 * 4 = 40000byte</p>
+</li>
+<li><p>放在不同的资源文件夹中<br>文件&amp;网络&amp;assert文件夹&amp;res/drawable-nodpi文件夹<br>从这些位置加载图片会保持原尺寸，不缩放，bitmap宽高100x100，内存=100x100x4byte</p>
+</li>
+</ol>
+<p>res/drawable-mdpi文件夹<br>因为该文件夹的目标设备是mdpi，显示到xhdpi的设备上，要做放大320/160=2倍，加载后的bitmap宽高200x200，内存200x200x4byte</p>
+<p>res/drawable-hdpi文件夹<br>该文件夹目标设备是hdpi，显示到xhdpi设备上，要放大320/240倍，加载后的bitmap宽高133x133，内存133x133x4byte</p>
+<p>res/drawable-xhdpi文件夹<br>因为文件夹和设备屏幕像素密度相同，不做缩放，加载后bitmap宽高100x100，内存100x100x4byte</p>
+<p>res/drawable-xxhdpi文件夹<br>因为文件夹目标设备是xxhdpi，显示到xhdpi设备上，要缩小320/480倍，加载后bitmap宽高75x75，内存75x75x4byte</p>
+<p>res/drawable-xxhdpi文件夹计算方式类似。</p>
+<p>res/drawable文件夹<br>该文件夹为基准分辨率，与res/drawable-mdpi文件夹效果相同。</p>
+<p>2.Bitmap的高效加载？<br>Bitmap的高效加载在Glide中也用到了，思路：</p>
+<p>获取需要的长和宽，一般获取控件的长和宽。<br>设置BitmapFactory.Options中的inJustDecodeBounds为true，可以帮助我们在不加载进内存的方式获得Bitmap的长和宽。<br>对需要的长和宽和Bitmap的长和宽进行对比，从而获得压缩比例，放入BitmapFactory.Options中的inSampleSize属性。<br>设置BitmapFactory.Options中的inJustDecodeBounds为false，将图片加载进内存，进而设置到控件中。</p>
+<p>3.recyclerView嵌套卡顿解决如何解决<br>设置预加载的数量LinearLayoutManager.setInitialPrefetchItemCount(4)，默认是预加载2个，<br>设置子项缓存，<br>设置自带滑动冲突解决属性rv.setHasFixedSize(true); rv.setNestedScrollingEnabled(false);<br>可以完美解决，不过Google不推荐RecyClerView嵌套使用,需要嵌套尽量找类似于ExpandableListView 第三方控件来解决</p>
+<p>4.RecyclerView和ListView的区别<br>缓存上:前者缓存的是View+ViewHolder+flag，不用每次调用findViewById,后者则只是缓存View<br>刷新数据方面，前者提供了局部刷新，后者则全部刷新</p>
+<p>5.View的绘制原理<br>View为所有图形控件的基类，View的绘制由3个函数完成<br>measure,计算视图的大小<br>layout,提供视图要显示的位置<br>draw,绘制</p>
+<p>6.View和SurfaceView的区别<br>View基于主线程刷新UI，SurfaceView子线程又可以刷新UI</p>
+<p>7.ListView卡顿的原因以及优化策略</p>
+<p>重用converView： 通过复用converview来减少不必要的view的创建，另外Infalte操作会把xml文件实例化成相应的View实例，属于IO操作，是耗时操作。</p>
+<p>减少findViewById()操作： 将xml文件中的元素封装成viewholder静态类，通过converview的setTag和getTag方法将view与相应的holder对象绑定在一起，避免不必要的findviewbyid操作</p>
+<p>避免在 getView 方法中做耗时的操作: 例如加载本地 Image 需要载入内存以及解析 Bitmap ，都是比较耗时的操作，如果用户快速滑动listview，会因为getview逻辑过于复杂耗时而造成滑动卡顿现象。用户滑动时候不要加载图片，待滑动完成再加载，可以使用这个第三方库glide</p>
+<p>Item的布局层次结构尽量简单，避免布局太深或者不必要的重绘</p>
+<p>尽量能保证 Adapter 的 hasStableIds() 返回 true 这样在 notifyDataSetChanged() 的时候，如果item内容并没有变化，ListView 将不会重新绘制这个 View，达到优化的目的</p>
+<p>在一些场景中，ScollView内会包含多个ListView，可以把listview的高度写死固定下来。 由于ScollView在快速滑动过程中需要大量计算每一个listview的高度，阻塞了UI线程导致卡顿现象出现，如果我们每一个item的高度都是均匀的，可以通过计算把listview的高度确定下来，避免卡顿现象出现</p>
+<p>使用 RecycleView 代替listview： 每个item内容的变动，listview都需要去调用notifyDataSetChanged来更新全部的item，太浪费性能了。RecycleView可以实现当个item的局部刷新，并且引入了增加和删除的动态效果，在性能上和定制上都有很大的改善</p>
+<p>ListView 中元素避免半透明： 半透明绘制需要大量乘法计算，在滑动时不停重绘会造成大量的计算，在比较差的机子上会比较卡。 在设计上能不半透明就不不半透明。实在要弄就把在滑动的时候把半透明设置成不透明，滑动完再重新设置成半透明。</p>
+<p>尽量开启硬件加速： 硬件加速提升巨大，避免使用一些不支持的函数导致含泪关闭某个地方的硬件加速。当然这一条不只是对 ListView。</p>
+<p>8.Bitmap 使用时候注意什么？<br>注意oom<br>1，要选择合适的图片规格（bitmap类型），即：<br>ALPHA_8 每个像素占用1byte内存<br>ARGB_4444 每个像素占用2byte内存<br>ARGB_8888 每个像素占用4byte内存 不设置的话默认这个。<br>RGB_565 每个像素占用2byte内存</p>
+<p>2，降低采样率。BitmapFactory.Options 参数inSampleSize的使用，先把options.inJustDecodeBounds设为true，只是去读取图片的大小，在拿到图片的大小之后和要显示的大小做比较通过calculateInSampleSize()函数计算inSampleSize的具体值，得到值之后。options.inJustDecodeBounds设为false读图片资源。<br>3，复用内存。即，通过软引用(内存不够的时候才会回收掉)，复用内存块，不需要在重新给这个bitmap申请一块新的内存,避免了一次内存的分配和回收，从而改善了运行效率。<br>4，及时回收。即，recycle。<br>5，压缩图片。compress。<br>6，尽量不要使用setImageBitmap或setImageResource或BitmapFactory.decodeResource来设置一张大图，因为这些函数在完成decode后，最终都是通过java层的createBitmap来完成的，需要消耗更多内存，可以通过BitmapFactory.decodeStream方法，创建出一个bitmap，再将其设为ImageView的 source。</p>
+<p>9.RecyclerView与ListView(缓存原理，区别联系，优缺点)</p>
+<p>ListView有两级缓存，在屏幕与非屏幕内。<br>RecyclerView比ListView多两级缓存，支持多个离屏ItemView缓存（匹配pos获取目标位置的缓存，如果匹配则无需再次bindView），支持开发者自定义缓存处理逻辑，支持所有RecyclerView共用同一个RecyclerViewPool(缓存池)。<br>缓存不同：<br>ListView缓存View。<br>RecyclerView缓存RecyclerView.ViewHolder，抽象可理解为：<br>View + ViewHolder(避免每次createView时调用findViewById) + flag(标识状态)；</p>
+<p>优点<br>RecylerView提供了局部刷新的接口，通过局部刷新，就能避免调用许多无用的bindView。<br>RecyclerView的扩展性更强大（LayoutManager、ItemDecoration等）。</p>
+<p>10.Recycleview和ListView的区别<br>RecyclerView可以完成ListView,GridView的效果，还可以完成瀑布流的效果。同时还可以设置列表的滚动方向（垂直或者水平）；<br>RecyclerView中view的复用不需要开发者自己写代码，系统已经帮封装完成了。<br>RecyclerView可以进行局部刷新。<br>RecyclerView提供了API来实现item的动画效果。<br>缓存机制：ListView(两级缓存)RecyclerView(四级缓存)<br>在性能上：<br>如果需要频繁的刷新数据，需要添加动画，则RecyclerView有较大的优势。<br>如果只是作为列表展示，则两者区别并不是很大。</p>
+<p>11.ListView 中图片错位的问题是如何产生的?<br>图片错位原理：<br>如果我们只是简单显示list中数据，而没用convertview的复用机制和异步操作，就不会产生图片错位；<br>重用convertview但没用异步，也不会有错位现象。但我们的项目中list一般都会用，不然会很卡。<br>在上图中，我们能看到listview中整屏刚好显示7个item，当向下滑动时，显示出item8，而item8是重用的item1，如果此时异步网络请求item8的图片，比item1的图片慢，那么item8就会显示item1的image。当item8下载完成，此时用户向上滑显示item1时，又复用了item8的image，这样就导致了图片错位现象(item1和item8是用的同一块内存哦)。</p>
+<p>解决方法：<br>对imageview设置tag，并预设一张图片。<br>向下滑动后，item8显示，item1隐藏。但由于item1是第一次进来就显示，所以一般情况下，item1都会比item8先下载完，但由于此时可见的item8的tag，和隐藏了的item1的url不匹配，所以就算item1的图片下载完也不会显示到item8中，因为tag标识的永远是可见图片中的url。</p>
+<p>12.ListView重用的是什么？<br>1.如果复用的View为null时，我们要创建一个新的item以及ViewHolder，<br>然后把item视图中的控件通过findViewById方法寻找到，<br>并添加到ViewHolder中，setTag方法，将viewholder传进去，完成viewholder与item之间的绑定</p>
+<p>2.如果复用的View不是为null,那么通过getTag（）方法直接拿过来用,并且从里面拿出ViewHolder,因为每一个复用的ViewHolder肯定是经过处创建并且返回的</p>
+<p>13.计算一个view的嵌套层级<br>循环追寻父类，看看有多少，便有多少嵌套层级：</p>
+<p>while (view.getParents() != null) {<br>        count++;<br>        view = view.getParents();<br>}</p>
+<p>14.Android中View，SurfaceView和GLSurfaceView<br>View：显示视图，内置画布，提供图形绘制函数，触屏事件，按键事件函数；必须在UI线程中更新画面，速度较慢。<br>SurfaceView：基于View视图进行拓展的视图类，更适合2D游戏的开发；是View的子类，类似双缓机制，在新的线程中更新画面，所以刷新界面速度比View快。（双缓机制：即前台缓存和后台缓存，后台缓存计算场景、产生画面，前台缓存显示后台缓存已画好的画面。）<br>GLSurfaceView：基于SurfaceView视图再次进行扩展的视图类，专用于3D游戏开发的视图；是SurfaceView的子类，OpenGL专用。（OpenGL：是一个开放的三维图形软件包。）</p>
+<p>15.LinearLayout、RelativeLayout、FrameLayout的特性及对比，并介绍使用场景。</p>
+<p>RelativeLayout的onMeasure过程<br>根据源码我们发现RelativeLayout会根据2次排列的结果对子View各做一次measure。<br>首先RelativeLayout中子View的排列方式是基于彼此的依赖关系，在确定每个子View的位置的时候，需要先给所有的子View排序一下，所以需要横向纵向分别进行一次排序测量</p>
+<p>LinearLayout的onMeasure过程<br>LinearLayout会先做一个简单横纵方向判断<br>需要注意的是在每次对child测量完毕后，都会调用child.getMeasuredHeight()/getMeasuredWidth()获取该子视图最终的高度，并将这个高度添加到mTotalLength中。<br>但是getMeasuredHeight暂时避开了lp.weight&gt;0且高度为0子View，因为后面会将把剩余高度按weight分配给相应的子View。因此可以得出以下结论：<br>（1）如果我们在LinearLayout中不使用weight属性，将只进行一次measure的过程。（如果使用weight属性，则遍历一次wiew测量后，再遍历一次view测量）<br>（2）如果使用了weight属性，LinearLayout在第一次测量时获取所有子View的高度，之后再将剩余高度根据weight加到weight&gt;0的子View上。由此可见，weight属性对性能是有影响的。<br>1）RelativeLayout慢于LinearLayout是因为它会让子View调用2次measure过程，而LinearLayout只需一次，但是有weight属性存在时，LinearLayout也需要两次measure。<br>2）在不响应层级深度的情况下，使用Linearlayout而不是RelativeLayout。</p>
+<p>16.AlertDialog,popupWindow区别<br>（1）Popupwindow在显示之前一定要设置宽高，Dialog无此限制。<br>（2）Popupwindow默认不会响应物理键盘的back，除非显示设置了popup.setFocusable(true);而在点击back的时候，Dialog会消失。<br>（3）Popupwindow不会给页面其他的部分添加蒙层，而Dialog会。</p>
+<p>（4）Popupwindow没有标题，Dialog默认有标题，可以通过dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);取消标题<br>（5）二者显示的时候都要设置Gravity。如果不设置，Dialog默认是Gravity.CENTER。<br>（6）二者都有默认的背景，都可以通过setBackgroundDrawable(new ColorDrawable(android.R.color.transparent));去掉。<br>最本质的区别：AlertDialog是非阻塞式对话框：AlertDialog弹出时，后台还可以做事情；而PopupWindow是阻塞式对话框：PopupWindow弹出时，程序会等待，在PopupWindow退出前，程序一直等待，只有当我们调用了dismiss方法的后，PopupWindow退出，程序才会向下执行。</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2021/07/23/topic/%E5%8E%9F%E7%94%9Fview/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;23&#x2F;topic&#x2F;%E5%8E%9F%E7%94%9Fview&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;23&#x2F;topic&#x2F;%E5%8E%9F%E7%94%9Fview&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/2021/07/23/topic/%E5%AD%98%E5%82%A8/"><i class="iconfont iconleft"></i>存储</a>
+    <a href="/2021/07/23/topic/%E7%AE%97%E6%B3%95/">原生view<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+  
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

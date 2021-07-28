@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>性能优化 - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="
+1.Android性能优化
+布局优化: 减少布局层级...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+    </div>
+    <div class="center">性能优化</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">性能优化</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3329</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <ol>
+<li><p>1.Android性能优化</p>
+<p>布局优化: 减少布局层级，使用ViewStub提高显示速度，布局服用，尽可能少使用warp_content，删除空间中无用的属性,避免过度绘制移除window默认背景，按需显示展位图，自定义View优化，使用canvas.clipRect()识别可见区域<br>启动速度:采用分布加载，异步加载，延期加载提高应用初始化速度，采用线程初始化数据等，合理的刷新机制<br>内存方面:防止内存泄露,使用一些第三方工具检测解决<br>代码优化:遵循Java生命周期<br>安装包优化:删除无用资源，优化图片，代码混淆，避免重复库存在，插件化</p>
+</li>
+<li><p>2.内存优化</p>
+<p>1.使用性能高的数据结构</p>
+<p>2.避免在Android里面使用Enum</p>
+<p>3.减小Bitmap对象的内存占用</p>
+<p>Bitmap极容易消耗内存，减小创建出来的Bitmap的内存占用可谓是重中之重，通常来说有以下两个措施：</p>
+<p>inSampleSize：缩放比例，在把图片载入内存之前，我们需要先计算出一个合适的缩放比例，避免不必要的大图载入。<br>decode format：解码格式，选择ARGB_8888/RBG_565/ARGB_4444/ALPHA_8<br>4.某些场景下，用shape替代图片</p>
+<p>有时候会有一些渐变或者描边的UI效果，如果可以用<shape/>画的就尽量不要直接引用图片资源了，如下所示：</p>
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk /res/android" android:shape="rectangle">
+
+<p>&lt;gradient android:startColor=”#000000”</p>
+<p>android:angle=”0” android:endColor=”#ffffff”/&gt;</p>
+</shape>
+
+<p>5.代码混淆&amp;减少不必要的类、类库</p>
+<p>6.使用Parcelable进行内存间数据传输</p>
+<p>7.内存对象的复用</p>
+<p>复用系统自带的资源</p>
+<p>Android系统本身内置了很多的资源，比如string、color、drawable、anim、style以及简单layout等，这些资源都可以在应用程序中直接引用。这样做不仅能减小APK的大小，还可以在一定程度上减少内存的开销</p>
+<p>8.使用handler.obtainMessage()创建Message对象</p>
+<p>不要再用new Message()的方式创建Message对象啦！handler.obtainMessage()内部使用了对象池技术，可以有效帮助我们减少创建Message对象的内存消耗</p>
+<p>9.避免对象的内存泄露</p>
+<p>WebView造成的内存泄漏</p>
+<p>属性动画造成内存泄漏</p>
+<p>内存泄漏的检测工具</p>
+<p>Android Profiler<br>LeakCanary<br>MAT<br>线程造成内存泄漏</p>
+<p>对于线程造成的内存泄漏，也是平时比较常见的，异步任务和Runnable都是一个匿名内部类，因此它们对当前Activity都有一个隐式引用。如果Activity在销毁之前，任务还未完成，</p>
+<p>那么将导致Activity的内存资源无法回收，造成内存泄漏。正确的做法还是使用静态内部类的方式，如下：</p>
+<p>资源未关闭造成内存泄漏</p>
+<p>集合类造成内存泄漏</p>
+</li>
+<li><p>3.Android中性能优化</p>
+<p>由于手机硬件的限制，内存和CPU都无法像pc一样具有超大的内存，Android手机上，过多的使用内存，会容易导致oom，过多的使用CPU资源，会导致手机卡顿，甚至导致anr。我主要是从一下几部分进行优化：<br>布局优化，绘制优化，内存泄漏优化，响应速度优化，listview优化，bitmap优化，线程优化<br>布局优化：工具 hierarchyviewer，解决方式：<br>1、删除无用的空间和层级。<br>2、选择性能较低的viewgroup，如Relativelayout，如果可以选择Relativelayout也可以使用LinearLayout,就优先使用LinearLayout，因为相对来说Relativelayout功能较为复杂，会占用更多的CPU资源。<br>3、使用标签重用布局，减少层级，进行预加载，使用的时候才加载。<br>绘制优化<br>绘制优化指view在ondraw方法中避免大量的耗时操作，由于ondraw方法可能会被频繁的调用。<br>1、ondraw方法中不要创建新的局部变量，ondraw方法被频繁的调用，很容易引起GC。<br>2、ondraw方法不要做耗时操作。<br>内存优化：参考内存泄漏。<br>响应优化<br>主线程不能做耗时操作，触摸事件5s,广播10s，service20s。<br>listview优化：<br>1、getview方法中避免耗时操作。<br>2、view的复用和viewholder的使用。<br>3、滑动不适合开启异步加载。<br>4、分页处理数据。<br>5、图片使用三级缓存。<br>Bitmap优化：<br>1、等比例压缩图片。<br>2、不用的图片，及时recycler掉<br>线程优化<br>线程优化的思想是使用线程池来管理和复用线程，避免程序中有大量的Thread，同时可以控制线程的并发数，避免相互抢占资源而导致线程阻塞。<br>其他优化<br>1、少用枚举，枚举占用空间大。<br>2、使用Android特有的数据结构，如SparseArray来代替hashMap。<br>3、适当的使用软引用和弱引用。</p>
+</li>
+<li><p>4.app优化</p>
+<p>app优化:(工具：Hierarchy Viewer 分析布局 工具：TraceView 测试分析耗时的)</p>
+<p>App启动优化，布局优化，响应优化，内存优化，电池使用优化，网络优化</p>
+<p><strong>App启动优化(针对冷启动)</strong><br>App启动的方式有三种：<br>冷启动：App没有启动过或App进程被killed, 系统中不存在该App进程, 此时启动App即为冷启动。<br>热启动：热启动意味着你的App进程只是处于后台, 系统只是将其从后台带到前台, 展示给用户。<br>介于冷启动和热启动之间, 一般来说在以下两种情况下发生:<br>(1)用户back退出了App, 然后又启动. App进程可能还在运行, 但是activity需要重建。<br>(2)用户退出App后, 系统可能由于内存原因将App杀死, 进程和activity都需要重启, 但是可以在onCreate中将被动杀死锁保存的状态(saved instance state)恢复。<br>Application的onCreate（特别是第三方SDK初始化），首屏Activity的渲染都不要进行耗时操作，如果有，就可以放到子线程或者IntentService中</p>
+<p><strong>布局优化</strong><br>尽量不要过于复杂的嵌套。可以使用，，</p>
+<p><strong>响应优化</strong><br>Android系统每隔16ms会发出VSYNC信号重绘我们的界面(Activity)。<br>页面卡顿的原因：<br>(1)过于复杂的布局.（使用merge，viewstub,include 进行处理）<br>(2)UI线程的复杂运算<br>(3)频繁的GC,导致频繁GC有两个原因:1、内存抖动, 即大量的对象被创建又在短时间内马上被释放.2、瞬间产生大量的对象会严重占用内存区域。</p>
+<p><strong>内存优化：</strong></p>
+<p>参考内存泄露和内存溢出部分</p>
+<p>**<br>**<strong>电池使用优化(使用工具：Batterystats &amp; bugreport)</strong><br>(1)优化网络请求<br>(2)定位中使用GPS, 请记得及时关闭<br>网络优化(网络连接对用户的影响:流量,电量,用户等待)可在Android studio下方logcat旁边那个工具Network Monitor检测<br>API设计：App与Server之间的API设计要考虑网络请求的频次, 资源的状态等. 以便App可以以较少的请求来完成业务需求和界面的展示.<br>Gzip压缩：使用Gzip来压缩request和response, 减少传输数据量, 从而减少流量消耗.<br>图片的Size：可以在获取图片时告知服务器需要的图片的宽高, 以便服务器给出合适的图片, 避免浪费.<br>网络缓存：适当的缓存, 既可以让我们的应用看起来更快, 也能避免一些不必要的流量消耗.</p>
+<p><strong>图片优化</strong><br>(1)对图片本身进行操作。尽量不要使用setImageBitmap、setImageResource、BitmapFactory.decodeResource来设置一张大图，因为这些方法在完成decode后，<br>最终都是通过java层的createBitmap来完成的，需要消耗更多内存.<br>(2)图片进行缩放的比例，SDK中建议其值是2的指数值,值越大会导致图片不清晰。<br>(3)不用的图片记得调用图片的recycle()方法</p>
+</li>
+</ol>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2021/07/23/topic/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;23&#x2F;topic&#x2F;%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;23&#x2F;topic&#x2F;%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/2021/07/23/topic/%E8%87%AA%E5%AE%9A%E4%B9%89View/"><i class="iconfont iconleft"></i>自定义view</a>
+    <a href="/2021/07/23/topic/%E9%9F%B3%E8%A7%86%E9%A2%91/">音视频<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+  
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
