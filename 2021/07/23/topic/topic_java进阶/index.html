@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>java进阶 - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="1.需要关注的设计模式重点了解以下的几种常用的设计模式...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+    </div>
+    <div class="center">java进阶</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">java进阶</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>6170</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h3 id="1-需要关注的设计模式"><a href="#1-需要关注的设计模式" class="headerlink" title="1.需要关注的设计模式"></a>1.需要关注的设计模式</h3><p>重点了解以下的几种常用的设计模式：</p>
+<p>工厂模式和抽象工厂模式：注意他们的区别。<br>责任链模式：View的事件分发和OkHttp的调用过程都使用到了责任链模式。<br>观察者模式：重要性不言而喻。<br>代理模式：建议了解一下动态代理。</p>
+<h3 id="2-设计模式的六大原则是："><a href="#2-设计模式的六大原则是：" class="headerlink" title="2.设计模式的六大原则是："></a>2.设计模式的六大原则是：</h3><p>单一职责：合理分配类和函数的职责<br>开闭原则：开放扩展，关闭修改<br>里式替换：继承<br>依赖倒置：面向接口<br>接口隔离：控制接口的粒度<br>迪米特：一个类应该对其他的类了解最少</p>
+<h3 id="3-通常的阻塞队列有哪几种，特点是什么？"><a href="#3-通常的阻塞队列有哪几种，特点是什么？" class="headerlink" title="3.通常的阻塞队列有哪几种，特点是什么？"></a>3.通常的阻塞队列有哪几种，特点是什么？</h3><p>ArrayBlockQueue：基于数组实现的有界的FIFO(先进先出)阻塞队列。<br>LinkedBlockQueue：基于链表实现的无界的FIFO(先进先出)阻塞队列。<br>SynchronousQueue：内部没有任何缓存的阻塞队列。<br>PriorityBlockingQueue：具有优先级的无限阻塞队列。</p>
+<h3 id="4-volatile的原理？"><a href="#4-volatile的原理？" class="headerlink" title="4.volatile的原理？"></a>4.volatile的原理？</h3><p>可见性 如果对声明了volatile的变量进行写操作的时候，JVM会向处理器发送一条Lock前缀的指令，将这个变量所在缓存行的数据写入到系统内存。</p>
+<p>多处理器的环境下，其他处理器的缓存还是旧的，为了保证各个处理器一致，会通过嗅探在总线上传播的数据来检测自己的数据是否过期，如果过期，会强制重新将系统内存的数据读取到处理器缓存。</p>
+<p>有序性 Lock前缀的指令相当于一个内存栅栏，它确保指令排序的时候，不会把后面的指令拍到内存栅栏的前面，也不会把前面的指令排到内存栅栏的后面。</p>
+<h3 id="5-死锁触发的四大条件？"><a href="#5-死锁触发的四大条件？" class="headerlink" title="5.死锁触发的四大条件？"></a>5.死锁触发的四大条件？</h3><p>互斥锁<br>请求与保持<br>不可剥夺<br>循环的请求与等待</p>
+<h3 id="6-线程池的工作流程？"><a href="#6-线程池的工作流程？" class="headerlink" title="6.线程池的工作流程？"></a>6.线程池的工作流程？</h3><p>线程池工作流程<br>简而言之：</p>
+<p>任务来了，优先考虑核心线程。<br>核心线程满了，进入阻塞队列。<br>阻塞队列满了，考虑非核心线程（图上好像少了这个过程）。<br>非核心线程满了，再触发拒绝任务。</p>
+<h3 id="7-线程池中的几个参数是什么意思，线程池的种类有哪些？"><a href="#7-线程池中的几个参数是什么意思，线程池的种类有哪些？" class="headerlink" title="7.线程池中的几个参数是什么意思，线程池的种类有哪些？"></a>7.线程池中的几个参数是什么意思，线程池的种类有哪些？</h3><p>线程池的构造函数如下：</p>
+<p>public ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) { </p>
+<pre><code>    this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, Executors.defaultThreadFactory(), defaultHandler); 
+</code></pre>
+<p>}</p>
+<p>参数解释如下：</p>
+<p>corePoolSize：核心线程数量，不会释放。<br>maximumPoolSize：允许使用的最大线程池数量，非核心线程数量，闲置时会释放。<br>keepAliveTime：闲置线程允许的最大闲置时间。<br>unit：闲置时间的单位。<br>workQueue：阻塞队列，不同的阻塞队列有不同的特性。</p>
+<p>线程池分为四个类型：</p>
+<p>CachedThreadPool：闲置线程超时会释放，没有闲置线程的情况下，每次都会创建新的线程。<br>FixedThreadPool：线程池只能存放指定数量的线程池，线程不会释放，可重复利用。<br>SingleThreadExecutor：单线程的线程池。<br>ScheduledThreadPool：可定时和重复执行的线程池。</p>
+<h3 id="8-与新建一个线程相比，线程池的特点？"><a href="#8-与新建一个线程相比，线程池的特点？" class="headerlink" title="8.与新建一个线程相比，线程池的特点？"></a>8.与新建一个线程相比，线程池的特点？</h3><p>节省开销： 线程池中的线程可以重复利用。<br>速度快：任务来了就能开始，省去创建线程的时间。<br>线程可控：线程数量可空和任务可控。<br>功能强大：可以定时和重复执行任务。</p>
+<h3 id="9-线程的状态有哪些？"><a href="#9-线程的状态有哪些？" class="headerlink" title="9.线程的状态有哪些？"></a>9.线程的状态有哪些？</h3><p>线程的状态有：</p>
+<p>new：新创建的线程<br>Ready：准备就绪的线程，由于CPU分配的时间片的关系，此时的任务不在执行过程中。<br>Running：正在执行的任务<br>Block：被阻塞的任务<br>Time Waiting：计时等待的任务<br>Terminated：终止的任务<br>附上一张状态转换的图：</p>
+<p>线程状态转换</p>
+<h3 id="10-逻辑地址与物理地址，为什么使用逻辑地址？"><a href="#10-逻辑地址与物理地址，为什么使用逻辑地址？" class="headerlink" title="10.逻辑地址与物理地址，为什么使用逻辑地址？"></a>10.逻辑地址与物理地址，为什么使用逻辑地址？</h3><p>逻辑地址：存储单元的地址可以用段基值和段内偏移量来表示,段基值确定它所在的段居于整个存储空间的位置,偏移量确定它在段内的位置,这种地址表示方式称为逻辑地址。8086体系的CPU一开始是20根地址线, 寻址寄存器是16位, 16位的寄存器可以访问64K的地址空间, 如果程序要想访问大于64K的内存, 就要把内存分段, 每段64K, 用段地址+偏移量的方法来访问 。386CPU出来之后, 采用了32条地址线, 地址寄存器也扩为32位, 这样就可以不用分段了, 直接用一个地址寄存器来线性访问4G的内存了. 这就叫平面模式.</p>
+<p>线性地址：又叫虚拟地址，是一个32位无符号整数，可以用来表示高达4GB的地址，跟逻辑地址类似，它也是一个不真实的地址，如果逻辑地址是对应的硬件平台段式管理转换前地址的话，那么线性地址则对应了硬件页式内存的转换前地址。</p>
+<p>物理地址：用于内存芯片级的单元寻址，与处理器和CPU连接的地址总线相对应。</p>
+<p>注意：<br>1.CPU将一个虚拟内存空间中的地址转换为物理地址，需要进行两步：首先将给定一个逻辑地址（其实是段内偏移量，这个一定要理解！！！），CPU要利用其段式内存管理单元，先将为个逻辑地址转换成一个线性地址，再利用其页式内存管理单元，转换为最终物理地址。<br>逻辑地址—-段式内存管理单元—-线性地址—-页式内存管理单元—-物理地址<br>这样做两次转换，的确是非常麻烦而且没有必要的，因为直接可以把线性地址抽像给进程。之所以这样冗余，Intel完全是为了兼容而已。</p>
+<h3 id="11-gc-进行回收的准则是什么？也就是说什么样的对象可以被回收？"><a href="#11-gc-进行回收的准则是什么？也就是说什么样的对象可以被回收？" class="headerlink" title="11.gc()进行回收的准则是什么？也就是说什么样的对象可以被回收？"></a>11.gc()进行回收的准则是什么？也就是说什么样的对象可以被回收？</h3><p>简单来说就是：没有被任何可达变量指向的对象。这里的可达是意思就是能够找到的（没有任何可达变量指向你，你还有活下去的理由吗？你就算活下去谁能找得到你呢？）<br>所以说，C++中将释放了的指针置为null的习惯要保留到Java中，因为这有可能是你释放内存的唯一途径。<br>不要频繁使用gc函数。<br>保持代码健壮（记得将不用的变量置为null），让虚拟机去管理内存</p>
+<h3 id="12-System-gc-使用介绍："><a href="#12-System-gc-使用介绍：" class="headerlink" title="12.System.gc()使用介绍："></a>12.System.gc()使用介绍：</h3><p>Java中的内存分配是随着new一个新的对象来实现的，这个很简单，而且也还是有一些可以“改进”内存回收的机制的，其中最显眼的就是这个System.gc()函数。<br>其实这个gc()函数的作用只是提醒虚拟机：程序员希望进行一次垃圾回收。但是它不能保证垃圾回收一定会进行，而且具体什么时候进行是取决于具体的虚拟机的，不同的虚拟机有不同的对策。</p>
+<h3 id="13-垃圾回收机制与调用System-gc-区别"><a href="#13-垃圾回收机制与调用System-gc-区别" class="headerlink" title="13.垃圾回收机制与调用System.gc()区别"></a>13.垃圾回收机制与调用System.gc()区别</h3><p>垃圾回收机制：<br>1.垃圾收集算法的核心思想<br>Java语言建立了垃圾收集机制，用以跟踪正在使用的对象和发现并回收不再使用(引用)的对象。<br>该机制可以有效防范动态内存分配中可能发生的两个危险：因内存垃圾过多而引发的内存耗尽，以及不恰当的内存释放所造成的内存非法引用。</p>
+<p>垃圾收集算法的核心思想是：<br>对虚拟机可用内存空间，即堆空间中的对象进行识别，如果对象正在被引用，那么称其为存活对象，反之，如果对象不再被引用，则为垃圾对象，可以回收其占据的空间，用于再分配。</p>
+<p>2.触发主GC(Garbage Collector)的条件<br>JVM进行次GC的频率很高,但因为这种GC占用时间极短,所以对系统产生的影响不大。更值得关注的是主GC的触发条件,因为它对系统影响很明显。总的来说,有两个条件会触发主GC:</p>
+<p>①当应用程序空闲时,即没有应用线程在运行时,GC会被调用。因为GC在优先级最低的线程中进行,所以当应用忙时,GC线程就不会被调用,但以下条件除外。</p>
+<p>②Java堆内存不足时,GC会被调用。当应用线程在运行,并在运行过程中创建新对象,若这时内存空间不足,JVM就会强制地调用GC线程,以便回收内存用于新的分配。若GC一次之后仍不能满足内存分配的要求,JVM会再进行两次GC作进一步的尝试,若仍无法满足要求,则 JVM将报“out of memory”的错误,Java应用将停止。</p>
+<p>由于是否进行主GC由JVM根据系统环境决定,而系统环境在不断的变化当中,所以主GC的运行具有不确定性,无法预计它何时必然出现,但可以确定的是对一个长期运行的应用来说,其主GC是反复进行的。</p>
+<p>3.减少GC开销的措施<br>根据上述GC的机制,程序的运行会直接影响系统环境的变化,从而影响GC的触发。（若不针对GC的特点进行设计和编码,就会出现内存驻留等一系列负面影响。）<br>为了避免这些影响,基本的原则就是尽可能地减少垃圾和减少GC过程中的开销。具体措施包括以下几个方面:<br>(1)不要显式调用System.gc()<br>  此函数建议JVM进行主GC,虽然只是建议而非一定,但很多情况下它会触发主GC,从而增加主GC的频率,也即增加了间歇性停顿的次数。<br>(2)尽量减少临时对象的使用<br>  临时对象在跳出函数调用后,会成为垃圾,少用临时变量就相当于减少了垃圾的产生,从而延长了出现上述第二个触发条件出现的时间,减少了主GC的机会。<br>(3)对象不用时最好显式置为Null</p>
+<p>  一般而言,为Null的对象都会被作为垃圾处理,所以将不用的对象显式地设为Null,有利于GC收集器判定垃圾,从而提高了GC的效率。<br>(4)尽量使用StringBuffer,而不用String来累加字符串<br>  由于String是固定长的字符串对象,累加String对象时,并非在一个String对象中扩增,而是重新创建新的String对象（如 Str5=Str1+Str2+Str3+Str4,这条语句执行过程中会产生多个垃圾对象,因为对次作“+”操作时都必须创建新的String对象,但这些过渡对象对系统来说是没有实际意义的,只会增加更多的垃圾）。避免这种情况可以改用StringBuffer来累加字符串,因StringBuffer 是可变长的,它在原有基础上进行扩增,不会产生中间对象。</p>
+<p>(5)能用基本类型如Int,Long,就不用Integer,Long对象<br>  基本类型变量占用的内存资源比相应对象占用的少得多,如果没有必要,最好使用基本变量。<br>(6)尽量少用静态对象变量<br>  静态变量属于全局变量,不会被GC回收,它们会一直占用内存。<br>(7)分散对象创建或删除的时间<br>集中在短时间内大量创建新对象,特别是大对象,会导致突然需要大量内存,JVM在面临这种情况时,只能进行主GC,以回收内存或整合内存碎片, 从而增加主GC的频率。集中删除对象,道理也是一样的。它使得突然出现了大量的垃圾对象,空闲空间必然减少,从而大大增加了下一次创建新对象时强制主GC 的机会。</p>
+<h3 id="14-Art和Dalvik对比"><a href="#14-Art和Dalvik对比" class="headerlink" title="14.Art和Dalvik对比"></a>14.Art和Dalvik对比</h3><p>（1）在Dalvik下，应用每次运行都需要通过即时编译器（JIT）将字节码转换为机器码，即每次都要编译加运行，这虽然会使安装过程比较快，但是会拖慢应用的运行效率。而在ART 环境中，应用在第一次安装的时候，字节码就会预编译（AOT）成机器码，这样的话，虽然设备和应用的首次启动（安装慢了）会变慢，但是以后每次启动执行的时候，都可以直接运行，因此运行效率会提高。<br>（2）ART占用空间比Dalvik大（原生代码占用的存储空间更大，字节码变为机器码之后，可能会增加10%-20%），这也是著名的“空间换时间大法”。<br>（3）预编译也可以明显改善电池续航，因为应用程序每次运行时不用重复编译了，从而减少了 CPU 的使用频率，降低了能耗。</p>
+<h3 id="15-java虚拟机和Dalvik虚拟机的区别"><a href="#15-java虚拟机和Dalvik虚拟机的区别" class="headerlink" title="15.java虚拟机和Dalvik虚拟机的区别"></a>15.java虚拟机和Dalvik虚拟机的区别</h3><p>Java虚拟机：<br>1、java虚拟机基于栈。 基于栈的机器必须使用指令来载入和操作栈上数据，所需指令更多更多。<br>2、java虚拟机运行的是java字节码。（java类会被编译成一个或多个字节码.class文件）<br>Dalvik虚拟机：<br>1、dalvik虚拟机是基于寄存器的<br>2、Dalvik运行的是自定义的.dex字节码格式。（java类被编译成.class文件后，会通过一个dx工具将所有的.class文件转换成一个.dex文件，然后dalvik虚拟机会从其中读取指令和数据<br>3、常量池已被修改为只使用32位的索引，以 简化解释器。<br>4、一个应用，一个虚拟机实例，一个进程（所有android应用的线程都是对应一个linux线程，都运行在自己的沙盒中，不同的应用在不同的进程中运行。每个android dalvik应用程序都被赋予了一个独立的linux PID(app_*)）</p>
+<h3 id="16-JAVA-GC原理"><a href="#16-JAVA-GC原理" class="headerlink" title="16.JAVA GC原理"></a>16.JAVA GC原理</h3><p>垃圾收集算法的核心思想是：对虚拟机可用内存空间，即堆空间中的对象进行识别，如果对象正在被引用，那么称其为存活对象<br>，反之，如果对象不再被引用，则为垃圾对象，可以回收其占据的空间，用于再分配。垃圾收集算法的选择和垃圾收集系统参数的合理调节直接影响着系统性能。</p>
+<h3 id="17-强引用置为null，会不会被回收？"><a href="#17-强引用置为null，会不会被回收？" class="headerlink" title="17.强引用置为null，会不会被回收？"></a>17.强引用置为null，会不会被回收？</h3><p>会，GC执行时，就被回收掉，前提是没有被引用的对象</p>
+<h3 id="18-java中的四种引用的区别以及使用场景"><a href="#18-java中的四种引用的区别以及使用场景" class="headerlink" title="18.java中的四种引用的区别以及使用场景"></a>18.java中的四种引用的区别以及使用场景</h3><p>（1）强引用(StrongReference)<br>强引用是使用最普遍的引用。如果一个对象具有强引用，那垃圾回收器绝不会回收它。当内存空间不足，Java虚拟机宁愿抛出OutOfMemoryError错误，使程序异常终止，也不会靠随意回收具有强引用的对象来解决内存不足的问题。<br>（2）软引用(SoftReference)<br>如果一个对象只具有软引用，则内存空间足够，垃圾回收器就不会回收它；如果内存空间不足了，就会回收这些对象的内存。只要垃圾回收器没有回收它，该对象就可以被程序使用。软引用可用来实现内存敏感的高速缓存。</p>
+<p>软引用可以和一个引用队列（ReferenceQueue）联合使用，如果软引用所引用的对象被垃圾回收器回收，Java虚拟机就会把这个软引用加入到与之关联的引用队列中。<br>（3）弱引用(WeakReference)<br>弱引用与软引用的区别在于：只具有弱引用的对象拥有更短暂的生命周期。在垃圾回收器线程扫描它所管辖的内存区域的过程中，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存。不过，由于垃圾回收器是一个优先级很低的线程，因此不一定会很快发现那些只具有弱引用的对象。<br>弱引用可以和一个引用队列（ReferenceQueue）联合使用，如果弱引用所引用的对象被垃圾回收，Java虚拟机就会把这个弱引用加入到与之关联的引用队列中。</p>
+<p>（4）虚引用(PhantomReference)<br>“虚引用”顾名思义，就是形同虚设，与其他几种引用都不同，虚引用并不会决定对象的生命周期。如果一个对象仅持有虚引用，那么它就和没有任何引用一样，在任何时候都可能被垃圾回收器回收。<br>虚引用主要用来跟踪对象被垃圾回收器回收的活动。虚引用与软引用和弱引用的一个区别在于：虚引用必须和引用队列 （ReferenceQueue）联合使用。当垃圾回收器准备回收一个对象时，如果发现它还有虚引用，就会在回收对象的内存之前，把这个虚引用加入到与之 关联的引用队列中。</p>
+<h3 id="19-你所知道的设计模式有哪些？（说自己熟悉的）"><a href="#19-你所知道的设计模式有哪些？（说自己熟悉的）" class="headerlink" title="19.你所知道的设计模式有哪些？（说自己熟悉的）"></a>19.你所知道的设计模式有哪些？（说自己熟悉的）</h3><p>单例模式，观察者模式，工厂模式，builder模式，生产者/消费者模式，适配器模式，装饰者模式。。。。。（23种，随你挑）</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2021/07/23/topic/topic_java%E8%BF%9B%E9%98%B6/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;23&#x2F;topic&#x2F;topic_java%E8%BF%9B%E9%98%B6&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;23&#x2F;topic&#x2F;topic_java%E8%BF%9B%E9%98%B6&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/2021/07/23/topic/topic_gradle/"><i class="iconfont iconleft"></i>gradle</a>
+    <a href="/2021/07/23/topic/topic_%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91/">事件分发<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">1.需要关注的设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99%E6%98%AF%EF%BC%9A"><span class="toc-text">2.设计模式的六大原则是：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%80%9A%E5%B8%B8%E7%9A%84%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%8C%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">3.通常的阻塞队列有哪几种，特点是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-volatile%E7%9A%84%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="toc-text">4.volatile的原理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%AD%BB%E9%94%81%E8%A7%A6%E5%8F%91%E7%9A%84%E5%9B%9B%E5%A4%A7%E6%9D%A1%E4%BB%B6%EF%BC%9F"><span class="toc-text">5.死锁触发的四大条件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">6.线程池的工作流程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%B8%AD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8F%82%E6%95%B0%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E7%A7%8D%E7%B1%BB%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">7.线程池中的几个参数是什么意思，线程池的种类有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E4%B8%8E%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B%E7%9B%B8%E6%AF%94%EF%BC%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="toc-text">8.与新建一个线程相比，线程池的特点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">9.线程的状态有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80%EF%BC%9F"><span class="toc-text">10.逻辑地址与物理地址，为什么使用逻辑地址？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-gc-%E8%BF%9B%E8%A1%8C%E5%9B%9E%E6%94%B6%E7%9A%84%E5%87%86%E5%88%99%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%9B%9E%E6%94%B6%EF%BC%9F"><span class="toc-text">11.gc()进行回收的准则是什么？也就是说什么样的对象可以被回收？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-System-gc-%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-text">12.System.gc()使用介绍：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%E4%B8%8E%E8%B0%83%E7%94%A8System-gc-%E5%8C%BA%E5%88%AB"><span class="toc-text">13.垃圾回收机制与调用System.gc()区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Art%E5%92%8CDalvik%E5%AF%B9%E6%AF%94"><span class="toc-text">14.Art和Dalvik对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CDalvik%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">15.java虚拟机和Dalvik虚拟机的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-JAVA-GC%E5%8E%9F%E7%90%86"><span class="toc-text">16.JAVA GC原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E5%BC%BA%E5%BC%95%E7%94%A8%E7%BD%AE%E4%B8%BAnull%EF%BC%8C%E4%BC%9A%E4%B8%8D%E4%BC%9A%E8%A2%AB%E5%9B%9E%E6%94%B6%EF%BC%9F"><span class="toc-text">17.强引用置为null，会不会被回收？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-java%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">18.java中的四种引用的区别以及使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-%E4%BD%A0%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%EF%BC%88%E8%AF%B4%E8%87%AA%E5%B7%B1%E7%86%9F%E6%82%89%E7%9A%84%EF%BC%89"><span class="toc-text">19.你所知道的设计模式有哪些？（说自己熟悉的）</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+  
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

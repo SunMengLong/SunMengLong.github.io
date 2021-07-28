@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JNI/NDK - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="1.jni如何调用java层代码？
+C代码回调Java...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+    </div>
+    <div class="center">JNI/NDK</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">JNI/NDK</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>4151</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <p>1.jni如何调用java层代码？</p>
+<p>C代码回调Java方法步骤：<br>①获取字节码对象（jclass (FindClass)(JNIEnv, const char*);）<br>②通过字节码对象找到方法对象（jmethodID (GetMethodID)(JNIEnv, jclass, const char, const char);）<br>③通过字节码文件创建一个object对象（该方法可选，方法中已经传递一个object，如果需要调用的方法与本地方法不在同一个文件夹则需要新创建object（jobject (AllocObject)(JNIEnv, jclass);），如果需要反射调用的java方法与本地方法不在同一个类中，需要创建该方法，但是如果是这样，并且需要跟新UI操作，例如打印一个Toast 会报空指针异常，因为这时候调用的方法只是一个方法，没有actiivty的生命周期。）<br>④通过对象调用方法，可以调用空参数方法，也可以调用有参数方法，并且将参数通过调用的方法传入（void (CallVoidMethod)(JNIEnv, jobject, jmethodID, …);）</p>
+<p>2.NDK特点</p>
+<p>1.性能方面：<br>（1）运行效率高：在开发要求高性能的需求中，采用C/C++更加有效率（如使用本地代码（C/C++）执行算法，能大大提高算大的执行效率）<br>（2）代码安全性高：java是半解释型语言，容易被反编译后得到源代码,而本地有些代码类型（如C/C++）则不会，能提高系统的安全性<br>2.功能方面：<br>功能扩展性好：可方便地使用其他开发语言的开源库，除了java的开源库，还可以使用开发语言（C/C++）的开源库<br>3.使用方面：<br>易于代码复用和移植：用本地代码（如C/C++）开发的代码不仅可在Android中使用，还可嵌入其他类型平台上使用</p>
+<p>3.JNI开发流程的步骤：<br>传统的开发步骤：<br>第1步：在Java中先声明一个native方法<br>第2步：编译Java源文件，调用声明的本地native方法<br>第3步：通过javah -jni命令导出JNI的.h头文件，并在main下创建一个名为jni的文件夹，将这个.h文件copy进去。<br>第4步：在jni文件夹下创建.c文件，两部分内容：1)添加.h头文件 2)实现java中声明的native方法<br>第5步：在jni文件夹下创建.mk文件，android.mk主要用来告诉编译器，需要编译哪些c++文件，以及需要编译的外部库和一些系统库。<br>            如果不编写.mk文件会报错：<br>            错误：执行app:compileDebugNdk任务失败，不再支持android.useDeprecatedNdk标志，并且将会在未来的Android Studio版本中删除这个标志。<br>第6步：检查local.properties中是否配置了Android.useDeprecatedNdk=true ，在grandle文件是否配置了ndk信息<br>第7步：将本地代码编译成动态库(Windows系统下是.dll文件，如果是Linux系统下是.so文件，如果是Mac系统下是.jnilib)<br>第8步：通过Java命令执行Java程序，最终实现Java调用本地代码。<br>PS：javah 是JDK自带的一个命令，-jni参数表示将class 中用到native 声明的函数生成JNI 规则的函数</p>
+<p>使用Cmake步骤：<br>1.在创建项目的时候勾选Include C++ Suppert<br>2.项目创建完成后，会多出两个文件夹cpp和External Build Files ：<br>在 cpp 文件夹中：可以找到属于项目的所有原生源文件等构建库。对于新项目，Android Studio会创建一个示例C++源文件 native-lib.cpp，并将其置于应用模块src/main/cpp/目录中。这个示例代码提供了一个简单的C++函数stringFromJNI()，此函数可以返回字符串“Hello from C++”<br>在 External Build Files 文件夹中：可以找到CMake或 ndk-build 的构建脚本。与build.gradle文件指示Gradle构建应用一样，CMake和ndk-build需要一个构建脚本来了解如何构原生库。对于新项目，Android Studio 会创建一个CMake 构建脚本CMakeLists.txt，并将其置于模块根目录中。</p>
+<p>Cmake工具原理：<br>它既然能够跑起来，就一定有一个入口，这个入口就是在build.grandle中，我们发现创建项目之后，grandle文件中自动多了一个叫externalNativeBuild的模块，<br>在grandle文件中，发现有两个地方用了externalNativeBuild，一个是在defaultConfig里面，一个是在defaultConfig外面。外面的指定了CMakeList.mk的路径，<br>在本项目的文件夹下，和build.grandle在同一目录下。里面的主要填写的Cmake的命令参数。即由arguments 中的参数最后转化成一个可执行的 CMake 的命令，<br>可以在 app/externalNativeBuild/cmake/debug/{abi}/cmake_build_command.txt中查到。</p>
+<p>4.JNI的优势：<br>与其它类似接口Microsoft的原始本地接口等相比，JNI的主要竞争优势在于：它在设计之初就确保了二进制的兼容性，<br>JNI编写的应用程序兼容性以及其再某些具体平台上的Java虚拟机兼容性(当谈及JNI时，这里并不特比针对Davik虚拟机，<br>JNI适用于所有JVM虚拟机)。这就是为什么C/C++编译后的代码无论在任何平台上都能执行。不过，一些早期版本并不支持二进制兼容。<br>二进制兼容性是一种程序兼容性类型，允许一个程序在不改变其可执行文件的条件下在不同的编译环境中工作。</p>
+<p>5.为什么要使用JNI?<br>因为在实际需求中，需要Java代码与C/C++代码进行交互，通过JNI可以实现Java代码与C/C++代码的交互</p>
+<p>6.为什么要使用NDK?<br>1.在平台之间移植其应用<br>2.重复使用现在库，或者提供其自己的库重复使用<br>3.在某些情况下提性能，特别是像游戏这种计算密集型应用<br>4.使用第三方库，现在许多第三方库都是由C/C++库编写的，比如Ffmpeg这样库。<br>5.不依赖于Dalvik Java虚拟机的设计<br>6.代码的保护。由于APK的Java层代码很容易被反编译，而C/C++库反编译难度大。</p>
+<p>7.JNI静态注册和动态注册<br>静态注册：<br>通过 JNIEXPORT 和 JNICALL 两个宏定义声明，Java + 包名 + 类名 + 方法名 形式的函数名。不好的地方就是方法名太长了。</p>
+<p>动态注册：<br>通常在 JNI_OnLoad 方法中通过 RegisterNatives 方法注册，可以不再遵从固定的命名写法（当然为了代码容易理解，名称还是尽量和 Java 中保持一致）。</p>
+<p>8.怎么定位 NDK 中的问题和错误<br>一般在开发阶段的话，我们可以通过 log 来定位和分析问题。</p>
+<p>如果是上线状态（即关闭了基本的 log），我们可以借助 NDK 提供的 addr2line 工具和 objdump 工具来定位错误。详情：</p>
+<p>so 动态库崩溃问题定位（addr2line与objdump）</p>
+<p>其它还可以使用 C/C++ 的一些分析工具。</p>
+<p>9.JNI 线程间数据怎么互相访问<br>线程本来就是共享内存区域的，因此我们需要使用 全局引用。</p>
+<p>10.解释一下 JNI 中全局引用和局部引用的区别和使用<br>全局引用<br>通过 NewGlobalRef 和 DeleteGlobalRef 方法创建和释放一个全局引用。<br>全局引用能在多个线程中被使用，且不会被 GC 回收，只能手动释放。</p>
+<p>局部引用<br>通过 NewLocalRef 和 DeleteLocalRef 方法创建和释放一个局部引用。<br>局部引用只在创建它的 native 方法中有效，包括其调用的其它函数中有效。因此我们不能寄望于将一个局部引用直接保存在全局变量中下次使用（请使用全局引用实现该需求）。<br>我们可以不用删除局部引用，它们会在 native 方法返回时全部自动释放，但是建议对于不再使用的局部引用手动释放，避免内存过度使用。</p>
+<p>扩展：弱全局引用<br>通过 NewWeakGlobalRef 和 DeleteWeakGlobalRef 创建和释放一个弱全局引用。<br>弱全局引用类似于全局引用，唯一的区别是它不会阻止被 GC 回收。</p>
+<p>11.谈谈你对 JNIEnv 和 JavaVM 理解<br>JavaVM<br>JavaVM 是虚拟机在 JNI 层的代表。<br>一个进程只有一个 JavaVM。（重要！）<br>所有的线程共用一个 JavaVM。（重要！）</p>
+<p>JNIEnv<br>JNIEnv 表示 Java 调用 native 语言的环境，封装了几乎全部 JNI 方法的指针。<br>JNIEnv 只在创建它的线程生效，不能跨线程传递，不同线程的 JNIEnv 彼此独立。（重要！）</p>
+<p>注意：<br>在 native 环境下创建的线程，要想和 java 通信，即需要获取一个 JNIEnv 对象。我们通过 AttachCurrentThread 和 DetachCurrentThread 方法将 native 的线程与 JavaVM 关联和解除关联。</p>
+<p>12.谈谈你对 JNI 和 NDK 的理解<br>JNI：<br>JNI 是 Java Native Interface 的缩写，即 Java 的本地接口。<br>目的是使得 Java 与本地其他语言（如 C/C++）进行交互。<br>JNI 是属于 Java 的，与 Android 无直接关系。</p>
+<p>NDK：<br>NDK 是 Native Development Kit 的缩写，是 Android 的工具开发包。<br>作用是更方便和快速开发 C/C++ 的动态库，并自动将动态库与应用一起打包到 apk。<br>NDK 是属于 Android 的，与 Java 无直接关系。</p>
+<p>总结：<br>JNI 是实现的目的，NDK 是 Android 中实现 JNI 的手段</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2021/07/23/topic/topic_JNI%20:%20NDK/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;23&#x2F;topic&#x2F;topic_JNI%20:%20NDK&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;07&#x2F;23&#x2F;topic&#x2F;topic_JNI%20:%20NDK&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/2021/07/23/topic/topic_Binder%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"><i class="iconfont iconleft"></i>Binder通信原理</a>
+    <a href="/2021/07/23/topic/topic_gradle/">gradle<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+  
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
