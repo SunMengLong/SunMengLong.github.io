@@ -185,7 +185,7 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>6892</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>6909</span>
     </div>
   </div>
 </section>
@@ -232,7 +232,10 @@
 <h3 id="12-ListView重用的是什么？"><a href="#12-ListView重用的是什么？" class="headerlink" title="12.ListView重用的是什么？"></a>12.ListView重用的是什么？</h3><p>1.如果复用的View为null时，我们要创建一个新的item以及ViewHolder，<br>然后把item视图中的控件通过findViewById方法寻找到，<br>并添加到ViewHolder中，setTag方法，将viewholder传进去，完成viewholder与item之间的绑定</p>
 <p>2.如果复用的View不是为null,那么通过getTag（）方法直接拿过来用,并且从里面拿出ViewHolder,因为每一个复用的ViewHolder肯定是经过处创建并且返回的</p>
 <h3 id="13-计算一个view的嵌套层级"><a href="#13-计算一个view的嵌套层级" class="headerlink" title="13.计算一个view的嵌套层级"></a>13.计算一个view的嵌套层级</h3><p>循环追寻父类，看看有多少，便有多少嵌套层级：</p>
-<p>while (view.getParents() != null) {<br>        count++;<br>        view = view.getParents();<br>}</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs q"><span class="hljs-keyword">while</span> (<span class="hljs-built_in">view</span>.getParents() != <span class="hljs-built_in">null</span>) &#123;<br>        <span class="hljs-built_in">count</span>++;<br>        <span class="hljs-built_in">view</span> = <span class="hljs-built_in">view</span>.getParents();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
 <h3 id="14-Android中View，SurfaceView和GLSurfaceView"><a href="#14-Android中View，SurfaceView和GLSurfaceView" class="headerlink" title="14.Android中View，SurfaceView和GLSurfaceView"></a>14.Android中View，SurfaceView和GLSurfaceView</h3><p>View：显示视图，内置画布，提供图形绘制函数，触屏事件，按键事件函数；必须在UI线程中更新画面，速度较慢。<br>SurfaceView：基于View视图进行拓展的视图类，更适合2D游戏的开发；是View的子类，类似双缓机制，在新的线程中更新画面，所以刷新界面速度比View快。（双缓机制：即前台缓存和后台缓存，后台缓存计算场景、产生画面，前台缓存显示后台缓存已画好的画面。）<br>GLSurfaceView：基于SurfaceView视图再次进行扩展的视图类，专用于3D游戏开发的视图；是SurfaceView的子类，OpenGL专用。（OpenGL：是一个开放的三维图形软件包。）</p>
 <h3 id="15-LinearLayout、RelativeLayout、FrameLayout的特性及对比，并介绍使用场景。"><a href="#15-LinearLayout、RelativeLayout、FrameLayout的特性及对比，并介绍使用场景。" class="headerlink" title="15.LinearLayout、RelativeLayout、FrameLayout的特性及对比，并介绍使用场景。"></a>15.LinearLayout、RelativeLayout、FrameLayout的特性及对比，并介绍使用场景。</h3><p>RelativeLayout的onMeasure过程<br>根据源码我们发现RelativeLayout会根据2次排列的结果对子View各做一次measure。<br>首先RelativeLayout中子View的排列方式是基于彼此的依赖关系，在确定每个子View的位置的时候，需要先给所有的子View排序一下，所以需要横向纵向分别进行一次排序测量</p>
 <p>LinearLayout的onMeasure过程<br>LinearLayout会先做一个简单横纵方向判断<br>需要注意的是在每次对child测量完毕后，都会调用child.getMeasuredHeight()/getMeasuredWidth()获取该子视图最终的高度，并将这个高度添加到mTotalLength中。<br>但是getMeasuredHeight暂时避开了lp.weight&gt;0且高度为0子View，因为后面会将把剩余高度按weight分配给相应的子View。因此可以得出以下结论：<br>（1）如果我们在LinearLayout中不使用weight属性，将只进行一次measure的过程。（如果使用weight属性，则遍历一次wiew测量后，再遍历一次view测量）<br>（2）如果使用了weight属性，LinearLayout在第一次测量时获取所有子View的高度，之后再将剩余高度根据weight加到weight&gt;0的子View上。由此可见，weight属性对性能是有影响的。<br>1）RelativeLayout慢于LinearLayout是因为它会让子View调用2次measure过程，而LinearLayout只需一次，但是有weight属性存在时，LinearLayout也需要两次measure。<br>2）在不响应层级深度的情况下，使用Linearlayout而不是RelativeLayout。</p>
@@ -264,8 +267,8 @@
         
         
   <nav class="nav">
-    <a href="/2021/07/23/topic/topic_%E5%8A%A8%E7%94%BB/"><i class="iconfont iconleft"></i>动画</a>
-    <a href="/2021/07/23/topic/topic_%E5%8F%8D%E5%B0%84/">反射<i class="iconfont iconright"></i></a>
+    <a href="/2021/07/23/topic/topic_%E5%8F%8D%E5%B0%84/"><i class="iconfont iconleft"></i>反射</a>
+    <a href="/2021/07/23/topic/topic_%E5%AD%98%E5%82%A8/">存储<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>

@@ -199,7 +199,7 @@
 <h3 id="5-HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？"><a href="#5-HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？" class="headerlink" title="5.HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？"></a>5.HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？</h3><p>过程和上图类似，依次获取证书，公钥，最后生成对称加密的钥匙进行对称加密。</p>
 <p>对称加密可以保证加密效率，但是不能解决密钥传输问题；非对称加密可以解决传输问题，但是效率不高。</p>
 <h3 id="6-SSL-TLS的握手过程？"><a href="#6-SSL-TLS的握手过程？" class="headerlink" title="6.SSL/TLS的握手过程？"></a>6.SSL/TLS的握手过程？</h3><p>这里借用《趣谈网络协议》的图片：</p>
-<p>SSL/TLS</p>
+<p><img    class="lazyload" data-original="https://user-gold-cdn.xitu.io/2020/4/24/171ab7a751550e46?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="    title="示例图片"><span class="image-caption">SSL/TLS</span></p>
 <h3 id="7-HTTP和HTTPS有什么区别？"><a href="#7-HTTP和HTTPS有什么区别？" class="headerlink" title="7.HTTP和HTTPS有什么区别？"></a>7.HTTP和HTTPS有什么区别？</h3><p>简单来说，HTTP和HTTPS的关系是这样的</p>
 <p>HTTPS = HTTP + SSL/TLS</p>
 <p>区别如下： HTTP作用于应用层，使用80端口，起始地址是http://，明文传输，消息容易被拦截，串改。 HTTPS作用域传输层，使用443端口，起始地址是https://，需要下载CA证书，传输的过程需要加密，安全性高。</p>
@@ -263,8 +263,8 @@
         
         
   <nav class="nav">
-    <a href="/2021/07/23/topic/topic_%E7%AE%97%E6%B3%95/"><i class="iconfont iconleft"></i>算法</a>
-    <a href="/2021/07/23/topic/topic_%E8%87%AA%E5%AE%9A%E4%B9%89View/">自定义view<i class="iconfont iconright"></i></a>
+    <a href="/2021/07/23/topic/topic_%E7%BB%84%E4%BB%B6%E5%8C%96%E4%B8%8E%E6%8F%92%E4%BB%B6%E5%8C%96/"><i class="iconfont iconleft"></i>组件化/插件化</a>
+    <a href="/2021/07/23/topic/topic_%E7%AE%97%E6%B3%95/">算法<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
