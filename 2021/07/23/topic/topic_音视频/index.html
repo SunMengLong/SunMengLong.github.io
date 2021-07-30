@@ -11,9 +11,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="
-1.播放音频有哪几种方式 ？
-一、MediaPlay...">
+  <meta name="description" content="1.播放音频有哪几种方式 ？一、MediaPlayer...">
   <meta name="author" content="John Doe">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -187,15 +185,13 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1183</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1160</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <ol>
-<li><p>1.播放音频有哪几种方式 ？</p>
-<p>一、MediaPlayer播放音频</p>
+        <h3 id="1-播放音频有哪几种方式-？"><a href="#1-播放音频有哪几种方式-？" class="headerlink" title="1.播放音频有哪几种方式 ？"></a>1.播放音频有哪几种方式 ？</h3><p>一、MediaPlayer播放音频</p>
 <p>支持的格式有：AAC、AMR、FLAC、MP3、MIDI、OGG、PCM等格式</p>
 <p>不足：资源占用量较高、延迟时间较长、不支持多个音频同时播放等</p>
 <p>二、SoundPool播放音频</p>
@@ -210,30 +206,33 @@
 <p>静态的言下之意就是数据一次性交付给接收方。好处是简单高效，只需要进行一次操作就完成了数据的传递;缺点当然也很明显，对于数据量较大的音频回放，显然它是无法胜任的，因而通常只用于播放铃声、系统提醒等对内存小的操作</p>
 <p><strong>流模式streaming</strong></p>
 <p>流模式和网络上播放视频是类似的，即数据是按照一定规律不断地传递给接收方的。理论上它可用于任何音频播放的场景，不过我们一般在以下情况下采用：</p>
-<p>\1. 音频</p>
+<ol>
+<li>音频</li>
+</ol>
 <p>文件过大</p>
-<p>\2. 音频属性要求高，比如采样率高、深度大的数据</p>
-<p>\3. 音频数据是实时产生的，这种情况就只能用流模式了</p>
+<ol start="2">
+<li><p>音频属性要求高，比如采样率高、深度大的数据</p>
+</li>
+<li><p>音频数据是实时产生的，这种情况就只能用流模式了</p>
+</li>
+</ol>
 <p>下面是三者的使用场景：</p>
 <p>MediaPlayer 更加适合在后台长时间播放本地音乐文件或者在线的流式资源; </p>
 <p>SoundPool 则适合播放比较短的音频片段，比如游戏声音、按键声、铃声片段等等，它可以同时播放多个音频; </p>
 <p>AudioTrack 则更接近底层，提供了非常强大的控制能力，支持低延迟播放，适合流媒体和VoIP语音电话等场景。</p>
-</li>
-<li><p>2.录制音频有哪几种方式 ？</p>
-<p>一、使用AudioRecord 或者 MediaRecord </p>
+<h3 id="2-录制音频有哪几种方式-？"><a href="#2-录制音频有哪几种方式-？" class="headerlink" title="2.录制音频有哪几种方式 ？"></a>2.录制音频有哪几种方式 ？</h3><p>一、使用AudioRecord 或者 MediaRecord </p>
 <p>区别：</p>
 <p>AudioRecord 更加偏向底层，录制的音频文件是pcm格式的，不能直接使用系统自带的播放器播放，需要配合使用AudioTrack来播放。</p>
 <p>MediaRecord 更加偏向上层，录制的音频是MP3/wav格式的，可以直接使用系统自带的播放器播放。在用MediaRecorder进行录制音视频时，最终还是会创建AudioRecord用来与AudioFlinger进行交互。</p>
+<h3 id="3-绘制图片的三种方式-？"><a href="#3-绘制图片的三种方式-？" class="headerlink" title="3.绘制图片的三种方式 ？"></a>3.绘制图片的三种方式 ？</h3><ol>
+<li><p>通过ImageView直接加载</p>
 </li>
-<li><p>3.绘制图片的三种方式 ？</p>
-<p>\1. 通过ImageView直接加载</p>
-<p>\2. 通过SurfaceView绘制</p>
-<p>\3. 自定义View绘制</p>
+<li><p>通过SurfaceView绘制</p>
 </li>
-<li><p>4.视频加密传输</p>
-<p>DES加密。用java中提供的加密包。<br>将视频文件的数据流前100个字节中的每个字节与其下标进行异或运算。解密时只需将加密过的文件再进行一次异或运算即可。</p>
+<li><p>自定义View绘制</p>
 </li>
 </ol>
+<h3 id="4-视频加密传输"><a href="#4-视频加密传输" class="headerlink" title="4.视频加密传输"></a>4.视频加密传输</h3><p>DES加密。用java中提供的加密包。<br>将视频文件的数据流前100个字节中的每个字节与其下标进行异或运算。解密时只需将加密过的文件再进行一次异或运算即可。</p>
 
       </section>
       <section class="extra">
@@ -261,7 +260,7 @@
         
   <nav class="nav">
     <a href="/2021/07/23/topic/topic_%E9%9B%86%E5%90%88/"><i class="iconfont iconleft"></i>集合</a>
-    <a href="/2021/07/23/topic/topic_Android%E6%9E%B6%E6%9E%84/">Android架构<i class="iconfont iconright"></i></a>
+    <a href="/2021/07/23/study/study/">初识kotlin<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
@@ -274,7 +273,7 @@
           
   <aside class="toc-wrap">
     <h3 class="toc-title">文章目录：</h3>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F-%EF%BC%9F"><span class="toc-text">1.播放音频有哪几种方式 ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BD%95%E5%88%B6%E9%9F%B3%E9%A2%91%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F-%EF%BC%9F"><span class="toc-text">2.录制音频有哪几种方式 ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F-%EF%BC%9F"><span class="toc-text">3.绘制图片的三种方式 ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%A7%86%E9%A2%91%E5%8A%A0%E5%AF%86%E4%BC%A0%E8%BE%93"><span class="toc-text">4.视频加密传输</span></a></li></ol>
   </aside>
 
         
