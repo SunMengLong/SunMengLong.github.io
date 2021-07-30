@@ -11,9 +11,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="
-1.Android动画原理
-Animation框架定...">
+  <meta name="description" content="1.Android动画原理Animation框架定义了...">
   <meta name="author" content="John Doe">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -187,20 +185,14 @@ Animation框架定...">
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>485</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>479</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <ol>
-<li><p>1.Android动画原理</p>
-<p>Animation框架定义了透明度，旋转，缩放和位移几种常见的动画，而且控制的是整个View<br>实现原理是每次绘制视图时View所在的ViewGroup中的drawChild函数获取该View的Animation的Transformation值<br>然后调用canvas.concat(transformToApply.getMatrix())，通过矩阵运算完成动画帧，如果动画没有完成，继续调用invalidate()函数，启动下次绘制来驱动动画<br>动画过程中的帧之间间隙时间是绘制函数所消耗的时间，可能会导致动画消耗比较多的CPU资源，最重要的是，动画改变的只是显示，并不能相应事件</p>
-</li>
-<li><p>2.Android属性动画特性</p>
-<p>(1) 对任意对象的属性执行动画操作：属性动画允许对任意对象的属性执行动画操作，因为属性动画的性质是通过反射实现的。<br>(2)可改变背景颜色。<br>(3)真正改变 View 本身：因为是通过反射改变其属性，并刷新，如改变width，他会搜索getWidth(),反射获取，再通过进行某种计算，将值通过setWidth()设置进去并更新。</p>
-</li>
-</ol>
+        <h3 id="1-Android动画原理"><a href="#1-Android动画原理" class="headerlink" title="1.Android动画原理"></a>1.Android动画原理</h3><p>Animation框架定义了透明度，旋转，缩放和位移几种常见的动画，而且控制的是整个View<br>实现原理是每次绘制视图时View所在的ViewGroup中的drawChild函数获取该View的Animation的Transformation值<br>然后调用canvas.concat(transformToApply.getMatrix())，通过矩阵运算完成动画帧，如果动画没有完成，继续调用invalidate()函数，启动下次绘制来驱动动画<br>动画过程中的帧之间间隙时间是绘制函数所消耗的时间，可能会导致动画消耗比较多的CPU资源，最重要的是，动画改变的只是显示，并不能相应事件</p>
+<h3 id="2-Android属性动画特性"><a href="#2-Android属性动画特性" class="headerlink" title="2.Android属性动画特性"></a>2.Android属性动画特性</h3><p>(1) 对任意对象的属性执行动画操作：属性动画允许对任意对象的属性执行动画操作，因为属性动画的性质是通过反射实现的。<br>(2)可改变背景颜色。<br>(3)真正改变 View 本身：因为是通过反射改变其属性，并刷新，如改变width，他会搜索getWidth(),反射获取，再通过进行某种计算，将值通过setWidth()设置进去并更新。</p>
 
       </section>
       <section class="extra">
@@ -241,7 +233,7 @@ Animation框架定...">
           
   <aside class="toc-wrap">
     <h3 class="toc-title">文章目录：</h3>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Android%E5%8A%A8%E7%94%BB%E5%8E%9F%E7%90%86"><span class="toc-text">1.Android动画原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Android%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E7%89%B9%E6%80%A7"><span class="toc-text">2.Android属性动画特性</span></a></li></ol>
   </aside>
 
         

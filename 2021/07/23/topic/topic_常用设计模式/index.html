@@ -186,7 +186,7 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>953</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1049</span>
     </div>
   </div>
 </section>
@@ -197,7 +197,12 @@
 <p>好处：</p>
 <p>对于那些比较耗内存的类，只实例化一次可以大大的节约内存，尤其是在移动应用中。</p>
 <p>代码（懒汉式）：</p>
-<p>  private static RetrofitHelper instance;<br>     /**<br>     * 获取单例<br>     */<br>    public static RetrofitHelper getInstance() {<br>        if (null == instance) {<br>            synchronized (RetrofitHelper.class) {<br>                if (null == instance) {<br>                    instance = new RetrofitHelper();<br>                }<br>            }<br>        }<br>        return instance;<br>    }<br>饿汉式：<br>public class Singleton {<br>// 直接创建对象<br>public static Singleton instance = new Singleton();<br>// 私有化构造函数<br>private Singleton() {<br>}<br>// 返回对象实例<br>public static Singleton getInstance() {<br>return instance;<br>}<br>}<br>实现单例的步骤：</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs smali">private<span class="hljs-keyword"> static</span> RetrofitHelper instance;<br>   /**<br>   * 获取单例<br>        */<br>     <span class="hljs-keyword"> public</span><span class="hljs-keyword"> static</span> RetrofitHelper getInstance() &#123;<br>     <span class="hljs-built_in"> if </span>(null == instance) &#123;<br>          synchronized (RetrofitHelper.class) &#123;<br>             <span class="hljs-built_in"> if </span>(null == instance) &#123;<br>                 <span class="hljs-built_in"> instance </span>=<span class="hljs-built_in"> new </span>RetrofitHelper();<br>              &#125;<br>          &#125;<br>      &#125;<br>     <span class="hljs-built_in"> return </span>instance;<br>      &#125;<br></code></pre></td></tr></table></figure>
+
+<p>饿汉式：</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs smali">public class Singleton &#123;<br>// 直接创建对象<span class="hljs-keyword"></span><br><span class="hljs-keyword">public</span><span class="hljs-keyword"> static</span> Singleton<span class="hljs-built_in"> instance </span>=<span class="hljs-built_in"> new </span>Singleton();<br>// 私有化构造函数<span class="hljs-keyword"></span><br><span class="hljs-keyword">private</span> Singleton() &#123;<br>&#125;<br>// 返回对象实例<span class="hljs-keyword"></span><br><span class="hljs-keyword">public</span><span class="hljs-keyword"> static</span> Singleton getInstance() &#123;<span class="hljs-built_in"></span><br><span class="hljs-built_in">return </span>instance;<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>实现单例的步骤：</p>
 <ol>
 <li><p>防止外部通过构造方法对其实例化，所以构造方法必须私有化</p>
 </li>
@@ -210,6 +215,7 @@
 </ol>
 <p>单例模式的应用：</p>
 <p>初始化Android-Universal-Image-Loader，EventBus,Rxbus,ActivityManager 中</p>
+<p></p>
 
       </section>
       <section class="extra">
