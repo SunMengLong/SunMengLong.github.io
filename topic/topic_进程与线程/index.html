@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>进程与线程 - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="1.有时候我们想中断run()方法的执行，怎么办呢，是...">
+  <meta name="author" content="MengLong Sun">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+    </div>
+    <div class="center">进程与线程</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://t7.baidu.com/it/u=821791764,3584359573&fm=193&f=GIF" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">进程与线程</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>15512</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h3 id="1-有时候我们想中断run-方法的执行，怎么办呢，是直接使用stop-方法还是使用interrupt-？"><a href="#1-有时候我们想中断run-方法的执行，怎么办呢，是直接使用stop-方法还是使用interrupt-？" class="headerlink" title="1.有时候我们想中断run()方法的执行，怎么办呢，是直接使用stop()方法还是使用interrupt ？"></a><strong>1.有时候我们想中断run()方法的执行，怎么办呢，是直接使用stop()方法还是使用interrupt ？</strong></h3><p>正确的姿势是使用interrupt</p>
+<ol>
+<li><p>stop()方法会直接杀死线程，一点喘息的机会都不给，如果被杀死的线程持有sychronized隐式锁，你就再也不会释放掉这个锁了，接下来的线程也都不会获得这个锁了，同样suspend()和resume()方法也不建议使用</p>
+</li>
+<li><p>interrupt()方法相比于stop()方法就柔和很多，它只是通知线程后续的操作可以不用执行了，线程可以选择继续执行，也可以选择立即停止，也可以选择过一段时间再停止。interrupt()只是通知一下线程而已。就比如你做火车去一个地方，突然通知你这个火车晚点了，你可以选择无视这个通知继续等待，或者选择另一个火车，但是不管你做什么，和火车站都没有关系，它通知的责任尽到了。</p>
+</li>
+</ol>
+<h3 id="2-java进程的生命周期"><a href="#2-java进程的生命周期" class="headerlink" title="2.java进程的生命周期"></a>2.java进程的生命周期</h3><p>系统/java的线程通用生命周期：</p>
+<ol>
+<li>new ：线程被创建，没有分配到CPU，因为这个状态只是说明这个线程在编程语言层面被创建了，操作系统层面还没有被创建。</li>
+<li>ready ：在操作系统层面创建了，接下来就是等待分配CPU执行了。</li>
+<li>running ：分配了CPU，开始执行的状态。</li>
+<li>wating ： 正在执行的时候，需要进行I/O操作，或者需要等待一段时间再执行，此时会释放掉CPU资源。</li>
+<li>terminoted ：线程执行完毕/遇到异常，此状态不能再切换到任何状态了。</li>
+</ol>
+<p>java线程的生命周期：</p>
+<ol>
+<li><p>new ： 同上</p>
+</li>
+<li><p>runnable ：thread调用了start方法，java线程正在执行时的状态</p>
+</li>
+<li><p>blocked ：线程等待synchronized隐式锁时，就会从runnable状态转换为blocked状态，也就是等待持有锁的线程释放锁，获得锁的时候会切换到runnable状态。此时在操作系统层面还是runnable状态。</p>
+</li>
+<li><p>waiting ：执行wait方法进入等待状态</p>
+</li>
+<li><p>timed_wating ：超时限等待状态，与wating相比就是多了个时间限制</p>
+</li>
+<li><p>terminoted ：同上<br>在java的生命周期中，runnable状态是将ready和running状态合并到了一起。<br>而blocked/waiting/timed_waiting这三种状态其实就是waiting，也就是线程要等待某些事件发生，才能继续执行下去。</p>
+</li>
+</ol>
+<h3 id="3-java中独占锁-共享锁"><a href="#3-java中独占锁-共享锁" class="headerlink" title="3.java中独占锁/共享锁"></a>3.java中独占锁/共享锁</h3><p>写锁（独占锁）：是指该锁一次只能被一个线程锁持有。对ReentrantLock和Sychronized而言都是独占锁。<br>读锁（共享锁）：是指该锁可被多个线程持有。对ReentrantReadWriteLock而言，其读锁是共享锁，其写锁是独占锁。读锁的共享性可保证并发读是非常高效的，读写、写读、写写的过程都是互斥的。</p>
+<h3 id="4-说一下对线程池的理解"><a href="#4-说一下对线程池的理解" class="headerlink" title="4.说一下对线程池的理解"></a>4.说一下对线程池的理解</h3><p>线程池的好处：</p>
+<p>1、通过对线程的复用，减小创建线程及销毁线程的性能消耗；</p>
+<p>2、能控制线程池中的并发数，否则会因为大量的线程争夺CPU资源造成阻塞；</p>
+<p>3、能对对线程进行管理，比如使用schaduledTheadPool可以延迟执行任务/循环执行任务。</p>
+<p>线程池接口Executor：</p>
+<p>Executor是一个接口，它的实现是ThreadPoolExecutor，Android中的线程池都是直接或者间接配置ThreadPoolExector来实现不同特性的线程池。</p>
+<p>ThreadPoolExecutor执行任务的步骤：</p>
+<p>1、当线程数&lt;核心线程数时，直接创建一个核心线程执行任务；</p>
+<p>2、当线程数&gt;=核心线程数时，且当workQueue未满时，会将任务加入到workQueue等待执行；</p>
+<p>3、当workQueue满时，会创建一个非核心线程执行任务；</p>
+<p>4、当线程数&gt;核心线程数，且workQueue已满，且线程数&gt;最大线程数，调用handler默认抛出RejectExecutionExpection异常。</p>
+<p>Android中的四种线程池：</p>
+<p>1、FixedTheadPool：只有核心线程，并且数量固定，也不会被回收。当所有线程都在活动时，因为队列没有限制大小，新任务会等待执行。由于线程不会被回收，所以执行外界任务时更快一些。</p>
+<p>2、SingleThreadPool：只有一个核心线程，确保所有任务都在同一个线程中按顺序执行。因此不需要处理线程同步问题。</p>
+<p>3、CahcedThreadPool：只有非核心线程，最大线程数非常大，所有线程都活动时，会为新任务创建新线程，否则利用空闲线程（60s空闲时间，过了就会被回收，所以线程池中有0个线程的可能）处理任务。比较适合执行大量的耗时较少的任务</p>
+<p>4、 ScheduledThreadPool：核心线程数固定，非核心线程（闲着没活干会被立即回收）数没有限制。主要用于执行定时任务以及有固定周期的重复任务。</p>
+<p>总结自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/1925yiyi/p/9040605.html">https://www.cnblogs.com/1925yiyi/p/9040605.html</a></p>
+<h3 id="5-多线程间的有序性、可见性和原子性是什么意思？"><a href="#5-多线程间的有序性、可见性和原子性是什么意思？" class="headerlink" title="5.多线程间的有序性、可见性和原子性是什么意思？"></a>5.多线程间的有序性、可见性和原子性是什么意思？</h3><p>原子性：执行一个或者多个操作的时候，要么全部执行，要么都不执行，并且中间过程中不会被打断。Java中的原子性可以通过独占锁和CAS去保证<br>可见性：指多线程访问同一个变量的时候，一个线程修改了变量的值，其他线程能够立刻看得到修改的值。锁和volatile能够保证可见性<br>有序性：程序执行的顺序按照代码先后的顺序执行。锁和volatile能够保证有序性</p>
+<h3 id="6-wait-notify和Condition类实现的等待通知有什么区别？"><a href="#6-wait-notify和Condition类实现的等待通知有什么区别？" class="headerlink" title="6.wait/notify和Condition类实现的等待通知有什么区别？"></a>6.wait/notify和Condition类实现的等待通知有什么区别？</h3><p>  synchronized与wait/notify结合的等待通知只有一个条件，而Condition类可以实现多个条件等待。</p>
+<h3 id="7-notify和notifyAll方法的区别？"><a href="#7-notify和notifyAll方法的区别？" class="headerlink" title="7.notify和notifyAll方法的区别？"></a>7.notify和notifyAll方法的区别？</h3><p>notify随机唤醒一个线程，notifyAll唤醒所有等待的线程，让他们竞争锁。</p>
+<h3 id="8-CAS是什么？底层原理？"><a href="#8-CAS是什么？底层原理？" class="headerlink" title="8.CAS是什么？底层原理？"></a>8.CAS是什么？底层原理？</h3><p>CAS全称Compare And Set，核心的三个元素是：内存位置、预期原值和新值，执行CAS的时候，会将内存位置的值与预期原值进行比较，如果一致，就将原值更新为新值，否则就不更新。 底层原理：是借助CPU底层指令cmpxchg实现原子操作。</p>
+<h3 id="9-悲观锁和乐观锁的举例？以及它们的相关实现？"><a href="#9-悲观锁和乐观锁的举例？以及它们的相关实现？" class="headerlink" title="9.悲观锁和乐观锁的举例？以及它们的相关实现？"></a>9.悲观锁和乐观锁的举例？以及它们的相关实现？</h3><p>悲观锁和乐观锁的概念：</p>
+<p>悲观锁：悲观锁会认为，修改共享数据的时候其他线程也会修改数据，因此只在不会受到其他线程干扰的情况下执行。这样会导致其他有需要锁的线程挂起，等到持有锁的线程释放锁<br>乐观锁：每次不加锁，每次直接修改共享数据假设其他线程不会修改，如果发生冲突就直接重试，直到成功为止<br>举例：</p>
+<p>悲观锁：典型的悲观锁是独占锁，有synchronized、ReentrantLock。<br>乐观锁：典型的乐观锁是CAS，实现CAS的atomic为代表的一系列类</p>
+<h3 id="10-synchronized和Lock的区别？"><a href="#10-synchronized和Lock的区别？" class="headerlink" title="10.synchronized和Lock的区别？"></a>10.synchronized和Lock的区别？</h3><p>主要区别：</p>
+<p>synchronized是Java中的关键字，是Java的内置实现；Lock是Java中的接口。<br>synchronized遇到异常会释放锁；Lock需要在发生异常的时候调用成员方法Lock#unlock()方法。<br>synchronized是不可以中断的，Lock可中断。<br>synchronized不能去尝试获得锁，没有获得锁就会被阻塞；Lock可以去尝试获得锁，如果未获得可以尝试处理其他逻辑。<br>synchronized多线程效率不如Lock，不过Java在1.6以后已经对synchronized进行大量的优化，所以性能上来讲，其实差不了多少。</p>
+<h3 id="11-synchronized的原理？"><a href="#11-synchronized的原理？" class="headerlink" title="11.synchronized的原理？"></a>11.synchronized的原理？</h3><p>任何一个对象都有一个monitor与之相关联，JVM基于进入和退出mointor对象来实现代码块同步和方法同步，两者实现细节不同：</p>
+<p>代码块同步：在编译字节码的时候，代码块起始的地方插入monitorenter指令，异常和代码块结束处插入monitorexit指令，线程在执行monitorenter指令的时候尝试获取monitor对象的所有权，获取不到的情况下就是阻塞<br>方法同步：synchronized方法在method_info结构有AAC_synchronized标记，线程在执行的时候获取对应的锁，从而实现同步方法</p>
+<h3 id="12-synchronized关键字的使用？synchronized的参数放入对象和Class有什么区别？"><a href="#12-synchronized关键字的使用？synchronized的参数放入对象和Class有什么区别？" class="headerlink" title="12.synchronized关键字的使用？synchronized的参数放入对象和Class有什么区别？"></a>12.synchronized关键字的使用？synchronized的参数放入对象和Class有什么区别？</h3><p>synchronized关键字的用法：</p>
+<p>修饰方法<br>修饰代码块：需要自己提供锁对象，锁对象包括对象本身、对象的Class和其他对象。<br>放入对象和Class的区别是：</p>
+<p>锁住的对象不同：成员方法锁住的实例对象，静态方法锁住的是Class。<br>访问控制不同：如果锁住的是实例，只会针对同一个对象方法进行同步访问，多线程访问同一个对象的synchronized代码块是串行的，访问不同对象是并行的。如果锁住的是类，多线程访问的不管是同一对象还是不同对象的synchronized代码块是都是串行的。</p>
+<h3 id="13-IdleHandler介绍？"><a href="#13-IdleHandler介绍？" class="headerlink" title="13.IdleHandler介绍？"></a>13.IdleHandler介绍？</h3><p>介绍： IdleHandler是在Hanlder空闲时处理空闲任务的一种机制。</p>
+<p>执行场景：</p>
+<p>MessageQueue没有消息，队列为空的时候。<br>MessageQueue属于延迟消息，当前没有消息执行的时候。<br>会不会发生死循环： 答案是否定的，MessageQueue使用计数的方法保证一次调用MessageQueue#next方法只会使用一次的IdleHandler集合。</p>
+<h3 id="14-Looper在主线程中死循环为什么没有导致界面的卡死？"><a href="#14-Looper在主线程中死循环为什么没有导致界面的卡死？" class="headerlink" title="14.Looper在主线程中死循环为什么没有导致界面的卡死？"></a>14.Looper在主线程中死循环为什么没有导致界面的卡死？</h3><p>导致卡死的是在Ui线程中执行耗时操作导致界面出现掉帧，甚至ANR，Looper.loop()这个操作本身不会导致这个情况。<br>有人可能会说，我在点击事件中设置死循环会导致界面卡死，同样都是死循环，不都一样的吗？Looper会在没有消息的时候阻塞当前线程，释放CPU资源，等到有消息到来的时候，再唤醒主线程。<br>App进程中是需要死循环的，如果循环结束的话，App进程就结束了。<br>建议阅读：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/34652589">https://www.zhihu.com/question/34652589</a></p>
+<h3 id="15-Hander原理"><a href="#15-Hander原理" class="headerlink" title="15.Hander原理"></a>15.Hander原理</h3><p>Handler，loop轮询检测发送消息到MessagerQuery,MessageQuery对Message入列，Handler回调方法处理消息，重写handMessage方法刷新ui</p>
+<h3 id="16-进程和线程的区别"><a href="#16-进程和线程的区别" class="headerlink" title="16.进程和线程的区别"></a>16.进程和线程的区别</h3><p>概念：进程包括多个线程，一个程序一个进程，多线程的优点可以提高执行效率，提高资源利用率<br>创建：Thread类和Runnable接口，<br>常用方法有：<br>start()用于启动线程<br>run()调用线程对象中的run方法<br>join()合并插队到当前线程<br>sellp()睡眠释放cpu资源<br>setPriority()设置线程优先级</p>
+<h3 id="17-wait和-sleep-的区别"><a href="#17-wait和-sleep-的区别" class="headerlink" title="17.wait和 sleep 的区别"></a>17.wait和 sleep 的区别</h3><p>wait是Object的方法，wait是对象锁，锁定方法不让继续执行，当执行notify方法后就会继续执行，sleep 是Thread的方法，sleep 是使线程睡眠，让出cpu，结束后自动继续执行</p>
+<h3 id="18-跨进程通信的几种方式"><a href="#18-跨进程通信的几种方式" class="headerlink" title="18.跨进程通信的几种方式"></a>18.跨进程通信的几种方式</h3><p>Intent,比如拨打电话<br>ContentProvider数据库存储数据<br>Broadcast广播通信<br>AIDL通信，通过接口共享数据</p>
+<h3 id="19-obtinMessage的优势，为什么不用new-Message？"><a href="#19-obtinMessage的优势，为什么不用new-Message？" class="headerlink" title="19.obtinMessage的优势，为什么不用new Message？"></a>19.obtinMessage的优势，为什么不用new Message？</h3><p>从整个Messge池中返回一个新的Message实例，在许多情况下使用它，因为它能避免分配新的对象</p>
+<p>如果是这样的话，那么通过调用obtainMessage方法获取Message对象就能避免创建对象，从而减少内存的开销了。</p>
+<h3 id="20-handler的延时发送消息是怎么实现的"><a href="#20-handler的延时发送消息是怎么实现的" class="headerlink" title="20.handler的延时发送消息是怎么实现的"></a>20.handler的延时发送消息是怎么实现的</h3><p>本质上是通过调用handler的sendMessageAtTime，起原理的在消息插入队列的时候，会根据消息插入时的当前时间+需要延时的时间，来算好消息在队列中的位置，loop去取消息的时候，会判断当前时间和该消息的发送时间，如果当前时间大于发送的时间，loop则取出消息并发送，否则让线程进入休息，一段时间，到下次消息需要发送的时候，再触发。</p>
+<h3 id="21-线程池"><a href="#21-线程池" class="headerlink" title="21.线程池"></a>21.线程池</h3><p>Android中常见的线程池有四种，FixedThreadPool、CachedThreadPool、ScheduledThreadPool、SingleThreadExecutor。</p>
+<p>FixedThreadPool线程池是通过Executors的new FixedThreadPool方法来创建。它的特点是该线程池中的线程数量是固定的。即使线程处于闲置的状态，它们也不会被回收，除非线程池被关闭。当所有的线程都处于活跃状态的时候，新任务就处于队列中等待线程来处理。注意，FixedThreadPool只有核心线程，没有非核心线程。</p>
+<p>CachedThreadPool线程池是通过Executors的newCachedThreadPool进行创建的。它是一种线程数目不固定的线程池，它没有核心线程，只有非核心线程，当线程池中的线程都处于活跃状态，就会创建新的线程来处理新的任务。否则就会利用闲置的线程来处理新的任务。线程池中的线程都有超时机制，这个超时机制时长是60s，超过这个时间，闲置的线程就会被回收。这种线程池适合处理大量并且耗时较少的任务。这里得说一下，CachedThreadPool的任务队列，基本都是空的。</p>
+<p>ScheduledThreadPool线程池是通过Executors的newScheduledThreadPool进行创建的，它的核心线程是固定的，但是非核心线程数是不固定的，并且当非核心线程一处于空闲状态，就立即被回收。这种线程适合执行定时任务和具有固定周期的重复任务。</p>
+<p>SingleThreadExecutor线程池是通过Executors的newSingleThreadExecutor方法来创建的，这类线程池中只有一个核心线程，也没有非核心线程，这就确保了所有任务能够在同一个线程并且按照顺序来执行，这样就不需要考虑线程同步的问题。</p>
+<h3 id="22-进程保活的方式"><a href="#22-进程保活的方式" class="headerlink" title="22.进程保活的方式"></a>22.进程保活的方式</h3><p>此处延伸：进程的优先级是什么<br>当前业界的Android进程保活手段主要分为** 黑、白、灰 **三种，其大致的实现思路如下：<br>黑色保活：不同的app进程，用广播相互唤醒（包括利用系统提供的广播进行唤醒）<br>白色保活：启动前台Service<br>灰色保活：利用系统的漏洞启动前台Service<br>黑色保活<br>所谓黑色保活，就是利用不同的app进程使用广播来进行相互唤醒。举个3个比较常见的场景：<br>场景1：开机，网络切换、拍照、拍视频时候，利用系统产生的广播唤醒app<br>场景2：接入第三方SDK也会唤醒相应的app进程，如微信sdk会唤醒微信，支付宝sdk会唤醒支付宝。由此发散开去，就会直接触发了下面的 场景3<br>场景3：假如你手机里装了支付宝、淘宝、天猫、UC等阿里系的app，那么你打开任意一个阿里系的app后，有可能就顺便把其他阿里系的app给唤醒了。（只是拿阿里打个比方，其实BAT系都差不多）<br>白色保活<br>白色保活手段非常简单，就是调用系统api启动一个前台的Service进程，这样会在系统的通知栏生成一个Notification，用来让用户知道有这样一个app在运行着，哪怕当前的app退到了后台。如下方的LBE和QQ音乐这样：<br>灰色保活<br>灰色保活，这种保活手段是应用范围最广泛。它是利用系统的漏洞来启动一个前台的Service进程，与普通的启动方式区别在于，它不会在系统通知栏处出现一个Notification，看起来就如同运行着一个后台Service进程一样。这样做带来的好处就是，用户无法察觉到你运行着一个前台进程（因为看不到Notification）,但你的进程优先级又是高于普通后台进程的。那么如何利用系统的漏洞呢，大致的实现思路和代码如下：<br>思路一：API &lt; 18，启动前台Service时直接传入new Notification()； 思路二：API &gt;= 18，同时启动两个id相同的前台Service，然后再将后启动的Service做stop处理<br>熟悉Android系统的童鞋都知道，系统出于体验和性能上的考虑，app在退到后台时系统并不会真正的kill掉这个进程，而是将其缓存起来。打开的应用越多，后台缓存的进程也越多。在系统内存不足的情况下，系统开始依据自身的一套进程回收机制来判断要kill掉哪些进程，以腾出内存来供给需要的app。这套杀进程回收内存的机制就叫 Low Memory Killer ，它是基于Linux内核的 OOM Killer（Out-Of-Memory killer）机制诞生。<br>进程的重要性，划分5级：<br>前台进程 (Foreground process)<br>可见进程 (Visible process)<br>服务进程 (Service process)<br>后台进程 (Background process)<br>空进程 (Empty process)<br>了解完 Low Memory Killer，再科普一下oom_adj。什么是oom_adj？它是linux内核分配给每个系统进程的一个值，代表进程的优先级，进程回收机制就是根据这个优先级来决定是否进行回收。对于oom_adj的作用，你只需要记住以下几点即可：<br>进程的oom_adj越大，表示此进程优先级越低，越容易被杀回收；越小，表示进程优先级越高，越不容易被杀回收<br>普通app进程的oom_adj&gt;=0,系统进程的oom_adj才可能&lt;0<br>有些手机厂商把这些知名的app放入了自己的白名单中，保证了进程不死来提高用户体验（如微信、QQ、陌陌都在小米的白名单中）。如果从白名单中移除，他们终究还是和普通app一样躲避不了被杀的命运，为了尽量避免被杀，还是老老实实去做好优化工作吧。<br>还有一种就是放到对应手机厂商的白名单中，那进程不会被杀死了。</p>
+<h3 id="23-Android进程分类？"><a href="#23-Android进程分类？" class="headerlink" title="23.Android进程分类？"></a>23.Android进程分类？</h3><p>前台进程，可见进程，服务进程，后台进程，空进程</p>
+<h3 id="24-Java多线程引发的性能问题，怎么解决？"><a href="#24-Java多线程引发的性能问题，怎么解决？" class="headerlink" title="24.Java多线程引发的性能问题，怎么解决？"></a>24.Java多线程引发的性能问题，怎么解决？</h3><p>使用线程池来进行管理</p>
+<h3 id="25-线程池有没有上限？"><a href="#25-线程池有没有上限？" class="headerlink" title="25.线程池有没有上限？"></a>25.线程池有没有上限？</h3><p>其实这个没有上限的，因为资源都限制在这个进程里，你开多少线程都最多用这些资源。</p>
+<h3 id="26-Android线程有没有上限？"><a href="#26-Android线程有没有上限？" class="headerlink" title="26.Android线程有没有上限？"></a>26.Android线程有没有上限？</h3><p>Android系统会给每个应用分配一个内存空间（不同的系统分配的内存大小不同），这块内存空间大小是有限的。<br>创建线程需要占用内存空间，<br>不可能拿有限的内存空间创建无限的线程。<br>结论：<br>Android线程是有上限的。如果应用创建线程的数量过多，而没有及时释放会导致OOM</p>
+<h3 id="27-ANR定位和修正"><a href="#27-ANR定位和修正" class="headerlink" title="27.ANR定位和修正"></a>27.ANR定位和修正</h3><p>定位：ANR一般有三种类型<br>KeyDispatchTimeout(5 seconds) –主要类型<br>按键或触摸事件在特定时间内无响应<br>BroadcastTimeout(10 seconds)<br>BroadcastReceiver在特定时间内无法处理完成<br>ServiceTimeout(20 seconds) –小概率类型<br>Service在特定的时间内无法处理完成</p>
+<p>修正：</p>
+<p>1、主线程当中执行IO/网络操作，容易阻塞。<br>2、主线程当中执行了耗时的计算。（比如自定义控件中的onDraw()方法）<br>在onDraw()方法里面创建对象容易导致内存抖动（绘制动作时会大量不间断调用，产生大量垃圾对象导致GC很频繁，就造成了内存抖动），内存抖动就容易造成UI出现掉帧、卡顿等问题。<br>3、BroadCastReceiver没有在10秒内完成处理。<br>4、BroadCastReceiver的onReceived代码中也要尽量减少耗时的操作，建议使用IntentService处理。<br>5、Service执行了耗时的操作，因为Service也是在主线程当中执行的，所以耗时操作应该在Service里面开启子线程来做。<br>6、使用AsyncTask处理耗时的IO等操作。<br>7、Activity的onCreate和onResume回调中尽量耗时的操作。</p>
+<h3 id="28-ANR产生的原因是什么？"><a href="#28-ANR产生的原因是什么？" class="headerlink" title="28.ANR产生的原因是什么？"></a>28.ANR产生的原因是什么？</h3><p>ANR即Application Not Responding，顾名思义就是应用程序无响应。</p>
+<p>在Android中，一般情况下，四大组件均是工作在主线程中的，Android中的Activity Manager和Window Manager会随时监控应用程序的响应情况，如果因为一些耗时操作（网络请求或者IO操作）造成主线程阻塞一定时间（例如造成5s内不能响应用户事件或者BroadcastReceiver的onReceive方法执行时间超过10s），那么系统就会显示ANR对话框提示用户对应的应用处于无响应状态。</p>
+<h3 id="29-为什么不能在子线程更新UI？"><a href="#29-为什么不能在子线程更新UI？" class="headerlink" title="29.为什么不能在子线程更新UI？"></a>29.为什么不能在子线程更新UI？</h3><p>目的在于提高移动端更新UI的效率和和安全性，以此带来流畅的体验。原因是：<br>Android的UI访问是没有加锁的，多个线程可以同时访问更新操作同一个UI控件。也就是说访问UI的时候，android系统当中的控件都不是线程安全的，这将导致在多线程模式下，当多个线程共同访问更新操作同一个UI控件时容易发生不可控的错误，而这是致命的。所以Android中规定只能在UI线程中访问UI，这相当于从另一个角度给Android的UI访问加上锁，一个伪锁。</p>
+<h3 id="30-AsyncTask适合做什么？不适合做什么？"><a href="#30-AsyncTask适合做什么？不适合做什么？" class="headerlink" title="30.AsyncTask适合做什么？不适合做什么？"></a>30.AsyncTask适合做什么？不适合做什么？</h3><p>适合：<br>a.执行过程单一，仅输入一次，输出一次。<br>b.花费时间非常短但是仍然需要到后台去做事情，然后更新UI。例如加载文件，web页面或者数据库到UI。<br>c.执行线程必须是UI线程<br>d.不需要长期维护状态。</p>
+<p>不适合：</p>
+<p>a.长时间的任务。<br>b.可重复调用的任务。<br>c.需要线程执行多个不同任务，任务之间又有关联。<br>d.执行线程不是UI线程。<br>e.任务执行后仍然需要维护一些状态。<br>f.后台服务模块,需要提供独立的API.</p>
+<h3 id="31-如何取消AsyncTask？"><a href="#31-如何取消AsyncTask？" class="headerlink" title="31.如何取消AsyncTask？"></a>31.如何取消AsyncTask？</h3><p>1、调用cancel()：但是他是在doInBackground（）之后执行</p>
+<p>如果调用cancel（）方法，它不会立即执行，只有当doInBackground()方法执行完有返回值之后，会在UI主线程调用cancel（），同时也会间接的调用iscancelled（），并且返回true ，这个时候就不会再调onPostExecute（），然后在doInBackground（）里定期检查iscancelled（）方法的返回值，是否被cancel，如果return true，就尽快停止。</p>
+<p>2、在耗时操作中设置一些flag：我们可以在这个线程中的耗时操作中设置一些flag，也就是AsyncTask的doInBackground方法中的某些关键步骤。<br>然后在外层需要终止此线程的地方改变这个flag值，线程中的耗时代码一步步执行，当某一时刻发现flag的值变了，throwException，线程就不会再继续执行了。为了保险起见，在外层我们还要捕获这个异常，进行相应处理。（子线程被发生异常后会自己死掉而不会引起其他问题，更不会影响到主线程，更何况我们为了更加安全还捕获了异常并做处理）</p>
+<h3 id="32-AsyncTask原理及不足"><a href="#32-AsyncTask原理及不足" class="headerlink" title="32.AsyncTask原理及不足"></a>32.AsyncTask原理及不足</h3><p>原理：<br>AsyncTask是Android本身提供的一种轻量级的异步任务类。它可以在线程池中执行后台任务，然后把执行的进度和最终的结果传递给主线程更新UI。实际上，AsyncTask内部是封装了Thread和Handler。虽然AsyncTask很方便的执行后台任务，以及在主线程上更新UI，但是，AsyncTask并不合适进行特别耗时的后台操作，对于特别耗时的任务，个人还是建议使用线程池。<br>AsyncTask提供有4个核心方法：<br>1、onPreExecute():该方法在主线程中执行，在执行异步任务之前会被调用，一般用于一些准备工作。<br>2、doInBackground(String… params):这个方法是在线程池中执行，此方法用于执行异步任务。在这个方法中可以通过publishProgress方法来更新任务的进度，publishProgress方法会调用onProgressUpdate方法，另外，任务的结果返回给onPostExecute方法。<br>3、onProgressUpdate(Object… values):该方法在主线程中执行，主要用于任务进度更新的时候，该方法会被调用。<br>4、onPostExecute(Long aLong)：在主线程中执行，在异步任务执行完毕之后，该方法会被调用，该方法的参数及为后台的返回结果。<br>除了这几个方法之外还有一些不太常用的方法，如onCancelled(),在异步任务取消的情况下，该方法会被调用。<br>源码可以知道从上面的execute方法内部调用的是executeOnExecutor()方法，即executeOnExecutor(sDefaultExecutor, params);而sDefaultExecutor实际上是一个串行的线程池。而onPreExecute()方法在这里就会被调用了。接着看这个线程池。AsyncTask的执行是排队执行的，因为有关键字synchronized，而AsyncTask的Params参数就封装成为FutureTask类，FutureTask这个类是一个并发类，在这里它充当了Runnable的作用。接着FutureTask会交给SerialExecutor的execute方法去处理，而SerialExecutor的executor方法首先就会将FutureTask添加到mTasks队列中，如果这个时候没有任务，就会调用scheduleNext()方法，执行下一个任务。如果有任务的话，则执行完毕后最后在调用 scheduleNext();执行下一个任务。直到所有任务被执行完毕。而AsyncTask的构造方法中有一个call()方法，而这个方法由于会被FutureTask的run方法执行。所以最终这个call方法会在线程池中执行。而doInBackground这个方法就是在这里被调用的。我们好好研究一下这个call()方法。mTaskInvoked.set(true);表示当前任务已经执行过了。接着执行doInBackground方法，最后将结果通过postResult(result);方法进行传递。postResult()方法中通过sHandler来发送消息，sHandler的中通过消息的类型来判断一个MESSAGE_POST_RESULT，这种情况就是调用onPostExecute(result)方法或者是onCancelled(result)。另一种消息类型是MESSAGE_POST_PROGRESS则调用更新进度onProgressUpdate。</p>
+<p>不足：AsyncTask的优点在于执行完后台任务后可以很方便的更新UI，然而使用它存在着诸多的限制。先抛开内存泄漏问题，使用AsyncTask主要存在以下局限性：<br>在Android 4.1版本之前，AsyncTask类必须在主线程中加载，这意味着对AsyncTask类的第一次访问必须发生在主线程中；在Android 4.1以及以上版本则不存在这一限制，因为ActivityThread（代表了主线程）的main方法中会自动加载AsyncTask<br>AsyncTask对象必须在主线程中创建<br>AsyncTask对象的execute方法必须在主线程中调用<br>一个AsyncTask对象只能调用一次execute方法</p>
+<h3 id="33-AsyncTask设计的思想是什么？"><a href="#33-AsyncTask设计的思想是什么？" class="headerlink" title="33.AsyncTask设计的思想是什么？"></a>33.AsyncTask设计的思想是什么？</h3><p>AsyncTask的设计是为了成为一个关于Thread和Handler的帮助类，并不是一个通用的线程框架。AsyncTask理想情况下，应该被使用于非常短的操作（最多几秒）。如果您希望您的线程可以运行很长时间，非常建议您使用java.util.concurrent包里面的API。例如Executor，ThreadPoolExecutor 和FutureTask</p>
+<h3 id="34-AsyncTask是什么？"><a href="#34-AsyncTask是什么？" class="headerlink" title="34.AsyncTask是什么？"></a>34.AsyncTask是什么？</h3><p>AsyncTask使得可以恰当和简单地使用 UI线程。这个class允许你在后台做一些事情，然后把进度和结果告诉UI线程，而不需要操作handler和线程。</p>
+<h3 id="35-请解释下在单线程模型中Message、Handler、Message-Queue、Looper之间的关系"><a href="#35-请解释下在单线程模型中Message、Handler、Message-Queue、Looper之间的关系" class="headerlink" title="35.请解释下在单线程模型中Message、Handler、Message Queue、Looper之间的关系"></a>35.请解释下在单线程模型中Message、Handler、Message Queue、Looper之间的关系</h3><p>Android中主线程是不能进行耗时操作的，子线程是不能进行更新UI的。所以就有了handler，它的作用就是实现线程之间的通信。<br>handler整个流程中，主要有四个对象，handler，Message,MessageQueue,Looper。当应用创建的时候，就会在主线程中创建handler对象，<br>我们通过要传送的消息保存到Message中，handler通过调用sendMessage方法将Message发送到MessageQueue中，Looper对象就会不断的调用loop()方法<br>不断的从MessageQueue中取出Message交给handler进行处理。从而实现线程之间的通信。</p>
+<h3 id="36-主线程中的Looper-loop-一直无限循环为什么不会造成ANR？"><a href="#36-主线程中的Looper-loop-一直无限循环为什么不会造成ANR？" class="headerlink" title="36.主线程中的Looper.loop()一直无限循环为什么不会造成ANR？"></a>36.主线程中的Looper.loop()一直无限循环为什么不会造成ANR？</h3><p>主线程Looper从消息队列读取消息，当读完所有消息时，主线程阻塞。子线程往消息队列发送消息，并且往管道文件写数据，主线程即被唤醒，从管道文件读取数据，主线程被唤醒只是为了读取消息，当消息读取完毕，再次睡眠。因此loop的循环并不会对CPU性能有过多的消耗。</p>
+<h3 id="37-Looper为什么要无限循环？"><a href="#37-Looper为什么要无限循环？" class="headerlink" title="37.Looper为什么要无限循环？"></a>37.Looper为什么要无限循环？</h3><p>主线程中如果没有looper进行循环，那么主线程一运行完毕就会退出。那么我们还能运行APP吗，显然，这是不可能的，Looper主要就是做消息循环，然后由Handler进行消息分发处理，一旦退出消息循环，那么你的应用也就退出了。</p>
+<h3 id="38-Handler机制和底层实现"><a href="#38-Handler机制和底层实现" class="headerlink" title="38.Handler机制和底层实现"></a>38.Handler机制和底层实现</h3><p>上面一共出现了几种类，ActivityThread，Handler，MessageQueue，Looper，msg（Message）,对这些类作简要介绍：<br>ActivityThread：程序的启动入口，该类就是我们说的主线程，它对Looper进行操作的。<br>Handler：字面意思是操控者，该类有比较重要的地方，就是通过handler来发送消息（sendMessage）到<br>MessageQueue和 操作控件的更新（handleMessage）。handler下面持有这MessageQueue和Looper的对象。<br>MessageQueue：字面意思是消息队列，就是封装Message类。对Message进行插入和取出操作。<br>Message：这个类是封装消息体并被发送到MessageQueue中的，给类是通过链表实现的，其好处方便MessageQueue的插入和取出操作。还有一些字段是（int what，Object obj，int arg1，int arg2）。what是用户定义的消息和代码，以便接收者（handler）知道这个是关于什么的。obj是用来传输任意对象的，arg1和arg2是用来传递一些简单的整数类型的。</p>
+<p>先获取looper，如果没有就创建</p>
+<p>创建过程：</p>
+<p>ActivityThread 执行looperMainPrepare（），该方法先实例化MessageQueue对象，然后实例化Looper对象，封装mQueue和主线程，把自己放入ThreadLocal中</p>
+<p>再执行loop（）方法，里面会重复死循环执行读取MessageQueue。接着ActivityThread 执行Looper对象中的loop（）方法）<br>此时调用sendMessage（）方法，往MessageQueue中添加数据，其取出消息队列中的handler，执行dispatchMessage（），进而执行handleMessage（），Message的数据结构是基于链表的</p>
+<h3 id="39-ThreadLocal原理，实现及如何保证Local属性？"><a href="#39-ThreadLocal原理，实现及如何保证Local属性？" class="headerlink" title="39.ThreadLocal原理，实现及如何保证Local属性？"></a>39.ThreadLocal原理，实现及如何保证Local属性？</h3><p>ThreadLocal：当某些数据是以线程为作用域并且不同线程具有不同的数据副本的时候，就可以考虑采用ThreadLocal。（Looper、ActivityThread以及AMS中都用到了），如使用ThreadLocal可以解决不同线程不同Looper的需求。</p>
+<p>虽然在不同线程中访问的是同一个ThreadLocal对象，但是它们通过ThreadLocal来获取到的值却是不一样的，这就是ThreadLocal的奇妙之处。ThreadLocal之所以有这么奇妙的效果，是因为不同线程访问同一个ThreadLocal的get方法，ThreadLocal内部会从各自的线程中取出一个数组，然后再从数组中根据当前ThreadLocal的索引去查找出对应的value值，很显然，不同线程中的数组是不同的，这就是为什么通过ThreadLocal可以在不同的线程中维护一套数据的副本并且彼此互不干扰。（从ThreadLocal的set和get方法可以看出，它们所操作的对象都是当前线程的localValues对象的table数组，因此在不同线程中访问同一个ThreadLocal的set和get方法，它们对ThreadLocal所做的读写操作仅限于各自线程的内部，这就是为什么ThreadLocal可以在多个线程中互不干扰地存储和修改数据。）</p>
+<h3 id="40-关于Handler，在任何地方new-Handler-都是什么线程下"><a href="#40-关于Handler，在任何地方new-Handler-都是什么线程下" class="headerlink" title="40.关于Handler，在任何地方new Handler 都是什么线程下?"></a>40.关于Handler，在任何地方new Handler 都是什么线程下?</h3><p>Handler内部通过 Looper.myLooper() 来获取 Looper 对象，也就是说对于不传递 Looper 对象的情况下，<br>在哪个线程创建 Handler 默认获取的就是该线程的 Looper 对象，那么 Handler 的一系列操作都是在该<br>线程进行的。</p>
+<p>对于传递 Looper 对象创建 Handler 的情况下，传递的 Looper 是哪个线程的，Handler 绑定的就是该线程。</p>
+<h3 id="41-为什么在主线程可以直接使用-Handler？"><a href="#41-为什么在主线程可以直接使用-Handler？" class="headerlink" title="41.为什么在主线程可以直接使用 Handler？"></a>41.为什么在主线程可以直接使用 Handler？</h3><p>因为主线程已经创建了 Looper 对象并开启了消息循环</p>
+<h3 id="42-Handler、Thread和HandlerThread的差别"><a href="#42-Handler、Thread和HandlerThread的差别" class="headerlink" title="42.Handler、Thread和HandlerThread的差别"></a>42.Handler、Thread和HandlerThread的差别</h3><p>Handler：在Android中负责发送和处理消息，通过它可以实现其他支线线程与主线程之间的消通讯<br>Thread：线程，可以看作是进程的一个实体，是CPU调度和分派的基本单位，他是比进程更小的独立运行的基本单位<br>HandlerThread：封装了Handler + ThreadHandlerThread适合在有需要一个工作线程（非UI线程）+任务的等待队列的形式，优点是不会有堵塞，减少了对性能的消耗，缺点是不能同时进行多个任务的处理，需要等待进行处理。处理效率低，可以当成一个轻量级的线程池来用</p>
+<h3 id="43-谈谈多线程在Android中的使用"><a href="#43-谈谈多线程在Android中的使用" class="headerlink" title="43.谈谈多线程在Android中的使用"></a>43.谈谈多线程在Android中的使用</h3><p>Handler+Thread<br>AsyncTask<br>ThreadPoolExecutor<br>IntentService</p>
+<h3 id="44-AsyncTask-如何使用"><a href="#44-AsyncTask-如何使用" class="headerlink" title="44.AsyncTask 如何使用?"></a>44.AsyncTask 如何使用?</h3><p>Android的AsyncTask比Handler更轻量级一些，适用于简单的异步处理。<br>首先明确Android之所以有Handler和AsyncTask，都是为了不阻塞主线程（UI线程），且UI的更新只能在主线程中完成，因此异步处理是不可避免的。<br>Android为了降低这个开发难度，提供了AsyncTask。AsyncTask就是一个封装过的后台任务类，顾名思义就是异步任务。</p>
+<p>AsyncTask直接继承于Object类，位置为android.os.AsyncTask。要使用AsyncTask工作我们要提供三个泛型参数，并重载几个方法(至少重载一个)。</p>
+<p>例：</p>
+<p>public class Task extends AsyncTask//Void是三个泛型参数的原始状态,并且Void也是一个类而不是void</p>
+<p>AsyncTask定义了三种泛型类型 Params，Progress和Result。</p>
+<p>Params 启动任务执行的输入参数，比如HTTP请求的URL。(可传入多个参数)<br>Progress 后台任务执行的百分比。<br>Result 后台执行任务最终返回的结果，比如String。<br>使用过AsyncTask 的同学都知道一个异步加载数据最少要重写以下这两个方法：</p>
+<p>doInBackground(Params…) 后台执行，比较耗时的操作都可以放在这里。注意这里不能直接操作UI。此方法在后台线程执行，完成任务的主要工作，通常需要较长的时间。在执行过程中可以调用publicProgress(Progress…)来更新任务的进度。<br>publicProgress(Progress…)会将Progress…传给onProgressUpdate(Progress…)作为ProgressUpdate(Progress…)的接收参数。<br>onPostExecute(Result) 相当于Handler 处理UI的方式，在这里面可以使用在doInBackground 得到的结果处理操作UI。 此方法在主线程执行，任务执行的结果作为此方法的参数返回<br>有必要的话你还得重写以下这三个方法，但不是必须的：</p>
+<p>onProgressUpdate(Progress…) 可以使用进度条增加用户体验度。 此方法在主线程执行，用于显示任务执行的进度。<br>onPreExecute() 这里是最终用户调用Excute时的接口，当任务执行之前开始调用此方法，可以在这里显示进度对话框。<br>onCancelled() 用户调用取消时，要做的操作<br>使用AsyncTask类，以下是几条必须遵守的准则：</p>
+<p>Task的实例必须在UI thread(主线程)中创建；<br>execute方法必须在UI thread中调用；<br>不要手动的调用onPreExecute(), onPostExecute(Result)，doInBackground(Params…), onProgressUpdate(Progress…)这几个方法；<br>该task只能被执行一次，否则多次调用时将会出现异常；</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>MengLong Sun</li>
+    <li><strong>本文链接：</strong><a href="http://www.jianzhioffer.com/topic/topic_%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/index.html" title="http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;topic&#x2F;topic_%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B&#x2F;index.html">http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;topic&#x2F;topic_%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/topic/topic_%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6/"><i class="iconfont iconleft"></i>四大组件</a>
+    <a></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%89%E6%97%B6%E5%80%99%E6%88%91%E4%BB%AC%E6%83%B3%E4%B8%AD%E6%96%ADrun-%E6%96%B9%E6%B3%95%E7%9A%84%E6%89%A7%E8%A1%8C%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%E5%91%A2%EF%BC%8C%E6%98%AF%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8stop-%E6%96%B9%E6%B3%95%E8%BF%98%E6%98%AF%E4%BD%BF%E7%94%A8interrupt-%EF%BC%9F"><span class="toc-text">1.有时候我们想中断run()方法的执行，怎么办呢，是直接使用stop()方法还是使用interrupt ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-java%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">2.java进程的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-java%E4%B8%AD%E7%8B%AC%E5%8D%A0%E9%94%81-%E5%85%B1%E4%BA%AB%E9%94%81"><span class="toc-text">3.java中独占锁&#x2F;共享锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AF%B4%E4%B8%80%E4%B8%8B%E5%AF%B9%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">4.说一下对线程池的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%97%B4%E7%9A%84%E6%9C%89%E5%BA%8F%E6%80%A7%E3%80%81%E5%8F%AF%E8%A7%81%E6%80%A7%E5%92%8C%E5%8E%9F%E5%AD%90%E6%80%A7%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="toc-text">5.多线程间的有序性、可见性和原子性是什么意思？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-wait-notify%E5%92%8CCondition%E7%B1%BB%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%AD%89%E5%BE%85%E9%80%9A%E7%9F%A5%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">6.wait&#x2F;notify和Condition类实现的等待通知有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-notify%E5%92%8CnotifyAll%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">7.notify和notifyAll方法的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-CAS%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="toc-text">8.CAS是什么？底层原理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81%E7%9A%84%E4%B8%BE%E4%BE%8B%EF%BC%9F%E4%BB%A5%E5%8F%8A%E5%AE%83%E4%BB%AC%E7%9A%84%E7%9B%B8%E5%85%B3%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-text">9.悲观锁和乐观锁的举例？以及它们的相关实现？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-synchronized%E5%92%8CLock%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">10.synchronized和Lock的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-synchronized%E7%9A%84%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="toc-text">11.synchronized的原理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-synchronized%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9Fsynchronized%E7%9A%84%E5%8F%82%E6%95%B0%E6%94%BE%E5%85%A5%E5%AF%B9%E8%B1%A1%E5%92%8CClass%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">12.synchronized关键字的使用？synchronized的参数放入对象和Class有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-IdleHandler%E4%BB%8B%E7%BB%8D%EF%BC%9F"><span class="toc-text">13.IdleHandler介绍？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Looper%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B%E4%B8%AD%E6%AD%BB%E5%BE%AA%E7%8E%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B2%A1%E6%9C%89%E5%AF%BC%E8%87%B4%E7%95%8C%E9%9D%A2%E7%9A%84%E5%8D%A1%E6%AD%BB%EF%BC%9F"><span class="toc-text">14.Looper在主线程中死循环为什么没有导致界面的卡死？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-Hander%E5%8E%9F%E7%90%86"><span class="toc-text">15.Hander原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">16.进程和线程的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-wait%E5%92%8C-sleep-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">17.wait和 sleep 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E8%B7%A8%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">18.跨进程通信的几种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-obtinMessage%E7%9A%84%E4%BC%98%E5%8A%BF%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8new-Message%EF%BC%9F"><span class="toc-text">19.obtinMessage的优势，为什么不用new Message？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-handler%E7%9A%84%E5%BB%B6%E6%97%B6%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84"><span class="toc-text">20.handler的延时发送消息是怎么实现的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-text">21.线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E8%BF%9B%E7%A8%8B%E4%BF%9D%E6%B4%BB%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">22.进程保活的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-Android%E8%BF%9B%E7%A8%8B%E5%88%86%E7%B1%BB%EF%BC%9F"><span class="toc-text">23.Android进程分类？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%95%E5%8F%91%E7%9A%84%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%EF%BC%8C%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-text">24.Java多线程引发的性能问题，怎么解决？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%9C%89%E6%B2%A1%E6%9C%89%E4%B8%8A%E9%99%90%EF%BC%9F"><span class="toc-text">25.线程池有没有上限？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26-Android%E7%BA%BF%E7%A8%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E4%B8%8A%E9%99%90%EF%BC%9F"><span class="toc-text">26.Android线程有没有上限？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#27-ANR%E5%AE%9A%E4%BD%8D%E5%92%8C%E4%BF%AE%E6%AD%A3"><span class="toc-text">27.ANR定位和修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28-ANR%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%9F%E5%9B%A0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">28.ANR产生的原因是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#29-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%9C%A8%E5%AD%90%E7%BA%BF%E7%A8%8B%E6%9B%B4%E6%96%B0UI%EF%BC%9F"><span class="toc-text">29.为什么不能在子线程更新UI？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#30-AsyncTask%E9%80%82%E5%90%88%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B8%8D%E9%80%82%E5%90%88%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">30.AsyncTask适合做什么？不适合做什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%A6%82%E4%BD%95%E5%8F%96%E6%B6%88AsyncTask%EF%BC%9F"><span class="toc-text">31.如何取消AsyncTask？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-AsyncTask%E5%8E%9F%E7%90%86%E5%8F%8A%E4%B8%8D%E8%B6%B3"><span class="toc-text">32.AsyncTask原理及不足</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-AsyncTask%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%9D%E6%83%B3%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">33.AsyncTask设计的思想是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-AsyncTask%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">34.AsyncTask是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#35-%E8%AF%B7%E8%A7%A3%E9%87%8A%E4%B8%8B%E5%9C%A8%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B%E4%B8%ADMessage%E3%80%81Handler%E3%80%81Message-Queue%E3%80%81Looper%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">35.请解释下在单线程模型中Message、Handler、Message Queue、Looper之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#36-%E4%B8%BB%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84Looper-loop-%E4%B8%80%E7%9B%B4%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%BC%9A%E9%80%A0%E6%88%90ANR%EF%BC%9F"><span class="toc-text">36.主线程中的Looper.loop()一直无限循环为什么不会造成ANR？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#37-Looper%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF%EF%BC%9F"><span class="toc-text">37.Looper为什么要无限循环？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#38-Handler%E6%9C%BA%E5%88%B6%E5%92%8C%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="toc-text">38.Handler机制和底层实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#39-ThreadLocal%E5%8E%9F%E7%90%86%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8F%8A%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81Local%E5%B1%9E%E6%80%A7%EF%BC%9F"><span class="toc-text">39.ThreadLocal原理，实现及如何保证Local属性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#40-%E5%85%B3%E4%BA%8EHandler%EF%BC%8C%E5%9C%A8%E4%BB%BB%E4%BD%95%E5%9C%B0%E6%96%B9new-Handler-%E9%83%BD%E6%98%AF%E4%BB%80%E4%B9%88%E7%BA%BF%E7%A8%8B%E4%B8%8B"><span class="toc-text">40.关于Handler，在任何地方new Handler 都是什么线程下?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8-Handler%EF%BC%9F"><span class="toc-text">41.为什么在主线程可以直接使用 Handler？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-Handler%E3%80%81Thread%E5%92%8CHandlerThread%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="toc-text">42.Handler、Thread和HandlerThread的差别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-%E8%B0%88%E8%B0%88%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9C%A8Android%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">43.谈谈多线程在Android中的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-AsyncTask-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-text">44.AsyncTask 如何使用?</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+  
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

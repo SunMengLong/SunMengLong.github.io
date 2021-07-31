@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>源码分析 - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="1.Activity的启动流程源码分析第一阶段：当前A...">
+  <meta name="author" content="MengLong Sun">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+    </div>
+    <div class="center">源码分析</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://t7.baidu.com/it/u=260205896,218106217&fm=193&f=GIF" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">源码分析</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>7006</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h3 id="1-Activity的启动流程源码分析"><a href="#1-Activity的启动流程源码分析" class="headerlink" title="1.Activity的启动流程源码分析"></a>1.Activity的启动流程源码分析</h3><p>第一阶段：当前Activity所在进程通知AMS启动Activity（当前Activity所在的进程）</p>
+<ol>
+<li>调用startActivity();，最终会调用startActivityForesult()，判断parentActivity是否为null，parentActivity指的是嵌套型的Activity，例如TabActivity、ActivityGroup等，在Android API13的时候已经废弃掉了，然后会调用Instrumentation.execStartActivity();主要是通过ActivityManagerNative.getDefault()获取到AMS的本地代理，然后通过这个本地代理通知AMS启动新的Activity。</li>
+</ol>
+<p>第二阶段：AMS收到启动Activit的通知，判断Activity是否正确，如果正确，暂存Activity信息，然后通过ApplicationThread通知launcher所在的进程pause调当前的activity。</p>
+<p>第三阶段：launcher接收到这个通知后，还行pause操作，并通知AMS pause完成</p>
+<p>第四阶段：AMS收到通知后，判断activity所在进程是否存在，如果不存在，则通过Socket通知Zygote进程创建进程。</p>
+<p>第五阶段：创建ActivityThread，并做一些初始化的操作，然后绑定Application，如果Application还没有创建，则调用LoadedApk的makeApplication方法创建Application，之后进入Looper循环；并通知AMS启动新的Activity。</p>
+<p>第六阶段：AMS收到通知后，调用ApplicationThread.scheduleLauncherActivity()接口，通知相应的进程执行启动Activity的操作。</p>
+<p>第七阶段：ApplicationThread吧这个启动Activity的操作转发给ActivtiyThread，调用Instrumentation.newActivity()创建Activity实例，然后加载Activity类，并执行onCreate生命周期方法；</p>
+<h3 id="2-App的启动流程源码分析"><a href="#2-App的启动流程源码分析" class="headerlink" title="2.App的启动流程源码分析"></a>2.App的启动流程源码分析</h3><p>一、从点击桌面的App图标开始：获取图标View的Tag值，并判断是否包含ShortCutInfo信息，如果包含的话，从tag中取到intent信息，并执行startActivitySafely();</p>
+<p>二、最终会执行到Activity.startActivityForesult();</p>
+<h3 id="3-apk的安装流程？"><a href="#3-apk的安装流程？" class="headerlink" title="3.apk的安装流程？"></a>3.apk的安装流程？</h3><p>四种安装方式：</p>
+<ol>
+<li>系统应用安装，没有安装界面，手机启动的时候自动安装</li>
+<li>网络下载安装，没有安装界面，在应用商店安装</li>
+<li>adb命令安装，没有安装界面，通过命令直接安装</li>
+<li>外部设备安装，有安装界面，通过SD卡等外部设备来安装，通过PackageInstaller处理安装逻辑。</li>
+</ol>
+<p>安装流程：<br>（1）拷贝apk到指定的目录：默认情况下，用户安装的apk首先会拷贝到/data/app下，用户有访问/data/app目录的权限，但系统出厂的apk文件会被放到/system分区下，包括/system/app，/system/vendor/app，以及/system/priv-app等，该分区需要root权限的用户才能访问。<br>（2）加载apk、拷贝文件、创建应用的数据目录：为了加快APP的启动速度，apk在安装的时候，会首先将APP的可执行文件（dex）拷贝到/data/dalvik-cache目录下，缓存起来。再在/data/data/目录下创建应用程序的数据目录（以应用包名命令），用来存放应用的数据库、xml文件、cache、二进制的so动态库等。<br>（3）解析apk的AndroidManifest.xml文件：在安装apk的过程中，会解析apk的AndroidManifest.xml文件，将apk的权限、应用包名、apk的安装位置、版本、userID等重要信息保存在/data/system/packages.xml文件中。这些操作都是在PackageManagerService中完成<br>的。<br>（4）显示icon图标：应用程序经过PMS中的逻辑处理后，相当于已经注册好了，如果想要在Android桌面上看到icon图标，则需要Launcher将系统中已经安装的程序展现在桌面上。</p>
+<h3 id="4-apk的打包流程？"><a href="#4-apk的打包流程？" class="headerlink" title="4.apk的打包流程？"></a>4.apk的打包流程？</h3><p>apk文件<br>apk文件其实就是一个压缩文件，把文件的后缀改成.zip就可以用windows解压软件解压了，解压之后的文件夹解释：<br>lib ：文件夹里面存放的是so动态链接库，so动态链接库是不需要在做apk打包时一系列压缩处理的。<br>META-INF ：签名文件夹，里面存放三个文件，有两个是对资源文件做的SHA1 hash处理，一个是签名和公钥证书。<br>res ：资源文件夹，里面还会分animator,anim,color,drawable,layout,menu和raw这几个文件夹。<br>AndroidManifest.xml AndroidManifest.xml 是每个android程序中必须的文件。它位于整个项目的根目录，描述了package中暴露的组件（activities, services, 等等），他们各自的实现类，各种能被处理的数据和启动位置。 除了能声明程序中的Activities, ContentProviders, Services, 和Intent Receivers,还能指定permissions和instrumentation（安全控制和测试）。这个文件是很重要的，里面有我们的Android四大组件和申请的权限。<br>classes.dex Android平台上的可执行文件，Android虚拟机Dalvik支持的字节码文件格式Google在新发布的Android平台上使用了自己的Dalvik虚拟机来定义， 这种虚拟机执行的并非Java字节码， 而是另一种字节码： dex格式的字节码。在编译Java代码之后，通过Android平台上的工具可以将Java字节码转换成Dex字节码。虽然Google称Dalvik是为了移动设备定做的，但是业界很多人认为这是为了规避向sun申请Javalicense。这个DalvikVM针对手机程式/CPU做过最佳化，可以同时执行许多VM而不会占用太多Resource。classes.dex也是由java的class文件重新编排而来，我们也可以通过反编译工具把dex文件转换成class文件。如果做了拆包那么会有classes1.dex，classes2.dex …多个classes.dex文件。<br>resources.arsc 这个文件记录了所有的应用程序资源目录的信息，包括每一个资源名称、类型、值、ID以及所配置的维度信息。我们可以将这个resources.arsc文件想象成是一个资源索引表，这个资源索引表在给定资源ID和设备配置信息的情况下，能够在应用程序的资源目录中快速地找到最匹配的资源。</p>
+<p>打包工具：<br>aapt Android资源打包工具<br>aidl  Android接口描述语言转化为.java文件的工具<br>javac Java Compiler java代码转class文件<br>dex   转化.class文件为Davik VM能识别的.dex文件<br>apkbuilder 生成apk包<br>jarsigner   .jar文件的签名工具<br>zipalign   字节码对齐工具</p>
+<p>打包流程：</p>
+<ol>
+<li>使用aapt来打包res资源文件，生成R.java、resources.arsc和res文件</li>
+<li>处理aidl文件，生成相应的java文件</li>
+<li>编译工程源代码，生成相应的class文件</li>
+<li>转换所有的class文件，生成class.dex文件</li>
+<li>打包生成apk文件</li>
+<li>对apk文件进行签名</li>
+<li>对签名后的apk文件进行对对齐处理<br>Zipalign是一个android平台上整理APK文件的工具，它对apk中未压缩的数据进行4字节对齐，对齐后就可以使用mmap函数读取文件，可以像读取内存一样对普通文件进行操作。如果没有4字节对齐，就必须显式的读取，这样比较缓慢并且会耗费额外的内存。</li>
+</ol>
+<h3 id="5-OkHttp分析"><a href="#5-OkHttp分析" class="headerlink" title="5.OkHttp分析"></a>5.OkHttp分析</h3><p>Android API23(6.0)以后Google正式移除了 apache-HttpClient okhttp成为了它的替代品</p>
+<p>okhttpClient功能特点：<br>1.支持SPDY 可以合并多个请求到同一个主机的请求、连接池、GZIP和HTTP缓存<br>2.支持HTTP/2协议，通过HTTP/2 可以让客户端中到服务器的所有请求共用同一个Socket连接<br>3.非HTTP/2 请求时， OkHttp内部会维护一个线程池，通过线程池可以对HTTP/1.x的连接进行复用，减少延迟<br>4.支持post,get请求，基于http的文件上传和下载<br>5.默认情况下，OkHttp会自动处理常见的网络问题，像二次连接、SSL的握手问题</p>
+<p>使用流程：<br>1.创建一个OkHttpClient并实例化，可设置相关参数连接时长connectTimeout等<br>2.创建一个Request对象并实例化，可设置网络地址url，请求方式get,post，携带参数等；<br>3.创建一个Call对象，通过okhttpClient的newCall()方法将Request封装成Call对象<br>4.创建一个Response响应，用于接收服务器返回的相关信息；<br>   即OkHttpClient客户端通过newCall()方法接受你的Request请求并生成Response响应</p>
+<p>请求流程：<br>同步<br>1.创建OkHttpClient和Request对象<br>2.将Request封装成Call对象<br>3.调用Call的excute()发起同步请求<br><em>特别注意</em>：当前线程发送同步请求后，就会进入阻塞状态，直到数据有响应才会停止(和异步最大的不同点)<br>异步<br>1.创建OkHttpClient和Request对象<br>2.将Request封装成Call对象<br>3.调用Call的enqueue发起异步请求<br><em>特别注意</em>： onFailure和onResponse都是执行在子线程中<br>区别：<br>1.发起请求方法调用<br>2.是否线程阻塞</p>
+<p>底层实现：<br>同步请求：<br>在new okHttpClient时在内部通过构造器的方式初始化了一些配置参数，如连接/读写的超时时间，支持协议<br>定义了dispatcher：任务分发器（里面包含了一个线程池，用于执行异步请求操作），创建了三个双向任务队列，两个异步的，一个同步的。<br>一个是准备执行的异步请求队列，一个是正在执行的异步请求队列，另一个是正在执行的同步请求队列。由它决定异步请求在线程池中直接执行还是缓存等待。<br>创建了一个ConnectionPool连接池，里面包含了一个线程池，统一管理服务端与客户端建立的每一个Connection，作用就是：</p>
+<p>1)当Connection的请求url相同时，可以选择是否复用。<br>2)控制Coonection保持打开状态</p>
+<p>创建Builder<br>在Request.build模式下，指定默认请求方式为“Get”，创建了Headers内部类用于保存头部信息，<br>Request的构造方法其实就是指定了请求的方式，指定了请求的url，头部信息。</p>
+<p>调用oKhttpclient.newCall方法封装Call对象，它的实现是RealCall，<br>从内部方法中可以看出Call对象就是之前封装好的OkHttpClient和Request对象，同时赋值给了RetryAndFollowUpInterCepter重定向拦截器，作用就是处理<br>请求错误和重定向。</p>
+<p>调用exucte方法实现同步请求：<br>首先加入了synchronized同步锁，判断executed表示为是否为true，确保每个call只能被执行<br>一次不能重复执行，然后开启了evventListener监听，接收相应的事件回调，通过dispatcher<br>将call请求添加到同步队列中。<br>当请求执行完成后会执行finished方法将队列中的请求清除掉。</p>
+<p>异步请求：<br>调用call.enqueue执行异步请求<br>这个方法内部的实现和同步的excute非常相似，都是先通过加synchronized同步锁防止请求重复执行，然后加入监听，最后执行相应的方法，但是唯一不同的是<br>同步请求之后会直接调用getResponseWithIntercepter方法回到结果，而异步请求是通过AnycCall进行回到请求结果的<br>这里的 AsyncCall 是 RealCall 的一个内部类，它继承于NamedRunnable抽象类，NamedRunnable抽象类又实现了 Runnable，<br>所以可以被提交到ExecutorService上执行，在execute方法里，我们看到了熟悉的流程,上文也说到getResponseWithInterceptorChain是一个拦截器链，<br>会依次执行相应的拦截器后返回数据，所以当返回数据后，通过retryAndFollowUpInterceptor重定向拦截器判断请求是否正常执行，<br>并且通过Callback接口返回相应数据信息，最后调用finished方法清除队列</p>
+<h3 id="6-MediaCodec编解码："><a href="#6-MediaCodec编解码：" class="headerlink" title="6.MediaCodec编解码："></a>6.MediaCodec编解码：</h3><p># MediaCode编解码流程</p>
+<p>王超:</p>
+<p>mediecodec 编码，场景 ：我们从camera 获取原始数据，这里一般设置camera的输出数据格式是YUV数据，因为mediacodec在很多手机上只支持yuv数据的输入格式，google文档上的mediacodec也支持别的格式，但是由于手机厂商定制的原因吧，别的格式就不知道了，如raw，rgb等。</p>
+<p>这里拿到camera的原始数据，我们就需要初始化mediacodec，配置mediecodec的编码方式，如h264、输入图像格式、帧率、码率，初始化成功后，可以从mediacodec中拿到他的输入队列和输出队列，这里的输入队列和输出队列是个队列，装载着一块一块的buffer缓存区。当要编码一帧数据时，从输入队列中取出一块buffer，把原始数据填充上去，在做一个入队操作也就是一个方法,好像是enqueue()。然后mediecodec内部就会去编码，编码完成的h264数据会放到输出队列中。然后取出来用就可以，但是这边 用完之后需要把这个输出的buffer调用一个releaseOutputBuffer方法，表示把取出的这块输出buffer继续放入输出队列中。如果不调用releaseOutputBuffer的话，会出现输出队列里的buffer全部被占用，那么有新的编码数据来了，发现输出队列中没有地方放了，就丢掉了。</p>
+<p>王超:</p>
+<p>对于音频编码aac，首先也是用mediaRecord去录音，拿到原始音频数据（也就是byte[]），配置mediacodec编码器，配置输出格式，如aac，码率、采样率44100、声道数等。配置完后也是拿到mediacodec的输入队列和输出队列，和视频的流程就是一样的了。</p>
+<p>王超:</p>
+<p>如果要合成mp4的话，就需要在面两个步骤都完成之后，拿到视频编码后的数据h264和音频编码后的数据aac。 首先需要创建一个mediaMuxer。指定输出格式为mp4，在传出输出的mp4文件的地址。mediamuxer的指责就是把一帧一帧的音频和视频进行混合，mediamuxer中，可以执行addTracker去添加音频轨道和视频轨道，之后视频帧就往视频轨道添加，音频帧就往音频轨道添加。那么怎么样去添加音频轨道和视频轨道呢？ 答案：addTracker需要一个MediaFormat参数，mediacodec输出队列的第一帧就是MediaFormat，即：音频mediacodec输出队列的第一帧获取到音频的mediaFormat，视频同理！addTracker（MediaFormat format）会返回一个int值，这个int值就是你的音频轨道audioIndex或者视频轨道videoIndex。在之后添加音频的时候，有了audioIndex和aac数据，直接添加就可以。视频同理！！结束的时候调用mediamuxer.stop（）本地就会生成完整的mp4视频文件。</p>
+<h3 id="7-Binder机制"><a href="#7-Binder机制" class="headerlink" title="7.Binder机制"></a>7.Binder机制</h3><p>李岩：</p>
+<p>直观的看，Binder是Android中的一个类，实现了IBinder接口</p>
+<p>从IPC角度，Binder是跨进程通信方式</p>
+<p>从应用层角度，Binder是客户端与服务端通信的媒介</p>
+<p>Binder机制是采用C/S的通信模式。相比共享内存来说，Binder方便管理，相比管道来说，Binder少了一次内存拷贝，传输效率高，开销小。底层是利用进程间可共享的内核内存空间来完成底层通信工作的。</p>
+<p>而一个进程分为用户空间和内核空间，用户空间进程间是不可以进行共享的，二内核空间是可以进行共享的。</p>
+<p>Binder则是先通过进程间的内核空间进行数据交互，再通过进程内的用户空间&amp;内核空间进行数据交互，从而实现进程间的用户空间的数据共享。</p>
+<p><img    class="lazyload" data-original="https://docimg9.docs.qq.com/image/EQ--QhM-d-VO1GwHdwMoIg?w=650&h=378" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>MengLong Sun</li>
+    <li><strong>本文链接：</strong><a href="http://www.jianzhioffer.com/topic/topic_%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/index.html" title="http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;topic&#x2F;topic_%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&#x2F;index.html">http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;topic&#x2F;topic_%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/topic/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/"><i class="iconfont iconleft"></i>面试经历</a>
+    <a href="/topic/topic_%E7%83%AD%E4%BF%AE%E5%A4%8D%E4%B8%8E%E7%83%AD%E6%9B%B4%E6%96%B0/">热修复/热更新<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Activity%E7%9A%84%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">1.Activity的启动流程源码分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-App%E7%9A%84%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">2.App的启动流程源码分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-apk%E7%9A%84%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">3.apk的安装流程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-apk%E7%9A%84%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">4.apk的打包流程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-OkHttp%E5%88%86%E6%9E%90"><span class="toc-text">5.OkHttp分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-MediaCodec%E7%BC%96%E8%A7%A3%E7%A0%81%EF%BC%9A"><span class="toc-text">6.MediaCodec编解码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Binder%E6%9C%BA%E5%88%B6"><span class="toc-text">7.Binder机制</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+  
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

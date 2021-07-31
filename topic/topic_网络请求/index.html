@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>网络请求 - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="1.TCP为什么是一种可靠的协议？如何做到流量控制和拥...">
+  <meta name="author" content="MengLong Sun">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+    </div>
+    <div class="center">网络请求</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://t7.baidu.com/it/u=3934835039,2975828388&fm=193&f=GIF" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">网络请求</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>5975</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h3 id="1-TCP为什么是一种可靠的协议？如何做到流量控制和拥塞控制？"><a href="#1-TCP为什么是一种可靠的协议？如何做到流量控制和拥塞控制？" class="headerlink" title="1.TCP为什么是一种可靠的协议？如何做到流量控制和拥塞控制？"></a>1.TCP为什么是一种可靠的协议？如何做到流量控制和拥塞控制？</h3><p>TCP可靠：是因为可以做到数据包发送的有序、无差错和无重复。<br>流量控制：是通过滑动窗口实现的，因为发送发和接收方消息发送速度和接收速度不一定对等，所以需要一个滑动窗口来平衡处理效率，并且保证没有差错和有序的接收数据包。<br>拥塞控制：慢开始和拥塞避免、快重传和快恢复算法。这写算法主要是为了适应网络中的带宽而作出的调整。</p>
+<h3 id="2-TCP和UDP有什么区别？"><a href="#2-TCP和UDP有什么区别？" class="headerlink" title="2.TCP和UDP有什么区别？"></a>2.TCP和UDP有什么区别？</h3><p>TCP：基于字节流、面向连接、可靠、能够进行全双工通信，除此以外，还能进行流量控制和拥塞控制，不过效率略低<br>UDP：基于报文、面向无连接、不可靠，但是传输效率高。<br>总的来说，TCP适用于传输效率要求低，准确性要求高或要求有连接。而UDP适用于对准确性要求较低，传输效率要求较高的场景，比如语音通话、直播等。</p>
+<h3 id="3-TCP的四次挥手过程？"><a href="#3-TCP的四次挥手过程？" class="headerlink" title="3.TCP的四次挥手过程？"></a>3.TCP的四次挥手过程？</h3><p>大致意思就是：</p>
+<p>Client：我要断开连接了<br>Server：我收到你的消息了<br>Server：我也要断开连接了<br>Client：收到你要断开连接的消息了<br>之后Client等待两个MSL(数据包在网络上生存的最长时间)，如果服务端没有回消息就彻底断开了。</p>
+<h3 id="4-TCP的三次握手过程，为什么需要三次，而不是两次或者四次？"><a href="#4-TCP的三次握手过程，为什么需要三次，而不是两次或者四次？" class="headerlink" title="4.TCP的三次握手过程，为什么需要三次，而不是两次或者四次？"></a>4.TCP的三次握手过程，为什么需要三次，而不是两次或者四次？</h3><p>只发送两次，服务端是不知道自己发送的消息能不能被客户端接收到。 因为TCP握手是三次，所以此时双方都已经知道自己发送的消息能够被对方收到，所以，第四次的发送就显得多余了。</p>
+<h3 id="5-HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？"><a href="#5-HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？" class="headerlink" title="5.HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？"></a>5.HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？</h3><p>过程和上图类似，依次获取证书，公钥，最后生成对称加密的钥匙进行对称加密。</p>
+<p>对称加密可以保证加密效率，但是不能解决密钥传输问题；非对称加密可以解决传输问题，但是效率不高。</p>
+<h3 id="6-SSL-TLS的握手过程？"><a href="#6-SSL-TLS的握手过程？" class="headerlink" title="6.SSL/TLS的握手过程？"></a>6.SSL/TLS的握手过程？</h3><p>这里借用《趣谈网络协议》的图片：</p>
+<p><img    class="lazyload" data-original="https://user-gold-cdn.xitu.io/2020/4/24/171ab7a751550e46?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="    title="示例图片"><span class="image-caption">SSL/TLS</span></p>
+<h3 id="7-HTTP和HTTPS有什么区别？"><a href="#7-HTTP和HTTPS有什么区别？" class="headerlink" title="7.HTTP和HTTPS有什么区别？"></a>7.HTTP和HTTPS有什么区别？</h3><p>简单来说，HTTP和HTTPS的关系是这样的</p>
+<p>HTTPS = HTTP + SSL/TLS</p>
+<p>区别如下： HTTP作用于应用层，使用80端口，起始地址是http://，明文传输，消息容易被拦截，串改。 HTTPS作用域传输层，使用443端口，起始地址是https://，需要下载CA证书，传输的过程需要加密，安全性高。</p>
+<h3 id="8-HTTP-1-1-和HTTP-2有什么区别？"><a href="#8-HTTP-1-1-和HTTP-2有什么区别？" class="headerlink" title="8.HTTP 1.1 和HTTP 2有什么区别？"></a>8.HTTP 1.1 和HTTP 2有什么区别？</h3><p>HTTP 2.0基于HTTP 1.1，与HTTP 2.0增加了：</p>
+<p>二进制格式：HTTP 1.1使用纯文本进行通信，HTTP 2.0使用二进制进行传输。<br>Head压缩：对已经发送的Header使用键值建立索引表，相同的Header使用索引表示。<br>服务器推送：服务器可以进行主动推送<br>多路复用：一个TCP连接可以划分成多个流，每个流都会分配Id，客户端可以借助流和服务端建立全双工进行通信，并且流具有优先级。</p>
+<h3 id="9-HTTP是哪一层的协议，常见的HTTP状态码有哪些，分别代表什么意思？"><a href="#9-HTTP是哪一层的协议，常见的HTTP状态码有哪些，分别代表什么意思？" class="headerlink" title="9.HTTP是哪一层的协议，常见的HTTP状态码有哪些，分别代表什么意思？"></a>9.HTTP是哪一层的协议，常见的HTTP状态码有哪些，分别代表什么意思？</h3><p>HTTP协议是应用层的协议。</p>
+<p>常见的HTTP状态码有：</p>
+<p>类别    解释<br>1xx    请求已经接收，继续处理<br>2xx    服务器已经正确处理请求，比如200<br>3xx    重定向，需要做进一步的处理才能完成请求<br>4xx    服务器无法理解的请求，比如404，访问的资源不存在<br>5xx    服务器收到请求以后，处理错误</p>
+<h3 id="10-断点续传"><a href="#10-断点续传" class="headerlink" title="10.断点续传"></a>10.断点续传</h3><p>基础知识：</p>
+<p>Http基础：在Http请求中，可以加入请求头Range，下载指定区间的文件数。<br>RandomAccessFile：支持随机访问，可以从指定位置进行数据的读写。</p>
+<p>有了这个基础以后，思路就清晰了：</p>
+<p>通过HttpUrlConnection获取文件长度。<br>自己分配好线程进行制定区间的文件数据的下载。<br>获取到数据流以后，使用RandomAccessFile进行指定位置的读写。</p>
+<h3 id="11-简述TCP，UDP，Socket"><a href="#11-简述TCP，UDP，Socket" class="headerlink" title="11.简述TCP，UDP，Socket"></a>11.简述TCP，UDP，Socket</h3><p>TCP是经过3次握手，4次挥手完成一串数据的传送<br>UDP是无连接的，知道IP地址和端口号，向其发送数据即可，不管数据是否发送成功<br>Socket是一种不同计算机，实时连接，比如说传送文件，即时通讯</p>
+<h3 id="12-http通信方式"><a href="#12-http通信方式" class="headerlink" title="12.http通信方式"></a>12.http通信方式</h3><p>HttpURLConnection和HttpClient，HttpURLConnection多用于发送或接收流式数据，因此比较适合上传/下载文件，HttpClient相对来讲更大更全能，但是速度相对也要慢一点。在此只介绍HttpClient的通信流程：</p>
+<p>HTTP的请求方式</p>
+<p>1、OPTIONS</p>
+<p>返回服务器针对特定资源所支持的HTTP请求方法，也可以利用向web服务器发送‘*’的请求来测试服务器的功能性</p>
+<p>2、HEAD</p>
+<p>向服务器索与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以再不必传输整个响应内容的情况下，就可以获取包含在响应小消息头中的元信息。</p>
+<p>3、GET</p>
+<p>向特定的资源发出请求。注意：GET方法不应当被用于产生“副作用”的操作中，例如在Web Application中，其中一个原因是GET可能会被网络蜘蛛等随意访问。Loadrunner中对应get请求函数：web_link和web_url</p>
+<p>4、POST</p>
+<p>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。 Loadrunner中对应POST请求函数：web_submit_data,web_submit_form</p>
+<p>5、PUT</p>
+<p>向指定资源位置上传其最新内容</p>
+<p>6、DELETE</p>
+<p>请求服务器删除Request-URL所标识的资源</p>
+<p>7、TRACE</p>
+<p>回显服务器收到的请求，主要用于测试或诊断</p>
+<p>8、CONNECT</p>
+<p>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。</p>
+<p>Http是应用层协议，TCP是网络层协议，</p>
+<p>我觉得区别从这两个连接的实现方式就可以看出来，HTTP连接需要指明资源的URL，发出请求的应用不知道服务器的IP，虽然域名服务器也是要把域名解析成IP地址，但不属于应用所关心的范畴，是网络层应该完成的工作。所以Http连接属于无状态的短连接，若再请求其他数据，需要再重新建立连接。客户端向服务器发送请求后，服务器才知道客户端的存在。</p>
+<p>TCP连接实现时需要指明IP地址和端口号，就可以跟目的主机通过三次握手建立联系，该连接一直保持直到某一方提出取消连接，通过四次握手关闭连接。Socket支持TCP/UDP协议，如果使用TCP协议，那么socket连接就是TCP连接。论文提到的应用场景是手机与云端的服务器建立联系，因为要保持连接并指定连接的建立时间，所以在这种场景下使用TCP连接最合适。3G网络不支持端到端建立TCP连接，因为它是client-server模式，所以需要通过云端服务器的辅助来实现手机的端到端通信。</p>
+<h3 id="13-Android-TCP通信"><a href="#13-Android-TCP通信" class="headerlink" title="13.Android TCP通信"></a>13.Android TCP通信</h3><p>TCP层是介于IP层和应用层的中间层</p>
+<p>本质是通过Socket进行通信，服务端创建一个ServiceSocket，客户端创建一个Socket，两者通过Ip和端口进行连接，连接成功后，就酒交给IO流进行通信。</p>
+<h3 id="14-谈谈对RxJava的理解"><a href="#14-谈谈对RxJava的理解" class="headerlink" title="14.谈谈对RxJava的理解"></a>14.谈谈对RxJava的理解</h3><p>RxJava：它是一个响应式的编程，区别于我们常用的应试编程，是一种观察者的设计模式，封装后是一个实现异步的操作库<br>响应式编程可以将数据和展示分层，很好的解耦，例如我们最常见的Buttom事件，设置监听事件，触发后回调<br>RxJava就是基于这种响应式的方式设计，在看看他是实现方式，有的人一开始会觉得它的代码好多，刚开始的时候我要注册，还要回调，主要你还是没有了解它的操作符的强大，操作符也是他的核心，你想用到的方法在里面都能找到，特别是当代码量多了之后，你会发现RxJava的代码看起来简洁，便于后期的维护<br>再说说它的操作符，常用的创建，交换，过滤这些就不说了，主要想说说它的错误操作符，它极大的简化了错误处理，便于我们后期维护排查<br>最后说说它的调度器，RxJava本身就是一个异步操作库，当我做一些耗时的操作时，往往会编写很多多线程，都知道多线程的编写和维护都是很烦的，RxJava很好的解决了这个鬼问题<br>好处：<br>Rx使代码简化<br>函数式风格：对可观察数据流使用无副作用的输入输出函数，避免了程序里错综复杂的状态<br>简化代码：Rx的操作符通通常可以将复杂的难题简化为很少的几行代码<br>异步错误处理：传统的try/catch没办法处理异步计算，Rx提供了合适的错误处理机制<br>轻松使用并发：Rx的Observables和Schedulers让开发者可以摆脱底层的线程同步和各种并发问题</p>
+<h3 id="15-Okhttp"><a href="#15-Okhttp" class="headerlink" title="15.Okhttp"></a>15.Okhttp</h3><p>OKHttp有哪些拦截器，分别起什么作用</p>
+<p>Okhttp的拦截器是把所有的拦截器都放到一个list里，然后每次依次执行拦截器，并且在每个拦截器分为三部分：</p>
+<p>①预处理拦截器内容</p>
+<p>②通过proceed方法把请求交给下一个拦截器</p>
+<p>③下一个拦截器处理完成并返回，后续处理工作。</p>
+<p>addInterceptor(Interceptor)这是由开发者设置的，会按照开发者的要求，在所有的拦截器处理之前进行最早的拦截处理，比如一些公共参数，Header都可以在这里添加。</p>
+<p>RetryAndFollowUpInterceptor，这里会对连接做一些初始化工作，以及请求失败的充实工作，重定向的后续请求工作。跟他的名字一样，就是做重试工作还有一些连接跟踪工作。</p>
+<p>请求错误重试和从定向：</p>
+<p>1、<em>HTTP_PROXY_AUTH</em> = 407 代理验证身份：client.proxyAuthenticator.authenticate 验证完成后，返回request</p>
+<p>2、<em>HTTP_UNAUTHORIZED</em> = 401 client.authenticator.authenticate(route, userResponse)</p>
+<p>3、<em>HTTP_CLIENT_TIMEOUT</em> = 408http超时： 返回原来的userResponse.request</p>
+<p>4、<em>HTTP_UNAVAILABLE</em> = 503; 服务⽆效，如果http带有 Retry-After字段，没有延时处理执⾏， 字段取原来的</p>
+<p>request</p>
+<p>5、HTTP_MISDIRECTED_REQUEST= 421 ，连接被改变，重试</p>
+<p>6、<em>HTTP_PERM_REDIRECT</em>, <em>HTTP_TEMP_REDIRECT</em>, <em>HTTP_MULT_CHOICE</em>, <em>HTTP_MOVED_PERM</em>, <em>HTTP_MOVED_TEMP</em>,</p>
+<p><em>HTTP_SEE_OTHER</em> 这⼏个code，属于从定向的code，取response.header(localtion)从定向地址，从新构建request请求。</p>
+<p>前五个是错误从试，第六个是重定向请求。 重试20次不成功，直接报错Too many follow-up requests ，回掉失败。</p>
+<p>BridgeInterceptor，这里会为用户构建一个能够进行网络访问的请求，同时后续工作将网络请求回来的响应Response转化为用户可用的Response，比如添加文件类型，content-length计算添加，gzip解包。</p>
+<p>CacheInterceptor，这里主要是处理cache相关处理，会根据OkHttpClient对象的配置以及缓存策略对请求值进行缓存，而且如果本地有了可⽤的Cache，就可以在没有网络交互的情况下就返回缓存结果。</p>
+<p>ConnectInterceptor，这里主要就是负责建立连接了，会建立TCP连接或者TLS连接，以及负责编码解码的HttpCodec</p>
+<p>networkInterceptors，这里也是开发者自己设置的，所以本质上和第一个拦截器差不多，但是由于位置不同，所以用处也不同。这个位置添加的拦截器可以看到请求和响应的数据了，所以可以做一些网络调试。</p>
+<p>CallServerInterceptor，这里就是进行网络数据的请求和响应了，也就是实际的网络I/O操作，通过socket读写数据。</p>
+<ol>
+<li>OkHttp怎么实现连接池</li>
+</ol>
+<p>为什么需要连接池？</p>
+<p>频繁的进行建立Socket连接和断开Socket是非常消耗网络资源和浪费时间的，所以HTTP中的keepAlive连接对于降低延迟和提升速度有非常重要的作用。keepAlive是什么呢？也就是可以在一次TCP连接中可以持续发送多份数据而不会断开连接。所以连接的多次使用，也就是复用就变得格外重要了，而复用连接就需要对连接进行管理，于是就有了连接池的概念。</p>
+<p>OkHttp中使用ConectionPool实现连接池，默认支持5个并发KeepAlive，默认链路生命为5分钟。</p>
+<p>1）首先，ConectionPool中维护了一个双端队列Deque，也就是两端都可以进出的队列，用来存储连接。</p>
+<p>2）然后在ConnectInterceptor，也就是负责建立连接的拦截器中，首先会找可用连接，也就是从连接池中去获取连接，具体的就是会调用到ConectionPool的get方法。也就是遍历了双端队列，如果连接有效，就会调用acquire方法计数并返回这个连接。</p>
+<p>3）如果没找到可用连接，就会创建新连接，并会把这个建立的连接加入到双端队列中，同时开始运行线程池中的线程，其实就是调用了ConectionPool的put方法。</p>
+<p>4）这里有个问题，怎样属于空闲连接？</p>
+<p>在RealConnection中，有一个StreamAllocation虚引用列表。每创建一个连接，就会把连接对应的StreamAllocationReference添加进该列表中，如果连接关闭以后就将该对象移除</p>
+<p>5）连接池的工作就这么多，并不负责，主要就是管理双端队列Deque<RealConnection>。可以用的连接就直接用，然后定期清理连接，同时通过对StreamAllocation的引用计数实现自动回收</p>
+<h3 id="16-简述-tcp-和-udp的区别？"><a href="#16-简述-tcp-和-udp的区别？" class="headerlink" title="16.简述 tcp 和 udp的区别？"></a>16.简述 tcp 和 udp的区别？</h3><ul>
+<li><p>TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接。</p>
+</li>
+<li><p>TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付。</p>
+</li>
+<li><p>Tcp通过校验和，重传控制，序号标识，滑动窗口、确认应答实现可靠传输。如丢包时的重发控制，还可以对次序乱掉的分包进行顺序控制。</p>
+</li>
+<li><p>UDP具有较好的实时性，工作效率比TCP高，适用于对高速传输和实时性有较高的通信或广播通信。</p>
+</li>
+<li><p>每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信。</p>
+</li>
+<li><p>TCP对系统资源要求较多，UDP对系统资源要求较少。</p>
+</li>
+</ul>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>MengLong Sun</li>
+    <li><strong>本文链接：</strong><a href="http://www.jianzhioffer.com/topic/topic_%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/index.html" title="http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;topic&#x2F;topic_%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82&#x2F;index.html">http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;topic&#x2F;topic_%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/topic/topic_%E7%BB%84%E4%BB%B6%E5%8C%96%E4%B8%8E%E6%8F%92%E4%BB%B6%E5%8C%96/"><i class="iconfont iconleft"></i>组件化/插件化</a>
+    <a href="/topic/topic_%E8%87%AA%E5%AE%9A%E4%B9%89View/">自定义view<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-TCP%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%80%E7%A7%8D%E5%8F%AF%E9%9D%A0%E7%9A%84%E5%8D%8F%E8%AE%AE%EF%BC%9F%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E5%92%8C%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%EF%BC%9F"><span class="toc-text">1.TCP为什么是一种可靠的协议？如何做到流量控制和拥塞控制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TCP%E5%92%8CUDP%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">2.TCP和UDP有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-TCP%E7%9A%84%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="toc-text">3.TCP的四次挥手过程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-TCP%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%B8%89%E6%AC%A1%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E4%B8%A4%E6%AC%A1%E6%88%96%E8%80%85%E5%9B%9B%E6%AC%A1%EF%BC%9F"><span class="toc-text">4.TCP的三次握手过程，为什么需要三次，而不是两次或者四次？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-HTTPS%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86%E7%9A%84%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BB%8D%E7%84%B6%E9%9C%80%E8%A6%81%E8%BF%9B%E8%A1%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%EF%BC%9F"><span class="toc-text">5.HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-SSL-TLS%E7%9A%84%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="toc-text">6.SSL&#x2F;TLS的握手过程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-HTTP%E5%92%8CHTTPS%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">7.HTTP和HTTPS有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-HTTP-1-1-%E5%92%8CHTTP-2%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">8.HTTP 1.1 和HTTP 2有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-HTTP%E6%98%AF%E5%93%AA%E4%B8%80%E5%B1%82%E7%9A%84%E5%8D%8F%E8%AE%AE%EF%BC%8C%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%8C%E5%88%86%E5%88%AB%E4%BB%A3%E8%A1%A8%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="toc-text">9.HTTP是哪一层的协议，常见的HTTP状态码有哪些，分别代表什么意思？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%96%AD%E7%82%B9%E7%BB%AD%E4%BC%A0"><span class="toc-text">10.断点续传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E7%AE%80%E8%BF%B0TCP%EF%BC%8CUDP%EF%BC%8CSocket"><span class="toc-text">11.简述TCP，UDP，Socket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-http%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-text">12.http通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-Android-TCP%E9%80%9A%E4%BF%A1"><span class="toc-text">13.Android TCP通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E8%B0%88%E8%B0%88%E5%AF%B9RxJava%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">14.谈谈对RxJava的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-Okhttp"><span class="toc-text">15.Okhttp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E7%AE%80%E8%BF%B0-tcp-%E5%92%8C-udp%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">16.简述 tcp 和 udp的区别？</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+  
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

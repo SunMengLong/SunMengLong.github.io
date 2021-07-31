@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>集合 - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="1.集合面试被问到 HashMap 有这一文就够了！
+...">
+  <meta name="author" content="MengLong Sun">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+    </div>
+    <div class="center">集合</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://t7.baidu.com/it/u=2067359777,945248471&fm=193&f=GIF" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">集合</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2402</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h3 id="1-集合"><a href="#1-集合" class="headerlink" title="1.集合"></a>1.集合</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42758551/article/details/106265315">面试被问到 HashMap 有这一文就够了！</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42758551/article/details/106265370">面试一文搞定之ArrayList和LinkedList</a></p>
+<h3 id="2-HashSet用过么？"><a href="#2-HashSet用过么？" class="headerlink" title="2.HashSet用过么？"></a>2.HashSet用过么？</h3><p>HashSet 的底层就是一个 HashMap ，HashSet 源码很少，大多直接调用调用了 HashMap 的实现。</p>
+<p>和 HashMap 的区别：HashMap 实现了 Map 接口，存储键值对，其 hashcode 使用 Key进行计算；HashSet 实现了Set 接口，直接存储数据对象，使用成员对象计算 hashcode值。</p>
+<p>HashSet 如何保证插入对象唯一：当元素插入时，先调用hash()方法计算插入对象的 hashcode值去得到对象加入的位置，同时会和集合中其他的对象的 hashcode 值进行比较，如果没有相同的 hashcode 值则说明对象没重复；如果 hashcode 值重复，这是会调用对象的equals()方法来检查 hashcode 相同的对象是否真的相同，最终相同则插入失败，否则成功。</p>
+<h3 id="3-说HashTable、HashMap"><a href="#3-说HashTable、HashMap" class="headerlink" title="3.说HashTable、HashMap ?"></a>3.说HashTable、HashMap ?</h3><p>HashMap 是非线程安全的，而 HashTable 是线程安全的，HashTable 内的方法大多都经过synchronized修饰；因为线程安全的问题上的处理，导致 HashMap 效率要略高于 HashTable ；并且 HashTable 已经是基本被淘汰的方案了！<br>HashMap 中允许存在一个为 null 的 key (value 可以有多个 null)，但是如果向 HashTable 中 put 一个为 null 的 key，会直接抛出 NullPointerException 。<br>HashTable 的默认初始容量大小是 11，HashMap 的默认初始容量大小是 16；如果创建时指定初始容量，HashTable 会直接使用指定的容量，HashMap 会将指定容量扩充为一个 2 的幂大小。(具体原因，在正文会进行分析)<br>JDK1.8 之后 HashMap 当链表长度大于阈值(默认 8 )时，先检查当前数组数组的长度，数组长度小于 64 则先进行数组扩容，否则转换为红黑树，以减少 Hash 冲突从而减少搜索时间。HashTable 没有这个机制。</p>
+<h3 id="4-ConcurrentHashMap的原理"><a href="#4-ConcurrentHashMap的原理" class="headerlink" title="4.ConcurrentHashMap的原理"></a>4.ConcurrentHashMap的原理</h3><p>数据结构的实现跟HashMap一样，不做介绍。</p>
+<p>JDK 1.8之前采用的是分段锁，核心类是一个Segment，Segment继承了ReentrantLock，每个Segment对象管理若干个桶，多个线程访问同一个元素的时候只能去竞争获取锁。</p>
+<p>JDK 1.8采用了CAS + synchronized，插入键值对的时候如果当前桶中没有Node节点，使用CAS方式进行更新，如果有Node节点，则使用synchronized的方式进行更新。</p>
+<h3 id="5-HashMap机制"><a href="#5-HashMap机制" class="headerlink" title="5.HashMap机制"></a>5.HashMap机制</h3><p>HashMap是无序且不安全的数据结构，HashMap是以key–value键值对的形式存储的，key值是唯一的（可以为null），一个key只能对应着一个value，但是value是可以重复的。HashMap如果再次添加相同的key值，它会覆盖key值所对应的内容，</p>
+<p>JDK7与JDK8的HashMap区别:</p>
+<p>jdk8中添加了红黑树，当链表长度大于等于8的时候链表会变成红黑树,链表新节点插入链表的顺序不同（jdk7是插入头结点，jdk8因为要把链表变为红黑树所以采用插入尾节点）,hash算法简化 ( jdk8 ),resize的逻辑修改（jdk7会出现死循环，jdk8不会）</p>
+<p>为什么HashMap的默认负载因子是0.75，而不是0.5或者是整数1呢？</p>
+<p>阈值(threshold) = 负载因子(loadFactor) x 容量(capacity) 根据HashMap的扩容机制，他会保证容量(capacity)的值永远都是2的幂 为了保证负载因子x容量的结果是一个整数，这个值是0.75(4/3)比较合理，因为这个数和任何2的次幂乘积结果都是整数。</p>
+<p>理论上来讲，负载因子越大，导致哈希冲突的概率也就越大，负载因子越小，费的空间也就越大,这是一个无法避免的利弊关系，所以通过一个简单的数学推理，可以测算出这个数值在0.75左右是比较合理的</p>
+<p>HashMap扩容:</p>
+<p>1、首先会判断table数组长度，如果大于0说明已被初始化过，那么按当前table数组长度的2倍进行扩容，阈值也变为原来的2倍</p>
+<p>2、若table数组未被初始化过，且threshold(阈值)大于0说明调用了 HashMap(initialCapacity, loadFactor)构造方法，那么就把数组大小设为threshold</p>
+<p>3、若table数组未被初始化，且threshold为0说明调用HashMap()构造方法，那么就把数组大小设为16,threshold设为16*0.75</p>
+<p>4、接着需要判断如果不是第一次初始化，那么扩容之后，要重新计算键值对的位置，并把它们移动到合适的位置上去，如果节点是红黑树类型的话则需要进行红黑树的拆分。</p>
+<p>链表树化:</p>
+<p>链表长度大于等于8</p>
+<p>table数字长度大于等于64（因为当table数组容量比较小时，键值对节点 hash 的碰撞率可能会比较高，进而导致链表长度较长。这个时候应该优先扩容，而不是立马树化。）</p>
+<p>Map插入:</p>
+<ol>
+<li>当table数组为空时，通过扩容的方式初始化table</li>
+<li>通过计算键的hash值求出下标后，若该位置上没有元素（没有发生hash冲突），则新建Node节点插入</li>
+<li>若发生了hash冲突，遍历链表查找要插入的key是否已经存在，存在的话根据条件判断是否新值替换旧值</li>
+<li>如果不存在，则将元素插入链表尾部，并根据链表长度决定是否将链表转为红黑树</li>
+<li>判断键值对数量是否大于等于阈值，如果是的话进行扩容。</li>
+</ol>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>MengLong Sun</li>
+    <li><strong>本文链接：</strong><a href="http://www.jianzhioffer.com/topic/topic_%E9%9B%86%E5%90%88/index.html" title="http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;topic&#x2F;topic_%E9%9B%86%E5%90%88&#x2F;index.html">http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;topic&#x2F;topic_%E9%9B%86%E5%90%88&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/topic/topic_%E8%87%AA%E5%AE%9A%E4%B9%89View/"><i class="iconfont iconleft"></i>自定义view</a>
+    <a href="/topic/topic_%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91/">混合开发<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9B%86%E5%90%88"><span class="toc-text">1.集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-HashSet%E7%94%A8%E8%BF%87%E4%B9%88%EF%BC%9F"><span class="toc-text">2.HashSet用过么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AF%B4HashTable%E3%80%81HashMap"><span class="toc-text">3.说HashTable、HashMap ?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ConcurrentHashMap%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-text">4.ConcurrentHashMap的原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-HashMap%E6%9C%BA%E5%88%B6"><span class="toc-text">5.HashMap机制</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+  
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
