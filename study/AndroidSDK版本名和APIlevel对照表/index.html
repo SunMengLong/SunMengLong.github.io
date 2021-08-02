@@ -114,8 +114,8 @@
         page_black_list: ''
       },
       search: {
-        enable: false,
-        path: ''
+        enable: true,
+        path: 'search.xml'
       }
     }
   </script>
@@ -139,6 +139,8 @@
       
       
       
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
       
     </div>
     <div class="center">Android SDK版本名和API level对照表</div>
@@ -218,8 +220,8 @@
         
         
   <nav class="nav">
-    <a href="/study/Andorid%E4%BB%BB%E6%84%8F%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0%E6%82%AC%E6%B5%AE%E7%AA%97/"><i class="iconfont iconleft"></i>Andorid 任意界面实现悬浮窗</a>
-    <a href="/study/Android%E4%B8%AD%E7%9B%91%E5%90%ACHome%E9%94%AE%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">Android中监听Home键的4种方法总结<i class="iconfont iconright"></i></a>
+    <a href="/study/Android%20%E7%94%9F%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84implementation%E4%BE%9D%E8%B5%96/"><i class="iconfont iconleft"></i>Android 生成自己的implementation依赖</a>
+    <a href="/study/AndroidStudio%E8%BF%9E%E6%8E%A5MUMU%E6%A8%A1%E6%8B%9F%E5%99%A8/">AndroidStudio连接MUMU模拟器<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
@@ -286,6 +288,20 @@
   
   
   
+  
+    <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
   
 </body>
 

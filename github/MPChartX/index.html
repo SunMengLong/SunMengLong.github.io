@@ -114,8 +114,8 @@
         page_black_list: ''
       },
       search: {
-        enable: false,
-        path: ''
+        enable: true,
+        path: 'search.xml'
       }
     }
   </script>
@@ -139,6 +139,8 @@
       
       
       
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
       
     </div>
     <div class="center">MPChart折线图</div>
@@ -219,8 +221,8 @@
         
         
   <nav class="nav">
-    <a href="/github/IndicatorX/"><i class="iconfont iconleft"></i>MagicIndicator指示器</a>
-    <a href="/github/MarqueeViewX/">跑马灯库<i class="iconfont iconright"></i></a>
+    <a href="/github/AnimatorX/"><i class="iconfont iconleft"></i>Lottie动画库</a>
+    <a href="/github/ShadowLayoutX/">阴影Layout<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
@@ -287,6 +289,20 @@
   
   
   
+  
+    <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
   
 </body>
 

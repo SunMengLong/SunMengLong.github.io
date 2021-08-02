@@ -114,8 +114,8 @@
         page_black_list: ''
       },
       search: {
-        enable: false,
-        path: ''
+        enable: true,
+        path: 'search.xml'
       }
     }
   </script>
@@ -139,6 +139,8 @@
       
       
       
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
       
     </div>
     <div class="center">Andorid 任意界面实现悬浮窗</div>
@@ -185,13 +187,14 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 23, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>37</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>83</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
         <p><a target="_blank" rel="noopener" href="https://www.ucloud.cn/yun/14180.html">https://www.ucloud.cn/yun/14180.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://jitpack.io/p/yhaolpz/FixedFloatWindow">https://jitpack.io/p/yhaolpz/FixedFloatWindow</a></p>
 
       </section>
       <section class="extra">
@@ -219,7 +222,7 @@
         
   <nav class="nav">
     <a href="/study/Activity%E9%80%80%E5%87%BA%E5%88%B0%E5%90%8E%E5%8F%B0/"><i class="iconfont iconleft"></i>Activity退出到后台，主页返回到桌面</a>
-    <a href="/study/AndroidSDK%E7%89%88%E6%9C%AC%E5%90%8D%E5%92%8CAPIlevel%E5%AF%B9%E7%85%A7%E8%A1%A8/">Android SDK版本名和API level对照表<i class="iconfont iconright"></i></a>
+    <a href="/study/Android%20%E7%94%9F%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84implementation%E4%BE%9D%E8%B5%96/">Android 生成自己的implementation依赖<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
@@ -286,6 +289,20 @@
   
   
   
+  
+    <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
   
 </body>
 
