@@ -101,113 +101,12 @@
       </categories>
   </entry>
   <entry>
-    <title>万能列表适配器BaseRecyclerViewAdapter</title>
-    <url>/github/AdapterX/</url>
-    <content><![CDATA[<p>github地址：<a href="https://github.com/CymChad/BaseRecyclerViewAdapterHelper">https://github.com/CymChad/BaseRecyclerViewAdapterHelper</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Android收集程序崩溃日志</title>
     <url>/exception/Android%E6%94%B6%E9%9B%86%E7%A8%8B%E5%BA%8F%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/</url>
     <content><![CDATA[<p><a href="https://blog.csdn.net/xy4_android/article/details/80846610">https://blog.csdn.net/xy4_android/article/details/80846610</a></p>
 ]]></content>
       <categories>
         <category>常见异常</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Lottie动画库</title>
-    <url>/github/AnimatorX/</url>
-    <content><![CDATA[<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>　　Lottie是Airbnb开源的一个面向IOS、Android、React Native的动画库，能分析Adobe After Effects导出的动画，并且能让原生App像使用静态素材一样使用这些动画，完美实现动画效果。<br>　　现在使用个平台的native代码实现一套复杂的动画是一件很困难并且很耗时的事，需要为不同尺寸的屏幕加载不同的素材资源，还需要写大量难维护的代码，而Lottie可以做到同一个通话文件在不同平台上实现相同的效果，极少减少开发时间，实现不同的动画，只需要设置不同的动画文件即可，极少减少开发和维护成本。</p>
-<p>使用说明：<a href="https://www.jianshu.com/p/282d098cf928?utm_source=oschina-app">https://www.jianshu.com/p/282d098cf928?utm_source=oschina-app</a></p>
-<p>github地址：<a href="https://github.com/airbnb/lottie-android">https://github.com/airbnb/lottie-android</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>MagicIndicator指示器</title>
-    <url>/github/IndicatorX/</url>
-    <content><![CDATA[<h3 id="支持高定制化的指示器"><a href="#支持高定制化的指示器" class="headerlink" title="支持高定制化的指示器"></a>支持高定制化的指示器</h3><p>github地址：<a href="https://github.com/hackware1993/MagicIndicator">https://github.com/hackware1993/MagicIndicator</a></p>
-<p>使用说明：<a href="https://www.jianshu.com/p/2865812fed41/">https://www.jianshu.com/p/2865812fed41/</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>MPChart折线图</title>
-    <url>/github/MPChartX/</url>
-    <content><![CDATA[<p>github地址：<a href="https://github.com/PhilJay/MPAndroidChart">https://github.com/PhilJay/MPAndroidChart</a></p>
-<p>使用说明：<a href="https://www.jianshu.com/p/2f0ff59ec911">https://www.jianshu.com/p/2f0ff59ec911</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>跑马灯库</title>
-    <url>/github/MarqueeViewX/</url>
-    <content><![CDATA[<p>俗名：可垂直跑、可水平跑的跑马灯<br>学名：可垂直翻、可水平翻的翻页公告</p>
-<p>github地址：<a href="https://github.com/sunfusheng/MarqueeView/">https://github.com/sunfusheng/MarqueeView/</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>NewbieGuide新手引导库</title>
-    <url>/github/NewbieGuideX/</url>
-    <content><![CDATA[<h3 id="Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"><a href="#Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示" class="headerlink" title="Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"></a>Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示</h3><p>github地址：<a href="https://github.com/huburt-Hu/NewbieGuide">https://github.com/huburt-Hu/NewbieGuide</a></p>
-<p>使用说明：<a href="https://www.jianshu.com/p/9609e547c128">https://www.jianshu.com/p/9609e547c128</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>EasyPopup弹框</title>
-    <url>/github/PopupX/</url>
-    <content><![CDATA[<p>PopupWindow Wrapper. 对 PopupWindow 的封装。可指定相对于 anchor view 各个方位弹出，设置背景变暗，指定 ViewGroup 背景变暗等特性。</p>
-<p>github地址：<a href="https://github.com/zyyoona7/EasyPopup/">https://github.com/zyyoona7/EasyPopup/</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>阴影Layout</title>
-    <url>/github/ShadowLayoutX/</url>
-    <content><![CDATA[<p>可定制化阴影的万能阴影布局ShadowLayout 2.0 震撼上线。效果赶超CardView。阴影支持x,y轴偏移，支持阴影扩散程度，支持阴影圆角，支持单边或多边不显示阴影；控件支持动态设置shape和selector（项目里再也不用画shape了）；支持随意更改颜色值，支持随意更改颜色值，支持随意更改颜色值。重要的事情说三遍</p>
-<p>github地址：<a href="https://github.com/zhoushunli/ShadowLayout">https://github.com/zhoushunli/ShadowLayout</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>XUpdate检测升级库</title>
-    <url>/github/UpdateX/</url>
-    <content><![CDATA[<p>一个轻量级、高可用性的Android全量版本更新框架。</p>
-<p>github地址：<a href="https://github.com/xuexiangjys/XUpdate">https://github.com/xuexiangjys/XUpdate</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>AndroidUtilCode工具库</title>
-    <url>/github/UtilX/</url>
-    <content><![CDATA[<p>今天给大家推荐的这个项目是「<strong>AndroidUtilCode</strong>」—— 一个强大易用 Android 卓工具类库，它合理地封装了 Android 开发中常用的函数，具有完善的 Demo 和单元测试，利用其封装好的 APIs 可以大大提高开发效率。</p>
-<p>github地址：<a href="https://github.com/Blankj/AndroidUtilCode">https://github.com/Blankj/AndroidUtilCode</a></p>
-<p>使用说明博客：<a href="https://blog.csdn.net/Yofreg/article/details/105843227">https://blog.csdn.net/Yofreg/article/details/105843227</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
       </categories>
   </entry>
   <entry>
@@ -449,209 +348,6 @@
 ]]></content>
       <categories>
         <category>RN</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>APng图片展示</title>
-    <url>/study/APng%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<p><a href="https://github.com/penfeizhou/APNG4Android">https://github.com/penfeizhou/APNG4Android</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Activity状态保存和恢复</title>
-    <url>/study/Activity%E7%8A%B6%E6%80%81%E4%BF%9D%E5%AD%98%E5%92%8C%E6%81%A2%E5%A4%8D/</url>
-    <content><![CDATA[<p><a href="https://www.cnblogs.com/xch-yang/p/5762722.html">https://www.cnblogs.com/xch-yang/p/5762722.html</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Activity退出到后台，主页返回到桌面</title>
-    <url>/study/Activity%E9%80%80%E5%87%BA%E5%88%B0%E5%90%8E%E5%8F%B0/</url>
-    <content><![CDATA[<p><a href="http://www.voidcn.com/article/p-sfeottvc-ke.html">http://www.voidcn.com/article/p-sfeottvc-ke.html</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Andorid 任意界面实现悬浮窗</title>
-    <url>/study/Andorid%E4%BB%BB%E6%84%8F%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0%E6%82%AC%E6%B5%AE%E7%AA%97/</url>
-    <content><![CDATA[<p><a href="https://www.ucloud.cn/yun/14180.html">https://www.ucloud.cn/yun/14180.html</a></p>
-<p><a href="https://jitpack.io/p/yhaolpz/FixedFloatWindow">https://jitpack.io/p/yhaolpz/FixedFloatWindow</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android 生成自己的implementation依赖</title>
-    <url>/study/Android%20%E7%94%9F%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84implementation%E4%BE%9D%E8%B5%96/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/qianxiangsen/article/details/107683275">https://blog.csdn.net/qianxiangsen/article/details/107683275</a></p>
-<p><a href="https://jitpack.io/#SunMengLong/NewbieGuide/v1.0">https://jitpack.io/#SunMengLong/NewbieGuide/v1.0</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android SDK版本名和API level对照表</title>
-    <url>/study/AndroidSDK%E7%89%88%E6%9C%AC%E5%90%8D%E5%92%8CAPIlevel%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
-    <content><![CDATA[<p><a href="https://www.jianshu.com/p/2ed9c0cc214e">https://www.jianshu.com/p/2ed9c0cc214e</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>AndroidStudio连接MUMU模拟器</title>
-    <url>/study/AndroidStudio%E8%BF%9E%E6%8E%A5MUMU%E6%A8%A1%E6%8B%9F%E5%99%A8/</url>
-    <content><![CDATA[<p><a href="https://www.cnblogs.com/ishai/p/11068899.html">https://www.cnblogs.com/ishai/p/11068899.html</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android中监听Home键的4种方法总结</title>
-    <url>/study/Android%E4%B8%AD%E7%9B%91%E5%90%ACHome%E9%94%AE%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/qq_31664497/article/details/92656049">https://blog.csdn.net/qq_31664497/article/details/92656049</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android实时监听网络状态</title>
-    <url>/study/Android%E5%AE%9E%E6%97%B6%E7%9B%91%E5%90%AC%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/</url>
-    <content><![CDATA[<p><a href="https://www.cnblogs.com/xuanwei-qingfeng/p/7651906.html">https://www.cnblogs.com/xuanwei-qingfeng/p/7651906.html</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android开发keyStore的配置</title>
-    <url>/study/Android%E5%BC%80%E5%8F%91keyStore%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/st526403649/article/details/105143302/">https://blog.csdn.net/st526403649/article/details/105143302/</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android清除缓存的实现</title>
-    <url>/study/Android%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<p><a href="https://www.cnblogs.com/hahayixiao/p/12132889.html">https://www.cnblogs.com/hahayixiao/p/12132889.html</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android签名文件制作指导</title>
-    <url>/study/Android%E7%AD%BE%E5%90%8D%E6%96%87%E4%BB%B6%E5%88%B6%E4%BD%9C%E6%8C%87%E5%AF%BC/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/zzhou910/article/details/76422248">https://blog.csdn.net/zzhou910/article/details/76422248</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android数据库GreenDao使用解析</title>
-    <url>/study/GreenDao%E4%BD%BF%E7%94%A8%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<p><a href="https://www.jianshu.com/p/53083f782ea2">https://www.jianshu.com/p/53083f782ea2</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ImageView获取Bitmap</title>
-    <url>/study/ImageView%E8%8E%B7%E5%8F%96Bitmap/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/lyh1299259684/article/details/80276396">https://blog.csdn.net/lyh1299259684/article/details/80276396</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java中如何将中文转换成拼音字母</title>
-    <url>/study/Java%E4%B8%AD%E5%B0%86%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8D%A2%E6%88%90%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8D/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/weixin_44466669/article/details/107637642">https://blog.csdn.net/weixin_44466669/article/details/107637642</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>仿微信@好友功能 輸入@跳转、删除整块</title>
-    <url>/study/%E4%BB%BF%E5%BE%AE%E4%BF%A1@%E5%A5%BD%E5%8F%8B%E5%8A%9F%E8%83%BD%20%E8%BC%B8%E5%85%A5@%E8%B7%B3%E8%BD%AC%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B4%E5%9D%97/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/u011077027/article/details/78391840?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">https://blog.csdn.net/u011077027/article/details/78391840?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>呼吸动画</title>
-    <url>/study/%E5%91%BC%E5%90%B8%E5%8A%A8%E7%94%BB/</url>
-    <content><![CDATA[<p><a href="https://juejin.cn/post/6844903465286647816">https://juejin.cn/post/6844903465286647816</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>判断Activity是否在前台</title>
-    <url>/study/%E5%88%A4%E6%96%ADActivity%E6%98%AF%E5%90%A6%E5%9C%A8%E5%89%8D%E5%8F%B0/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/jian11058/article/details/89399331">https://blog.csdn.net/jian11058/article/details/89399331</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>弹窗风格的 Activity</title>
-    <url>/study/%E5%BC%B9%E7%AA%97%E9%A3%8E%E6%A0%BC%E7%9A%84Activity/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/AlpinistWang/article/details/86773063?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control">https://blog.csdn.net/AlpinistWang/article/details/86773063?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android App优化之性能分析工具</title>
-    <url>/study/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<p><a href="https://www.jianshu.com/p/da2a4bfcba68">https://www.jianshu.com/p/da2a4bfcba68</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>截屏监听</title>
-    <url>/study/%E6%88%AA%E5%B1%8F/</url>
-    <content><![CDATA[<p><a href="https://www.pianshen.com/article/99181250364/">https://www.pianshen.com/article/99181250364/</a></p>
-<p><a href="https://blog.csdn.net/sollian/article/details/51463851?utm_term=android%E6%88%AA%E5%B1%8F%E7%9A%84%E7%9B%91%E5%90%AC&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-1-51463851&amp;spm=3001.4430">https://blog.csdn.net/sollian/article/details/51463851?utm_term=android%E6%88%AA%E5%B1%8F%E7%9A%84%E7%9B%91%E5%90%AC&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-1-51463851&amp;spm=3001.4430</a></p>
-<p><a href="https://blog.csdn.net/qq_41785058/article/details/102592237?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242">https://blog.csdn.net/qq_41785058/article/details/102592237?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242</a></p>
-<p><a href="https://www.jianshu.com/p/a7fab8faa73c">https://www.jianshu.com/p/a7fab8faa73c</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android防止连续点击打开两个重复页面的小技巧</title>
-    <url>/study/%E9%98%B2%E6%AD%A2%E8%BF%9E%E7%BB%AD%E7%82%B9%E5%87%BB/</url>
-    <content><![CDATA[<p><a href="https://www.jianshu.com/p/dc63a4b636fa">https://www.jianshu.com/p/dc63a4b636fa</a></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
       </categories>
   </entry>
   <entry>
@@ -1600,6 +1296,310 @@
 ]]></content>
       <categories>
         <category>面试题</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>万能列表适配器BaseRecyclerViewAdapter</title>
+    <url>/github/AdapterX/</url>
+    <content><![CDATA[<p>github地址：<a href="https://github.com/CymChad/BaseRecyclerViewAdapterHelper">https://github.com/CymChad/BaseRecyclerViewAdapterHelper</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Lottie动画库</title>
+    <url>/github/AnimatorX/</url>
+    <content><![CDATA[<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>　　Lottie是Airbnb开源的一个面向IOS、Android、React Native的动画库，能分析Adobe After Effects导出的动画，并且能让原生App像使用静态素材一样使用这些动画，完美实现动画效果。<br>　　现在使用个平台的native代码实现一套复杂的动画是一件很困难并且很耗时的事，需要为不同尺寸的屏幕加载不同的素材资源，还需要写大量难维护的代码，而Lottie可以做到同一个通话文件在不同平台上实现相同的效果，极少减少开发时间，实现不同的动画，只需要设置不同的动画文件即可，极少减少开发和维护成本。</p>
+<p>使用说明：<a href="https://www.jianshu.com/p/282d098cf928?utm_source=oschina-app">https://www.jianshu.com/p/282d098cf928?utm_source=oschina-app</a></p>
+<p>github地址：<a href="https://github.com/airbnb/lottie-android">https://github.com/airbnb/lottie-android</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>MagicIndicator指示器</title>
+    <url>/github/IndicatorX/</url>
+    <content><![CDATA[<h3 id="支持高定制化的指示器"><a href="#支持高定制化的指示器" class="headerlink" title="支持高定制化的指示器"></a>支持高定制化的指示器</h3><p>github地址：<a href="https://github.com/hackware1993/MagicIndicator">https://github.com/hackware1993/MagicIndicator</a></p>
+<p>使用说明：<a href="https://www.jianshu.com/p/2865812fed41/">https://www.jianshu.com/p/2865812fed41/</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>MPChart折线图</title>
+    <url>/github/MPChartX/</url>
+    <content><![CDATA[<p>github地址：<a href="https://github.com/PhilJay/MPAndroidChart">https://github.com/PhilJay/MPAndroidChart</a></p>
+<p>使用说明：<a href="https://www.jianshu.com/p/2f0ff59ec911">https://www.jianshu.com/p/2f0ff59ec911</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>跑马灯库</title>
+    <url>/github/MarqueeViewX/</url>
+    <content><![CDATA[<p>俗名：可垂直跑、可水平跑的跑马灯<br>学名：可垂直翻、可水平翻的翻页公告</p>
+<p>github地址：<a href="https://github.com/sunfusheng/MarqueeView/">https://github.com/sunfusheng/MarqueeView/</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>NewbieGuide新手引导库</title>
+    <url>/github/NewbieGuideX/</url>
+    <content><![CDATA[<h3 id="Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"><a href="#Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示" class="headerlink" title="Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"></a>Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示</h3><p>github地址：<a href="https://github.com/huburt-Hu/NewbieGuide">https://github.com/huburt-Hu/NewbieGuide</a></p>
+<p>使用说明：<a href="https://www.jianshu.com/p/9609e547c128">https://www.jianshu.com/p/9609e547c128</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>EasyPopup弹框</title>
+    <url>/github/PopupX/</url>
+    <content><![CDATA[<p>PopupWindow Wrapper. 对 PopupWindow 的封装。可指定相对于 anchor view 各个方位弹出，设置背景变暗，指定 ViewGroup 背景变暗等特性。</p>
+<p>github地址：<a href="https://github.com/zyyoona7/EasyPopup/">https://github.com/zyyoona7/EasyPopup/</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>阴影Layout</title>
+    <url>/github/ShadowLayoutX/</url>
+    <content><![CDATA[<p>可定制化阴影的万能阴影布局ShadowLayout 2.0 震撼上线。效果赶超CardView。阴影支持x,y轴偏移，支持阴影扩散程度，支持阴影圆角，支持单边或多边不显示阴影；控件支持动态设置shape和selector（项目里再也不用画shape了）；支持随意更改颜色值，支持随意更改颜色值，支持随意更改颜色值。重要的事情说三遍</p>
+<p>github地址：<a href="https://github.com/zhoushunli/ShadowLayout">https://github.com/zhoushunli/ShadowLayout</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>XUpdate检测升级库</title>
+    <url>/github/UpdateX/</url>
+    <content><![CDATA[<p>一个轻量级、高可用性的Android全量版本更新框架。</p>
+<p>github地址：<a href="https://github.com/xuexiangjys/XUpdate">https://github.com/xuexiangjys/XUpdate</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>APng图片展示</title>
+    <url>/study/APng%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<p><a href="https://github.com/penfeizhou/APNG4Android">https://github.com/penfeizhou/APNG4Android</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>AndroidUtilCode工具库</title>
+    <url>/github/UtilX/</url>
+    <content><![CDATA[<p>今天给大家推荐的这个项目是「<strong>AndroidUtilCode</strong>」—— 一个强大易用 Android 卓工具类库，它合理地封装了 Android 开发中常用的函数，具有完善的 Demo 和单元测试，利用其封装好的 APIs 可以大大提高开发效率。</p>
+<p>github地址：<a href="https://github.com/Blankj/AndroidUtilCode">https://github.com/Blankj/AndroidUtilCode</a></p>
+<p>使用说明博客：<a href="https://blog.csdn.net/Yofreg/article/details/105843227">https://blog.csdn.net/Yofreg/article/details/105843227</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Activity状态保存和恢复</title>
+    <url>/study/Activity%E7%8A%B6%E6%80%81%E4%BF%9D%E5%AD%98%E5%92%8C%E6%81%A2%E5%A4%8D/</url>
+    <content><![CDATA[<p><a href="https://www.cnblogs.com/xch-yang/p/5762722.html">https://www.cnblogs.com/xch-yang/p/5762722.html</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Activity退出到后台，主页返回到桌面</title>
+    <url>/study/Activity%E9%80%80%E5%87%BA%E5%88%B0%E5%90%8E%E5%8F%B0/</url>
+    <content><![CDATA[<p><a href="http://www.voidcn.com/article/p-sfeottvc-ke.html">http://www.voidcn.com/article/p-sfeottvc-ke.html</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Andorid 任意界面实现悬浮窗</title>
+    <url>/study/Andorid%E4%BB%BB%E6%84%8F%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0%E6%82%AC%E6%B5%AE%E7%AA%97/</url>
+    <content><![CDATA[<p><a href="https://www.ucloud.cn/yun/14180.html">https://www.ucloud.cn/yun/14180.html</a></p>
+<p><a href="https://jitpack.io/p/yhaolpz/FixedFloatWindow">https://jitpack.io/p/yhaolpz/FixedFloatWindow</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android 生成自己的implementation依赖</title>
+    <url>/study/Android%20%E7%94%9F%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84implementation%E4%BE%9D%E8%B5%96/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/qianxiangsen/article/details/107683275">https://blog.csdn.net/qianxiangsen/article/details/107683275</a></p>
+<p><a href="https://jitpack.io/#SunMengLong/NewbieGuide/v1.0">https://jitpack.io/#SunMengLong/NewbieGuide/v1.0</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android SDK版本名和API level对照表</title>
+    <url>/study/AndroidSDK%E7%89%88%E6%9C%AC%E5%90%8D%E5%92%8CAPIlevel%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
+    <content><![CDATA[<p><a href="https://www.jianshu.com/p/2ed9c0cc214e">https://www.jianshu.com/p/2ed9c0cc214e</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>AndroidStudio连接MUMU模拟器</title>
+    <url>/study/AndroidStudio%E8%BF%9E%E6%8E%A5MUMU%E6%A8%A1%E6%8B%9F%E5%99%A8/</url>
+    <content><![CDATA[<p><a href="https://www.cnblogs.com/ishai/p/11068899.html">https://www.cnblogs.com/ishai/p/11068899.html</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android中监听Home键的4种方法总结</title>
+    <url>/study/Android%E4%B8%AD%E7%9B%91%E5%90%ACHome%E9%94%AE%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/qq_31664497/article/details/92656049">https://blog.csdn.net/qq_31664497/article/details/92656049</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android实时监听网络状态</title>
+    <url>/study/Android%E5%AE%9E%E6%97%B6%E7%9B%91%E5%90%AC%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/</url>
+    <content><![CDATA[<p><a href="https://www.cnblogs.com/xuanwei-qingfeng/p/7651906.html">https://www.cnblogs.com/xuanwei-qingfeng/p/7651906.html</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android开发keyStore的配置</title>
+    <url>/study/Android%E5%BC%80%E5%8F%91keyStore%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/st526403649/article/details/105143302/">https://blog.csdn.net/st526403649/article/details/105143302/</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android清除缓存的实现</title>
+    <url>/study/Android%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<p><a href="https://www.cnblogs.com/hahayixiao/p/12132889.html">https://www.cnblogs.com/hahayixiao/p/12132889.html</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android签名文件制作指导</title>
+    <url>/study/Android%E7%AD%BE%E5%90%8D%E6%96%87%E4%BB%B6%E5%88%B6%E4%BD%9C%E6%8C%87%E5%AF%BC/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/zzhou910/article/details/76422248">https://blog.csdn.net/zzhou910/article/details/76422248</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android数据库GreenDao使用解析</title>
+    <url>/study/GreenDao%E4%BD%BF%E7%94%A8%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<p><a href="https://www.jianshu.com/p/53083f782ea2">https://www.jianshu.com/p/53083f782ea2</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>ImageView获取Bitmap</title>
+    <url>/study/ImageView%E8%8E%B7%E5%8F%96Bitmap/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/lyh1299259684/article/details/80276396">https://blog.csdn.net/lyh1299259684/article/details/80276396</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java中如何将中文转换成拼音字母</title>
+    <url>/study/Java%E4%B8%AD%E5%B0%86%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8D%A2%E6%88%90%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8D/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/weixin_44466669/article/details/107637642">https://blog.csdn.net/weixin_44466669/article/details/107637642</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>仿微信@好友功能 輸入@跳转、删除整块</title>
+    <url>/study/%E4%BB%BF%E5%BE%AE%E4%BF%A1@%E5%A5%BD%E5%8F%8B%E5%8A%9F%E8%83%BD%20%E8%BC%B8%E5%85%A5@%E8%B7%B3%E8%BD%AC%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B4%E5%9D%97/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/u011077027/article/details/78391840?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">https://blog.csdn.net/u011077027/article/details/78391840?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>判断Activity是否在前台</title>
+    <url>/study/%E5%88%A4%E6%96%ADActivity%E6%98%AF%E5%90%A6%E5%9C%A8%E5%89%8D%E5%8F%B0/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/jian11058/article/details/89399331">https://blog.csdn.net/jian11058/article/details/89399331</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>呼吸动画</title>
+    <url>/study/%E5%91%BC%E5%90%B8%E5%8A%A8%E7%94%BB/</url>
+    <content><![CDATA[<p><a href="https://juejin.cn/post/6844903465286647816">https://juejin.cn/post/6844903465286647816</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>弹窗风格的 Activity</title>
+    <url>/study/%E5%BC%B9%E7%AA%97%E9%A3%8E%E6%A0%BC%E7%9A%84Activity/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/AlpinistWang/article/details/86773063?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control">https://blog.csdn.net/AlpinistWang/article/details/86773063?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android App优化之性能分析工具</title>
+    <url>/study/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<p><a href="https://www.jianshu.com/p/da2a4bfcba68">https://www.jianshu.com/p/da2a4bfcba68</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>截屏监听</title>
+    <url>/study/%E6%88%AA%E5%B1%8F/</url>
+    <content><![CDATA[<p><a href="https://www.pianshen.com/article/99181250364/">https://www.pianshen.com/article/99181250364/</a></p>
+<p><a href="https://blog.csdn.net/sollian/article/details/51463851?utm_term=android%E6%88%AA%E5%B1%8F%E7%9A%84%E7%9B%91%E5%90%AC&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-1-51463851&amp;spm=3001.4430">https://blog.csdn.net/sollian/article/details/51463851?utm_term=android%E6%88%AA%E5%B1%8F%E7%9A%84%E7%9B%91%E5%90%AC&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-1-51463851&amp;spm=3001.4430</a></p>
+<p><a href="https://blog.csdn.net/qq_41785058/article/details/102592237?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242">https://blog.csdn.net/qq_41785058/article/details/102592237?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242</a></p>
+<p><a href="https://www.jianshu.com/p/a7fab8faa73c">https://www.jianshu.com/p/a7fab8faa73c</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android防止连续点击打开两个重复页面的小技巧</title>
+    <url>/study/%E9%98%B2%E6%AD%A2%E8%BF%9E%E7%BB%AD%E7%82%B9%E5%87%BB/</url>
+    <content><![CDATA[<p><a href="https://www.jianshu.com/p/dc63a4b636fa">https://www.jianshu.com/p/dc63a4b636fa</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
       </categories>
   </entry>
   <entry>
