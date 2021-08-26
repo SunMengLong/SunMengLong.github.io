@@ -181,13 +181,13 @@
       <div class="col-xl-6"><article class="article">
   <div class="wrap">
     <section class="head">
-  <img   class="lazyload" data-original="https://t7.baidu.com/it/u=821791764,3584359573&fm=193&f=GIF" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <img   class="lazyload" data-original="/../../images/cover/cover_33.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
     <h1 class="head-title">进程与线程</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 24, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>15512</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>15514</span>
     </div>
   </div>
 </section>
@@ -220,7 +220,7 @@
 </li>
 <li><p>timed_wating ：超时限等待状态，与wating相比就是多了个时间限制</p>
 </li>
-<li><p>terminoted ：同上<br>在java的生命周期中，runnable状态是将ready和running状态合并到了一起。<br>而blocked/waiting/timed_waiting这三种状态其实就是waiting，也就是线程要等待某些事件发生，才能继续执行下去。</p>
+<li><p>terminoted ：同上<br> 在java的生命周期中，runnable状态是将ready和running状态合并到了一起。<br> 而blocked/waiting/timed_waiting这三种状态其实就是waiting，也就是线程要等待某些事件发生，才能继续执行下去。</p>
 </li>
 </ol>
 <h3 id="3-java中独占锁-共享锁"><a href="#3-java中独占锁-共享锁" class="headerlink" title="3.java中独占锁/共享锁"></a>3.java中独占锁/共享锁</h3><p>写锁（独占锁）：是指该锁一次只能被一个线程锁持有。对ReentrantLock和Sychronized而言都是独占锁。<br>读锁（共享锁）：是指该锁可被多个线程持有。对ReentrantReadWriteLock而言，其读锁是共享锁，其写锁是独占锁。读锁的共享性可保证并发读是非常高效的，读写、写读、写写的过程都是互斥的。</p>
