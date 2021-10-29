@@ -6,12 +6,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Android开发keyStore的配置 - Android高级工程师</title>
+  <title>Android Wireguard源码编译 - Android高级工程师</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="https://blog.csdn.net/st526...">
+  <meta name="description" content="网站参考：Wireguard官网：https://ww...">
   <meta name="author" content="MengLong Sun">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -143,7 +143,7 @@
         <i class="iconfont iconsearch j-navbar-search"></i>
       
     </div>
-    <div class="center">Android开发keyStore的配置</div>
+    <div class="center">Android Wireguard源码编译</div>
     <div class="right">
       <i class="iconfont iconmenu j-navbar-menu"></i>
     </div>
@@ -181,19 +181,25 @@
       <div class="col-xl-6"><article class="article">
   <div class="wrap">
     <section class="head">
-  <img   class="lazyload" data-original="/../../images/cover/cover_34.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <img   class="lazyload" data-original="/../../images/cover/cover_12.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title">Android开发keyStore的配置</h1>
+    <h1 class="head-title">Android Wireguard源码编译</h1>
     <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 24, 2021</span>
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>October 29, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>61</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>656</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/st526403649/article/details/105143302/">https://blog.csdn.net/st526403649/article/details/105143302/</a></p>
+        <h4 id="网站参考："><a href="#网站参考：" class="headerlink" title="网站参考："></a>网站参考：</h4><h6 id="Wireguard官网：https-www-wireguard-com"><a href="#Wireguard官网：https-www-wireguard-com" class="headerlink" title="Wireguard官网：https://www.wireguard.com/"></a>Wireguard官网：<a target="_blank" rel="noopener" href="https://www.wireguard.com/">https://www.wireguard.com/</a></h6><h6 id="Wireguard各平台源码下载：https-git-zx2c4-com-wireguard"><a href="#Wireguard各平台源码下载：https-git-zx2c4-com-wireguard" class="headerlink" title="Wireguard各平台源码下载：https://git.zx2c4.com/wireguard"></a>Wireguard各平台源码下载：<a target="_blank" rel="noopener" href="https://git.zx2c4.com/wireguard">https://git.zx2c4.com/wireguard</a></h6><h6 id="F-Droid平台编译Wireguard安卓源码：https-f-droid-org-zh-Hans-packages-com-wireguard-android"><a href="#F-Droid平台编译Wireguard安卓源码：https-f-droid-org-zh-Hans-packages-com-wireguard-android" class="headerlink" title="F-Droid平台编译Wireguard安卓源码：https://f-droid.org/zh_Hans/packages/com.wireguard.android/"></a>F-Droid平台编译Wireguard安卓源码：<a target="_blank" rel="noopener" href="https://f-droid.org/zh_Hans/packages/com.wireguard.android/">https://f-droid.org/zh_Hans/packages/com.wireguard.android/</a></h6><h6 id="F-Droid平台技术在线交流："><a href="#F-Droid平台技术在线交流：" class="headerlink" title="F-Droid平台技术在线交流："></a>F-Droid平台技术在线交流：</h6><p><a target="_blank" rel="noopener" href="https://matrix.f-droid.org/room/!ZmSZzxujGNoCyoCETU:matrix.org/?anchor=$158859813316519lIkhf:matrix.org&amp;offset=720">https://matrix.f-droid.org/room/!ZmSZzxujGNoCyoCETU:matrix.org/?anchor=$158859813316519lIkhf:matrix.org&amp;offset=720</a></p>
+<h4 id="编译工具版本："><a href="#编译工具版本：" class="headerlink" title="编译工具版本："></a>编译工具版本：</h4><h6 id="Android-Studio-："><a href="#Android-Studio-：" class="headerlink" title="Android Studio ："></a>Android Studio ：</h6><p>Android Studio Arctic Fox | 2020.3.1 Patch 3<br>Build #AI-203.7717.56.2031.7784292, built on October 1, 2021</p>
+<h6 id="NDK：-21-2-6472646"><a href="#NDK：-21-2-6472646" class="headerlink" title="NDK： 21.2.6472646"></a>NDK： 21.2.6472646</h6><h6 id="Cmake：3-10-2-49888404"><a href="#Cmake：3-10-2-49888404" class="headerlink" title="Cmake：3.10.2.49888404"></a>Cmake：3.10.2.49888404</h6><h6 id="JDK：1-8-0-181"><a href="#JDK：1-8-0-181" class="headerlink" title="JDK：1.8.0_181"></a>JDK：1.8.0_181</h6><h6 id="另外需安装：c编译器mingw，百度网盘下载地址："><a href="#另外需安装：c编译器mingw，百度网盘下载地址：" class="headerlink" title="另外需安装：c编译器mingw，百度网盘下载地址："></a>另外需安装：c编译器mingw，百度网盘下载地址：</h6><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/14c48KLTafoEsrEhs4eIyQQ">https://pan.baidu.com/s/14c48KLTafoEsrEhs4eIyQQ</a><br>提取码：732y</p>
+<p>安装相关插件，如图：</p>
+<p><img   class="lazyload" data-original="../../images/study/mingw.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
+<p>编译成功的安卓源代码：</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/11fi_rN--8e07cZvhymFQjg">https://pan.baidu.com/s/11fi_rN--8e07cZvhymFQjg</a><br>提取码：6iuy</p>
 
       </section>
       <section class="extra">
@@ -201,7 +207,7 @@
           <ul class="copyright">
   
     <li><strong>本文作者：</strong>MengLong Sun</li>
-    <li><strong>本文链接：</strong><a href="http://www.jianzhioffer.com/study/Android%E5%BC%80%E5%8F%91keyStore%E7%9A%84%E9%85%8D%E7%BD%AE/index.html" title="http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;study&#x2F;Android%E5%BC%80%E5%8F%91keyStore%E7%9A%84%E9%85%8D%E7%BD%AE&#x2F;index.html">http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;study&#x2F;Android%E5%BC%80%E5%8F%91keyStore%E7%9A%84%E9%85%8D%E7%BD%AE&#x2F;index.html</a></li>
+    <li><strong>本文链接：</strong><a href="http://www.jianzhioffer.com/study/Wireguard-Android%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/index.html" title="http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;study&#x2F;Wireguard-Android%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91&#x2F;index.html">http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;study&#x2F;Wireguard-Android%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91&#x2F;index.html</a></li>
     <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
   
 </ul>
@@ -220,8 +226,8 @@
         
         
   <nav class="nav">
-    <a href="/test/Monkey%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/"><i class="iconfont iconleft"></i>Monkey 命令行工具</a>
-    <a href="/study/Android%E5%AE%9E%E6%97%B6%E7%9B%91%E5%90%AC%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/">Android实时监听网络状态<i class="iconfont iconright"></i></a>
+    <a></a>
+    <a href="/hexo/Hexo%E9%83%A8%E7%BD%B2/">Hexo部署<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
