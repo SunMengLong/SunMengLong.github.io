@@ -37,33 +37,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Android 8.0 启动Service适配(Not allowed to start service Intent)</title>
-    <url>/exception/Android%208.0%E5%90%AF%E5%8A%A8Service%E9%80%82%E9%85%8D/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/gxlgxjhll/article/details/88684993">https://blog.csdn.net/gxlgxjhll/article/details/88684993</a></p>
-]]></content>
-      <categories>
-        <category>常见异常</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android 8.0透明Activity报错 &quot;Only fullscreen activities can request orientation&quot;</title>
-    <url>/exception/Android8.0%E9%80%8F%E6%98%8EActivity%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/LoveDou0816/article/details/79129324?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">https://blog.csdn.net/LoveDou0816/article/details/79129324?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control</a></p>
-]]></content>
-      <categories>
-        <category>常见异常</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android收集程序崩溃日志</title>
-    <url>/exception/Android%E6%94%B6%E9%9B%86%E7%A8%8B%E5%BA%8F%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/xy4_android/article/details/80846610">https://blog.csdn.net/xy4_android/article/details/80846610</a></p>
-]]></content>
-      <categories>
-        <category>常见异常</category>
-      </categories>
-  </entry>
-  <entry>
     <title>自定义相机</title>
     <url>/CustomView/CustomCamera/</url>
     <content><![CDATA[<p><a href="https://github.com/aserbao/AndroidCamera">https://github.com/aserbao/AndroidCamera</a></p>
@@ -101,21 +74,94 @@
       </categories>
   </entry>
   <entry>
-    <title>万能列表适配器BaseRecyclerViewAdapter</title>
-    <url>/github/AdapterX/</url>
-    <content><![CDATA[<p>github地址：<a href="https://github.com/CymChad/BaseRecyclerViewAdapterHelper">https://github.com/CymChad/BaseRecyclerViewAdapterHelper</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Android——顶部弹出Snackbar</title>
     <url>/CustomView/%E9%A1%B6%E9%83%A8%E5%BC%B9%E5%87%BASnackbar/</url>
     <content><![CDATA[<p><a href="https://blog.csdn.net/yz1743585120/article/details/102609543">https://blog.csdn.net/yz1743585120/article/details/102609543</a></p>
 ]]></content>
       <categories>
         <category>自定义View</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android 8.0 启动Service适配(Not allowed to start service Intent)</title>
+    <url>/exception/Android%208.0%E5%90%AF%E5%8A%A8Service%E9%80%82%E9%85%8D/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/gxlgxjhll/article/details/88684993">https://blog.csdn.net/gxlgxjhll/article/details/88684993</a></p>
+]]></content>
+      <categories>
+        <category>常见异常</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android 8.0透明Activity报错 &quot;Only fullscreen activities can request orientation&quot;</title>
+    <url>/exception/Android8.0%E9%80%8F%E6%98%8EActivity%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/LoveDou0816/article/details/79129324?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">https://blog.csdn.net/LoveDou0816/article/details/79129324?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control</a></p>
+]]></content>
+      <categories>
+        <category>常见异常</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android收集程序崩溃日志</title>
+    <url>/exception/Android%E6%94%B6%E9%9B%86%E7%A8%8B%E5%BA%8F%E5%B4%A9%E6%BA%83%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/xy4_android/article/details/80846610">https://blog.csdn.net/xy4_android/article/details/80846610</a></p>
+]]></content>
+      <categories>
+        <category>常见异常</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo部署</title>
+    <url>/hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h4 id="修改网站基本信息："><a href="#修改网站基本信息：" class="headerlink" title="修改网站基本信息："></a>修改网站基本信息：</h4><p>参考文档：<a href="https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc">https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc</a></p>
+<p>本地配置文件：.\blog\themes\zhaoo\_config.yml</p>
+<h4 id="本地部署："><a href="#本地部署：" class="headerlink" title="本地部署："></a>本地部署：</h4><p>删除.\blog\public\content.json及.\blog\public\search.xml</p>
+<p>hexo clean  //清除缓存</p>
+<p>hexo g  //构建</p>
+<p>hexo clean  //清除缓存</p>
+<p>hexo g  //构建</p>
+<p>将.\blog\public\search.xml替换为.\blog\source\download\search.xml</p>
+<p>hexo s  //本地部署</p>
+<p>hexo d  //更新至github</p>
+<h4 id="更新博客："><a href="#更新博客：" class="headerlink" title="更新博客："></a>更新博客：</h4><p>博客位置：.\blog\source_posts</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo最全搭建教程</title>
+    <url>/hexo/hexo%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo撰写文章</title>
+    <url>/hexo/hexo%E5%86%99%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/wsmrzx/article/details/81478945">https://blog.csdn.net/wsmrzx/article/details/81478945</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>zhaoo主题配置文档</title>
+    <url>/hexo/zhaoo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<p><a href="https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc/#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc/#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>万能列表适配器BaseRecyclerViewAdapter</title>
+    <url>/github/AdapterX/</url>
+    <content><![CDATA[<p>github地址：<a href="https://github.com/CymChad/BaseRecyclerViewAdapterHelper">https://github.com/CymChad/BaseRecyclerViewAdapterHelper</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
       </categories>
   </entry>
   <entry>
@@ -160,16 +206,6 @@
       </categories>
   </entry>
   <entry>
-    <title>NewbieGuide新手引导库</title>
-    <url>/github/NewbieGuideX/</url>
-    <content><![CDATA[<h3 id="Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"><a href="#Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示" class="headerlink" title="Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"></a>Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示</h3><p>github地址：<a href="https://github.com/huburt-Hu/NewbieGuide">https://github.com/huburt-Hu/NewbieGuide</a></p>
-<p>使用说明：<a href="https://www.jianshu.com/p/9609e547c128">https://www.jianshu.com/p/9609e547c128</a></p>
-]]></content>
-      <categories>
-        <category>github常用框架</category>
-      </categories>
-  </entry>
-  <entry>
     <title>EasyPopup弹框</title>
     <url>/github/PopupX/</url>
     <content><![CDATA[<p>PopupWindow Wrapper. 对 PopupWindow 的封装。可指定相对于 anchor view 各个方位弹出，设置背景变暗，指定 ViewGroup 背景变暗等特性。</p>
@@ -180,10 +216,30 @@
       </categories>
   </entry>
   <entry>
+    <title>NewbieGuide新手引导库</title>
+    <url>/github/NewbieGuideX/</url>
+    <content><![CDATA[<h3 id="Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"><a href="#Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示" class="headerlink" title="Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"></a>Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示</h3><p>github地址：<a href="https://github.com/huburt-Hu/NewbieGuide">https://github.com/huburt-Hu/NewbieGuide</a></p>
+<p>使用说明：<a href="https://www.jianshu.com/p/9609e547c128">https://www.jianshu.com/p/9609e547c128</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
     <title>阴影Layout</title>
     <url>/github/ShadowLayoutX/</url>
     <content><![CDATA[<p>可定制化阴影的万能阴影布局ShadowLayout 2.0 震撼上线。效果赶超CardView。阴影支持x,y轴偏移，支持阴影扩散程度，支持阴影圆角，支持单边或多边不显示阴影；控件支持动态设置shape和selector（项目里再也不用画shape了）；支持随意更改颜色值，支持随意更改颜色值，支持随意更改颜色值。重要的事情说三遍</p>
 <p>github地址：<a href="https://github.com/zhoushunli/ShadowLayout">https://github.com/zhoushunli/ShadowLayout</a></p>
+]]></content>
+      <categories>
+        <category>github常用框架</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>XUpdate检测升级库</title>
+    <url>/github/UpdateX/</url>
+    <content><![CDATA[<p>一个轻量级、高可用性的Android全量版本更新框架。</p>
+<p>github地址：<a href="https://github.com/xuexiangjys/XUpdate">https://github.com/xuexiangjys/XUpdate</a></p>
 ]]></content>
       <categories>
         <category>github常用框架</category>
@@ -201,80 +257,153 @@
       </categories>
   </entry>
   <entry>
-    <title>XUpdate检测升级库</title>
-    <url>/github/UpdateX/</url>
-    <content><![CDATA[<p>一个轻量级、高可用性的Android全量版本更新框架。</p>
-<p>github地址：<a href="https://github.com/xuexiangjys/XUpdate">https://github.com/xuexiangjys/XUpdate</a></p>
+    <title>彩色创意风格行政管理求职简历模板</title>
+    <url>/resume/resume_1/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_1.png"></p>
+<p><a href="/download/resume/1%E5%BD%A9%E8%89%B2%E5%88%9B%E6%84%8F%E9%A3%8E%E6%A0%BC%E8%A1%8C%E6%94%BF%E7%AE%A1%E7%90%86%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
 ]]></content>
       <categories>
-        <category>github常用框架</category>
+        <category>简历模版</category>
       </categories>
   </entry>
   <entry>
-    <title>React学习记录</title>
-    <url>/react/react%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/q1ngqingsky/article/details/106579219">http-server在本地测试react/vue项目</a></p>
-<p><a href="https://ant.design/docs/react/introduce-cn">Ant Design</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/151286410">React 本地存储localStorage用法</a></p>
-<p><a href="https://blog.csdn.net/liwusen/article/details/86482467">React优化长列表</a></p>
-<p><a href="https://www.runoob.com/react/react-tutorial.html">React 教程 | 菜鸟教程</a></p>
-<p><a href="https://github.com/brickspert/blog/issues/1#init">从零搭建React全家桶框架教程</a></p>
-<p>[<a href="https://www.cnblogs.com/minnie-huang/p/12812562.html">webpack]zsh: command not found: webpack</a></p>
-<p><a href="https://blog.csdn.net/weixin_42280089/article/details/88937175">Mac下git配置及与VScode配合使用</a></p>
-<p><a href="https://blog.csdn.net/weixin_43788115/article/details/107006719">React中使用echarts（折线图）</a></p>
-<p><a href="https://blog.csdn.net/qq_42817227/article/details/86150176">react中react-router路由重定向（登录成功后跳转到首页）</a></p>
-<p><a href="https://www.cnblogs.com/xiaoyaoweb/p/13025011.html">react 国际化 react-i18next</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/45204328">react route跳转+传参的简单demo</a></p>
-<p><a href="https://blog.csdn.net/wei1273356078/article/details/106332444">webpack配置-source-map（让错误无处可逃）_wei1273356078的博客-CSDN博客</a></p>
+    <title>经典风格java工程师求职简历青草绿word简历模板</title>
+    <url>/resume/resume_11/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_11.png"></p>
+<p><a href="/download/resume/11%E7%BB%8F%E5%85%B8%E9%A3%8E%E6%A0%BCjava%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86%E9%9D%92%E8%8D%89%E7%BB%BFword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
 ]]></content>
       <categories>
-        <category>React</category>
+        <category>简历模版</category>
       </categories>
   </entry>
   <entry>
-    <title>Hexo部署</title>
-    <url>/hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h4 id="修改网站基本信息："><a href="#修改网站基本信息：" class="headerlink" title="修改网站基本信息："></a>修改网站基本信息：</h4><p>参考文档：<a href="https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc">https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc</a></p>
-<p>本地配置文件：.\blog\themes\zhaoo\_config.yml</p>
-<h4 id="本地部署："><a href="#本地部署：" class="headerlink" title="本地部署："></a>本地部署：</h4><p>删除.\blog\public\content.json及.\blog\public\search.xml</p>
-<p>hexo clean  //清除缓存</p>
-<p>hexo g  //构建</p>
-<p>hexo clean  //清除缓存</p>
-<p>hexo g  //构建</p>
-<p>将.\blog\public\search.xml替换为.\blog\source\download\search.xml</p>
-<p>hexo s  //本地部署</p>
-<p>hexo d  //更新至github</p>
-<h4 id="更新博客："><a href="#更新博客：" class="headerlink" title="更新博客："></a>更新博客：</h4><p>博客位置：.\blog\source_posts</p>
+    <title>经典风格java工程师黑色求职简历word简历模板</title>
+    <url>/resume/resume_10/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_10.png"></p>
+<p><a href="/download/resume/10%E7%BB%8F%E5%85%B8%E9%A3%8E%E6%A0%BCjava%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%BB%91%E8%89%B2%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>简历模版</category>
       </categories>
   </entry>
   <entry>
-    <title>Hexo撰写文章</title>
-    <url>/hexo/hexo%E5%86%99%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/wsmrzx/article/details/81478945">https://blog.csdn.net/wsmrzx/article/details/81478945</a></p>
+    <title>蓝粉现代风UI设计师求职简历word简历模板</title>
+    <url>/resume/resume_12/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_12.png"></p>
+<p><a href="/download/resume/12%E8%93%9D%E7%B2%89%E7%8E%B0%E4%BB%A3%E9%A3%8EUI%E8%AE%BE%E8%AE%A1%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>简历模版</category>
       </categories>
   </entry>
   <entry>
-    <title>zhaoo主题配置文档</title>
-    <url>/hexo/zhaoo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<p><a href="https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc/#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc/#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95</a></p>
+    <title>蓝色方块财务实习生求职简历word简历模板</title>
+    <url>/resume/resume_13/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_13.png"></p>
+<p><a href="/download/resume/13%E8%93%9D%E8%89%B2%E6%96%B9%E5%9D%97%E8%B4%A2%E5%8A%A1%E5%AE%9E%E4%B9%A0%E7%94%9F%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>简历模版</category>
       </categories>
   </entry>
   <entry>
-    <title>Hexo最全搭建教程</title>
-    <url>/hexo/hexo%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
+    <title>蓝色简洁风工程师成套Word简历模板</title>
+    <url>/resume/resume_14/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_14.png"></p>
+<p><a href="/download/resume/14%E8%93%9D%E8%89%B2%E7%AE%80%E6%B4%81%E9%A3%8E%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%88%90%E5%A5%97Word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>蓝色简约商务C语言工程师求职简历word模板</title>
+    <url>/resume/resume_15/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_15.png"></p>
+<p><a href="/download/resume/15%E8%93%9D%E8%89%B2%E7%AE%80%E7%BA%A6%E5%95%86%E5%8A%A1C%E8%AF%AD%E8%A8%80%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>彩色时间轴产品运营求职简历word简历模板</title>
+    <url>/resume/resume_2/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_2.png"></p>
+<p><a href="/download/resume/2%E5%BD%A9%E8%89%B2%E6%97%B6%E9%97%B4%E8%BD%B4%E4%BA%A7%E5%93%81%E8%BF%90%E8%90%A5%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>纯色简约软件工程师成套简历word简历模板</title>
+    <url>/resume/resume_3/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_3.png"></p>
+<p><a href="/download/resume/3%E7%BA%AF%E8%89%B2%E7%AE%80%E7%BA%A6%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%88%90%E5%A5%97%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>纯色运维工程师求职简约简历word模板</title>
+    <url>/resume/resume_4/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_4.png"></p>
+<p><a href="/download/resume/4%E7%BA%AF%E8%89%B2%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E7%BA%A6%E7%AE%80%E5%8E%86word%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>黑白灰简洁市场销售word个人简历模板</title>
+    <url>/resume/resume_5/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_5.png"></p>
+<p><a href="/download/resume/5%E9%BB%91%E7%99%BD%E7%81%B0%E7%AE%80%E6%B4%81%E5%B8%82%E5%9C%BA%E9%94%80%E5%94%AEword%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>互联网产品经理现代风格简历模板</title>
+    <url>/resume/resume_6/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_6.png"></p>
+<p><a href="/download/resume/6%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%8E%B0%E4%BB%A3%E9%A3%8E%E6%A0%BC%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>简洁简历封面模板word简历模板word简历模板</title>
+    <url>/resume/resume_7/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_7.png"></p>
+<p><a href="/download/resume/7%E7%AE%80%E6%B4%81%E7%AE%80%E5%8E%86%E5%B0%81%E9%9D%A2%E6%A8%A1%E6%9D%BFword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BFword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.doc" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>经典风格前端开发求职简历灰蓝word简历模板</title>
+    <url>/resume/resume_8/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_8.png"></p>
+<p><a href="/download/resume/8%E7%BB%8F%E5%85%B8%E9%A3%8E%E6%A0%BC%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86%E7%81%B0%E8%93%9Dword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>经典风格行政文秘求职简历蓝优雅绿word简历模板</title>
+    <url>/resume/resume_9/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_9.png"></p>
+<p><a href="/download/resume/9%E7%BB%8F%E5%85%B8%E9%A3%8E%E6%A0%BC%E8%A1%8C%E6%94%BF%E6%96%87%E7%A7%98%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86%E8%93%9D%E4%BC%98%E9%9B%85%E7%BB%BFword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
       </categories>
   </entry>
   <entry>
@@ -321,153 +450,24 @@
       </categories>
   </entry>
   <entry>
-    <title>彩色创意风格行政管理求职简历模板</title>
-    <url>/resume/resume_1/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_1.png"></p>
-<p><a href="/download/resume/1%E5%BD%A9%E8%89%B2%E5%88%9B%E6%84%8F%E9%A3%8E%E6%A0%BC%E8%A1%8C%E6%94%BF%E7%AE%A1%E7%90%86%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+    <title>React学习记录</title>
+    <url>/react/react%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/q1ngqingsky/article/details/106579219">http-server在本地测试react/vue项目</a></p>
+<p><a href="https://ant.design/docs/react/introduce-cn">Ant Design</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/151286410">React 本地存储localStorage用法</a></p>
+<p><a href="https://blog.csdn.net/liwusen/article/details/86482467">React优化长列表</a></p>
+<p><a href="https://www.runoob.com/react/react-tutorial.html">React 教程 | 菜鸟教程</a></p>
+<p><a href="https://github.com/brickspert/blog/issues/1#init">从零搭建React全家桶框架教程</a></p>
+<p>[<a href="https://www.cnblogs.com/minnie-huang/p/12812562.html">webpack]zsh: command not found: webpack</a></p>
+<p><a href="https://blog.csdn.net/weixin_42280089/article/details/88937175">Mac下git配置及与VScode配合使用</a></p>
+<p><a href="https://blog.csdn.net/weixin_43788115/article/details/107006719">React中使用echarts（折线图）</a></p>
+<p><a href="https://blog.csdn.net/qq_42817227/article/details/86150176">react中react-router路由重定向（登录成功后跳转到首页）</a></p>
+<p><a href="https://www.cnblogs.com/xiaoyaoweb/p/13025011.html">react 国际化 react-i18next</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/45204328">react route跳转+传参的简单demo</a></p>
+<p><a href="https://blog.csdn.net/wei1273356078/article/details/106332444">webpack配置-source-map（让错误无处可逃）_wei1273356078的博客-CSDN博客</a></p>
 ]]></content>
       <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>经典风格java工程师黑色求职简历word简历模板</title>
-    <url>/resume/resume_10/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_10.png"></p>
-<p><a href="/download/resume/10%E7%BB%8F%E5%85%B8%E9%A3%8E%E6%A0%BCjava%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%BB%91%E8%89%B2%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>经典风格java工程师求职简历青草绿word简历模板</title>
-    <url>/resume/resume_11/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_11.png"></p>
-<p><a href="/download/resume/11%E7%BB%8F%E5%85%B8%E9%A3%8E%E6%A0%BCjava%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86%E9%9D%92%E8%8D%89%E7%BB%BFword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>蓝粉现代风UI设计师求职简历word简历模板</title>
-    <url>/resume/resume_12/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_12.png"></p>
-<p><a href="/download/resume/12%E8%93%9D%E7%B2%89%E7%8E%B0%E4%BB%A3%E9%A3%8EUI%E8%AE%BE%E8%AE%A1%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>蓝色方块财务实习生求职简历word简历模板</title>
-    <url>/resume/resume_13/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_13.png"></p>
-<p><a href="/download/resume/13%E8%93%9D%E8%89%B2%E6%96%B9%E5%9D%97%E8%B4%A2%E5%8A%A1%E5%AE%9E%E4%B9%A0%E7%94%9F%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>蓝色简约商务C语言工程师求职简历word模板</title>
-    <url>/resume/resume_15/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_15.png"></p>
-<p><a href="/download/resume/15%E8%93%9D%E8%89%B2%E7%AE%80%E7%BA%A6%E5%95%86%E5%8A%A1C%E8%AF%AD%E8%A8%80%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>蓝色简洁风工程师成套Word简历模板</title>
-    <url>/resume/resume_14/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_14.png"></p>
-<p><a href="/download/resume/14%E8%93%9D%E8%89%B2%E7%AE%80%E6%B4%81%E9%A3%8E%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%88%90%E5%A5%97Word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>彩色时间轴产品运营求职简历word简历模板</title>
-    <url>/resume/resume_2/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_2.png"></p>
-<p><a href="/download/resume/2%E5%BD%A9%E8%89%B2%E6%97%B6%E9%97%B4%E8%BD%B4%E4%BA%A7%E5%93%81%E8%BF%90%E8%90%A5%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>纯色简约软件工程师成套简历word简历模板</title>
-    <url>/resume/resume_3/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_3.png"></p>
-<p><a href="/download/resume/3%E7%BA%AF%E8%89%B2%E7%AE%80%E7%BA%A6%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%88%90%E5%A5%97%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>纯色运维工程师求职简约简历word模板</title>
-    <url>/resume/resume_4/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_4.png"></p>
-<p><a href="/download/resume/4%E7%BA%AF%E8%89%B2%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E7%BA%A6%E7%AE%80%E5%8E%86word%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>互联网产品经理现代风格简历模板</title>
-    <url>/resume/resume_6/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_6.png"></p>
-<p><a href="/download/resume/6%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%8E%B0%E4%BB%A3%E9%A3%8E%E6%A0%BC%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>黑白灰简洁市场销售word个人简历模板</title>
-    <url>/resume/resume_5/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_5.png"></p>
-<p><a href="/download/resume/5%E9%BB%91%E7%99%BD%E7%81%B0%E7%AE%80%E6%B4%81%E5%B8%82%E5%9C%BA%E9%94%80%E5%94%AEword%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>简洁简历封面模板word简历模板word简历模板</title>
-    <url>/resume/resume_7/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_7.png"></p>
-<p><a href="/download/resume/7%E7%AE%80%E6%B4%81%E7%AE%80%E5%8E%86%E5%B0%81%E9%9D%A2%E6%A8%A1%E6%9D%BFword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BFword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.doc" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>经典风格前端开发求职简历灰蓝word简历模板</title>
-    <url>/resume/resume_8/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_8.png"></p>
-<p><a href="/download/resume/8%E7%BB%8F%E5%85%B8%E9%A3%8E%E6%A0%BC%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86%E7%81%B0%E8%93%9Dword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>经典风格行政文秘求职简历蓝优雅绿word简历模板</title>
-    <url>/resume/resume_9/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_9.png"></p>
-<p><a href="/download/resume/9%E7%BB%8F%E5%85%B8%E9%A3%8E%E6%A0%BC%E8%A1%8C%E6%94%BF%E6%96%87%E7%A7%98%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86%E8%93%9D%E4%BC%98%E9%9B%85%E7%BB%BFword%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
+        <category>React</category>
       </categories>
   </entry>
   <entry>
@@ -536,18 +536,18 @@
       </categories>
   </entry>
   <entry>
-    <title>Android实时监听网络状态</title>
-    <url>/study/Android%E5%AE%9E%E6%97%B6%E7%9B%91%E5%90%AC%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/</url>
-    <content><![CDATA[<p><a href="https://www.cnblogs.com/xuanwei-qingfeng/p/7651906.html">https://www.cnblogs.com/xuanwei-qingfeng/p/7651906.html</a></p>
+    <title>Android中监听Home键的4种方法总结</title>
+    <url>/study/Android%E4%B8%AD%E7%9B%91%E5%90%ACHome%E9%94%AE%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/qq_31664497/article/details/92656049">https://blog.csdn.net/qq_31664497/article/details/92656049</a></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
   </entry>
   <entry>
-    <title>Android中监听Home键的4种方法总结</title>
-    <url>/study/Android%E4%B8%AD%E7%9B%91%E5%90%ACHome%E9%94%AE%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/qq_31664497/article/details/92656049">https://blog.csdn.net/qq_31664497/article/details/92656049</a></p>
+    <title>Android实时监听网络状态</title>
+    <url>/study/Android%E5%AE%9E%E6%97%B6%E7%9B%91%E5%90%AC%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/</url>
+    <content><![CDATA[<p><a href="https://www.cnblogs.com/xuanwei-qingfeng/p/7651906.html">https://www.cnblogs.com/xuanwei-qingfeng/p/7651906.html</a></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -635,18 +635,18 @@
       </categories>
   </entry>
   <entry>
-    <title>Android App优化之性能分析工具</title>
-    <url>/study/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<p><a href="https://www.jianshu.com/p/da2a4bfcba68">https://www.jianshu.com/p/da2a4bfcba68</a></p>
+    <title>弹窗风格的 Activity</title>
+    <url>/study/%E5%BC%B9%E7%AA%97%E9%A3%8E%E6%A0%BC%E7%9A%84Activity/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/AlpinistWang/article/details/86773063?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control">https://blog.csdn.net/AlpinistWang/article/details/86773063?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control</a></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
   </entry>
   <entry>
-    <title>弹窗风格的 Activity</title>
-    <url>/study/%E5%BC%B9%E7%AA%97%E9%A3%8E%E6%A0%BC%E7%9A%84Activity/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/AlpinistWang/article/details/86773063?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control">https://blog.csdn.net/AlpinistWang/article/details/86773063?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control</a></p>
+    <title>Android App优化之性能分析工具</title>
+    <url>/study/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<p><a href="https://www.jianshu.com/p/da2a4bfcba68">https://www.jianshu.com/p/da2a4bfcba68</a></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -671,90 +671,6 @@
 ]]></content>
       <categories>
         <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>弱网测试工具QNET</title>
-    <url>/tool/Android%20%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7QNET/</url>
-    <content><![CDATA[<h3 id="工具下载地址："><a href="#工具下载地址：" class="headerlink" title="工具下载地址："></a>工具下载地址：</h3><p>链接: <a href="https://pan.baidu.com/s/1kU2rHDZNj4Eiqyy-R318hw">https://pan.baidu.com/s/1kU2rHDZNj4Eiqyy-R318hw</a>  密码: tckh</p>
-<p>使用图解：</p>
-<p><img  src="https://img-blog.csdnimg.cn/20210226183736683.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21lbmdsb25nMDMyOQ==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">img</span></p>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android开发者网站</title>
-    <url>/tool/Android%E5%BC%80%E5%8F%91%E8%80%85%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p><a href="https://developer.android.google.cn/">https://developer.android.google.cn/</a></p>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>UI库QMUI</title>
-    <url>/tool/UI%E5%BA%93QMUI/</url>
-    <content><![CDATA[<p><a href="https://qmuiteam.com/">https://qmuiteam.com/</a></p>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>在线图片压缩</title>
-    <url>/tool/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/</url>
-    <content><![CDATA[<p>一款超级好用的在线图片压缩网站：</p>
-<p><a href="https://tinypng.com/">https://tinypng.com/</a></p>
-<p><img  src="../../images/tool/picture_compression.png"  ><span class="image-caption">image-20210731154453704</span></p>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>在线json解析网站</title>
-    <url>/tool/json%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<p>在线json解析网站：</p>
-<p><a href="https://www.json.cn/">https://www.json.cn/</a></p>
-<p><img  src="../../images/tool/json.png"  ><span class="image-caption">image-20210731154453704</span></p>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>在线图片视频转gif</title>
-    <url>/tool/%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E8%BD%ACgif/</url>
-    <content><![CDATA[<p>在线图片视频转gif：</p>
-<p><a href="https://ezgif.com/">https://ezgif.com/</a></p>
-<p><img  src="../../images/tool/ezgif.png"  ><span class="image-caption">image-20210731154453704</span></p>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>阿里巴巴图标网站</title>
-    <url>/tool/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%9B%BE%E6%A0%87%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>阿里巴巴图标网站：</p>
-<p><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
-<p><img  src="../../images/tool/alibaba_icon.png"  ><span class="image-caption">image-20210731154453704</span></p>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>时间戳转换网站</title>
-    <url>/tool/%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>时间戳转换网站：</p>
-<p><a href="https://tool.lu/timestamp/">https://tool.lu/timestamp/</a></p>
-<p><img  src="../../images/tool/time_stamp.png"  ><span class="image-caption">image-20210731154453704</span></p>
-]]></content>
-      <categories>
-        <category>开发工具</category>
       </categories>
   </entry>
   <entry>
@@ -838,6 +754,14 @@
       </categories>
   </entry>
   <entry>
+    <title>gradle</title>
+    <url>/topic/topic_gradle/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>面试题</category>
+      </categories>
+  </entry>
+  <entry>
     <title>事件分发</title>
     <url>/topic/topic_%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91/</url>
     <content><![CDATA[<h3 id="1-布局加载的过程-？"><a href="#1-布局加载的过程-？" class="headerlink" title="1.布局加载的过程 ？"></a>1.布局加载的过程 ？</h3><ol>
@@ -872,14 +796,6 @@
 <p>如果onTouchListener中的onTouch方法返回true，表示此次事件已经被消费了，那onTouchEvent是接收不到消息的。（内置诸如click事件的实现等等都基于onTouchEvent,这些事件将不会被触发），如果onTouch方法返回false会接着触发onTouchEvent。</p>
 <h3 id="8-请描述一下View事件传递分发机制"><a href="#8-请描述一下View事件传递分发机制" class="headerlink" title="8.请描述一下View事件传递分发机制"></a>8.请描述一下View事件传递分发机制</h3><p>1.Touch事件分发中只有两个主角:ViewGroup和View。ViewGroup包含onInterceptTouchEvent、dispatchTouchEvent、onTouchEvent三个相关事件。View包含dispatchTouchEvent、onTouchEvent两个相关事件。其中ViewGroup又继承于View。<br>2.ViewGroup和View组成了一个树状结构，根节点为Activity内部包含的一个ViwGroup。<br>3.触摸事件由Action_Down、Action_Move、Aciton_UP组成，其中一次完整的触摸事件中，Down和Up都只有一个，Move有若干个，可以为0个。<br>4.当Acitivty接收到Touch事件时，将遍历子View进行Down事件的分发。ViewGroup的遍历可以看成是递归的。分发的目的是为了找到真正要处理本次完整触摸事件的View，这个View会在onTouchuEvent结果返回true。<br>5.当某个子View返回true时，会中止Down事件的分发，同时在ViewGroup中记录该子View。接下去的Move和Up事件将由该子View直接进行处理。由于子View是保存在ViewGroup中的，多层ViewGroup的节点结构时，上级ViewGroup保存的会是真实处理事件的View所在的ViewGroup对象:如ViewGroup0-ViewGroup1-TextView的结构中，TextView返回了true，它将被保存在ViewGroup1中，而ViewGroup1也会返回true，被保存在ViewGroup0中。当Move和UP事件来时，会先从ViewGroup0传递至ViewGroup1，再由ViewGroup1传递至TextView。<br>6.当ViewGroup中所有子View都不捕获Down事件时，将触发ViewGroup自身的onTouch事件。触发的方式是调用super.dispatchTouchEvent函数，即父类View的dispatchTouchEvent方法。在所有子View都不处理的情况下，触发Acitivity的onTouchEvent方法。<br>7.onInterceptTouchEvent有两个作用：1.拦截Down事件的分发。2.中止Up和Move事件向目标View传递，使得目标View所在的ViewGroup捕获Up和Move事件。</p>
 ]]></content>
-      <categories>
-        <category>面试题</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>gradle</title>
-    <url>/topic/topic_gradle/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>面试题</category>
       </categories>
@@ -1058,6 +974,23 @@
       </categories>
   </entry>
   <entry>
+    <title>工具使用</title>
+    <url>/topic/topic_%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="1-描述清点击-Android-Studio-的-build-按钮后发生了什么"><a href="#1-描述清点击-Android-Studio-的-build-按钮后发生了什么" class="headerlink" title="1.描述清点击 Android Studio 的 build 按钮后发生了什么"></a>1.描述清点击 Android Studio 的 build 按钮后发生了什么</h3><ol>
+<li>通过aapt打包res资源文件，生成R.java、resources.arsc和res文件</li>
+<li>处理.aidl文件，生成对应的Java接口文件</li>
+<li>通过Java Compiler编译R.java、Java接口文件、Java源文件，生成.class文</li>
+<li>通过dex命令，将.class文件和第三方库中的.class文件处理生成classes.dex</li>
+<li>通过apkbuilder工具，将aapt生成的resources.arsc和res文件、assets文件和classes.dex一起打包生成apk</li>
+<li>通过Jarsigner工具，对上面的apk进行debug或release签名</li>
+<li>通过zipalign工具，将签名后的apk进行对齐处理。<br>这样就得到了一个可以安装运行的Android程序。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>面试题</category>
+      </categories>
+  </entry>
+  <entry>
     <title>常用设计模式</title>
     <url>/topic/topic_%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h3 id="1-单例设计模式"><a href="#1-单例设计模式" class="headerlink" title="1.单例设计模式"></a>1.单例设计模式</h3><p>概念：</p>
@@ -1084,23 +1017,6 @@
 <p>单例模式的应用：</p>
 <p>初始化Android-Universal-Image-Loader，EventBus,Rxbus,ActivityManager 中</p>
 <p></p>
-]]></content>
-      <categories>
-        <category>面试题</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>工具使用</title>
-    <url>/topic/topic_%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="1-描述清点击-Android-Studio-的-build-按钮后发生了什么"><a href="#1-描述清点击-Android-Studio-的-build-按钮后发生了什么" class="headerlink" title="1.描述清点击 Android Studio 的 build 按钮后发生了什么"></a>1.描述清点击 Android Studio 的 build 按钮后发生了什么</h3><ol>
-<li>通过aapt打包res资源文件，生成R.java、resources.arsc和res文件</li>
-<li>处理.aidl文件，生成对应的Java接口文件</li>
-<li>通过Java Compiler编译R.java、Java接口文件、Java源文件，生成.class文</li>
-<li>通过dex命令，将.class文件和第三方库中的.class文件处理生成classes.dex</li>
-<li>通过apkbuilder工具，将aapt生成的resources.arsc和res文件、assets文件和classes.dex一起打包生成apk</li>
-<li>通过Jarsigner工具，对上面的apk进行debug或release签名</li>
-<li>通过zipalign工具，将签名后的apk进行对齐处理。<br>这样就得到了一个可以安装运行的Android程序。</li>
-</ol>
 ]]></content>
       <categories>
         <category>面试题</category>
@@ -1619,6 +1535,90 @@
 ]]></content>
       <categories>
         <category>面试题</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>弱网测试工具QNET</title>
+    <url>/tool/Android%20%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7QNET/</url>
+    <content><![CDATA[<h3 id="工具下载地址："><a href="#工具下载地址：" class="headerlink" title="工具下载地址："></a>工具下载地址：</h3><p>链接: <a href="https://pan.baidu.com/s/1kU2rHDZNj4Eiqyy-R318hw">https://pan.baidu.com/s/1kU2rHDZNj4Eiqyy-R318hw</a>  密码: tckh</p>
+<p>使用图解：</p>
+<p><img  src="https://img-blog.csdnimg.cn/20210226183736683.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21lbmdsb25nMDMyOQ==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">img</span></p>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android开发者网站</title>
+    <url>/tool/Android%E5%BC%80%E5%8F%91%E8%80%85%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p><a href="https://developer.android.google.cn/">https://developer.android.google.cn/</a></p>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>UI库QMUI</title>
+    <url>/tool/UI%E5%BA%93QMUI/</url>
+    <content><![CDATA[<p><a href="https://qmuiteam.com/">https://qmuiteam.com/</a></p>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>在线json解析网站</title>
+    <url>/tool/json%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<p>在线json解析网站：</p>
+<p><a href="https://www.json.cn/">https://www.json.cn/</a></p>
+<p><img  src="../../images/tool/json.png"  ><span class="image-caption">image-20210731154453704</span></p>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>在线图片压缩</title>
+    <url>/tool/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/</url>
+    <content><![CDATA[<p>一款超级好用的在线图片压缩网站：</p>
+<p><a href="https://tinypng.com/">https://tinypng.com/</a></p>
+<p><img  src="../../images/tool/picture_compression.png"  ><span class="image-caption">image-20210731154453704</span></p>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>在线图片视频转gif</title>
+    <url>/tool/%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E8%BD%ACgif/</url>
+    <content><![CDATA[<p>在线图片视频转gif：</p>
+<p><a href="https://ezgif.com/">https://ezgif.com/</a></p>
+<p><img  src="../../images/tool/ezgif.png"  ><span class="image-caption">image-20210731154453704</span></p>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>时间戳转换网站</title>
+    <url>/tool/%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>时间戳转换网站：</p>
+<p><a href="https://tool.lu/timestamp/">https://tool.lu/timestamp/</a></p>
+<p><img  src="../../images/tool/time_stamp.png"  ><span class="image-caption">image-20210731154453704</span></p>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>阿里巴巴图标网站</title>
+    <url>/tool/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%9B%BE%E6%A0%87%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>阿里巴巴图标网站：</p>
+<p><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
+<p><img  src="../../images/tool/alibaba_icon.png"  ><span class="image-caption">image-20210731154453704</span></p>
+]]></content>
+      <categories>
+        <category>开发工具</category>
       </categories>
   </entry>
   <entry>
