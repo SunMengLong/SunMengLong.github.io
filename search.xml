@@ -471,24 +471,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Monkey 命令行工具</title>
-    <url>/test/Monkey%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<p><a href="https://wiki.jikexueyuan.com/project/android-test-course/monkey-commond-tools.html">https://wiki.jikexueyuan.com/project/android-test-course/monkey-commond-tools.html</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>bilibili测试学习视频</title>
-    <url>/test/bilibili%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<p><a href="https://space.bilibili.com/448016348?spm_id_from=333.788.b_765f7570696e666f.1">https://space.bilibili.com/448016348?spm_id_from=333.788.b_765f7570696e666f.1</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-  </entry>
-  <entry>
     <title>APng图片展示</title>
     <url>/study/APng%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/</url>
     <content><![CDATA[<p><a href="https://github.com/penfeizhou/APNG4Android">https://github.com/penfeizhou/APNG4Android</a></p>
@@ -704,6 +686,24 @@
 ]]></content>
       <categories>
         <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Monkey 命令行工具</title>
+    <url>/test/Monkey%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<p><a href="https://wiki.jikexueyuan.com/project/android-test-course/monkey-commond-tools.html">https://wiki.jikexueyuan.com/project/android-test-course/monkey-commond-tools.html</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>bilibili测试学习视频</title>
+    <url>/test/bilibili%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/</url>
+    <content><![CDATA[<p><a href="https://space.bilibili.com/448016348?spm_id_from=333.788.b_765f7570696e666f.1">https://space.bilibili.com/448016348?spm_id_from=333.788.b_765f7570696e666f.1</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
       </categories>
   </entry>
   <entry>
