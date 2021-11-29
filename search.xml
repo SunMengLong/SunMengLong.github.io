@@ -37,6 +37,15 @@
       </categories>
   </entry>
   <entry>
+    <title>TextView末尾添加“查看全文”</title>
+    <url>/CustomView/ExpandLongTextView/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/dodouaj/article/details/52212835?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">https://blog.csdn.net/dodouaj/article/details/52212835?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param</a></p>
+]]></content>
+      <categories>
+        <category>自定义View</category>
+      </categories>
+  </entry>
+  <entry>
     <title>自定义相机</title>
     <url>/CustomView/CustomCamera/</url>
     <content><![CDATA[<p><a href="https://github.com/aserbao/AndroidCamera">https://github.com/aserbao/AndroidCamera</a></p>
@@ -55,9 +64,9 @@
       </categories>
   </entry>
   <entry>
-    <title>TextView末尾添加“查看全文”</title>
-    <url>/CustomView/ExpandLongTextView/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/dodouaj/article/details/52212835?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">https://blog.csdn.net/dodouaj/article/details/52212835?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param</a></p>
+    <title>Android——顶部弹出Snackbar</title>
+    <url>/CustomView/%E9%A1%B6%E9%83%A8%E5%BC%B9%E5%87%BASnackbar/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/yz1743585120/article/details/102609543">https://blog.csdn.net/yz1743585120/article/details/102609543</a></p>
 ]]></content>
       <categories>
         <category>自定义View</category>
@@ -68,15 +77,6 @@
     <url>/CustomView/%E7%BB%84%E5%90%88%E5%A4%B4%E5%83%8FView/</url>
     <content><![CDATA[<p><a href="https://blog.csdn.net/mx_xxs/article/details/102594136">https://blog.csdn.net/mx_xxs/article/details/102594136</a></p>
 <p><a href="https://www.wanandroid.com/blog/show/2180">https://www.wanandroid.com/blog/show/2180</a></p>
-]]></content>
-      <categories>
-        <category>自定义View</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android——顶部弹出Snackbar</title>
-    <url>/CustomView/%E9%A1%B6%E9%83%A8%E5%BC%B9%E5%87%BASnackbar/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/yz1743585120/article/details/102609543">https://blog.csdn.net/yz1743585120/article/details/102609543</a></p>
 ]]></content>
       <categories>
         <category>自定义View</category>
@@ -107,27 +107,6 @@
 ]]></content>
       <categories>
         <category>常见异常</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React学习记录</title>
-    <url>/react/react%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/q1ngqingsky/article/details/106579219">http-server在本地测试react/vue项目</a></p>
-<p><a href="https://ant.design/docs/react/introduce-cn">Ant Design</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/151286410">React 本地存储localStorage用法</a></p>
-<p><a href="https://blog.csdn.net/liwusen/article/details/86482467">React优化长列表</a></p>
-<p><a href="https://www.runoob.com/react/react-tutorial.html">React 教程 | 菜鸟教程</a></p>
-<p><a href="https://github.com/brickspert/blog/issues/1#init">从零搭建React全家桶框架教程</a></p>
-<p>[<a href="https://www.cnblogs.com/minnie-huang/p/12812562.html">webpack]zsh: command not found: webpack</a></p>
-<p><a href="https://blog.csdn.net/weixin_42280089/article/details/88937175">Mac下git配置及与VScode配合使用</a></p>
-<p><a href="https://blog.csdn.net/weixin_43788115/article/details/107006719">React中使用echarts（折线图）</a></p>
-<p><a href="https://blog.csdn.net/qq_42817227/article/details/86150176">react中react-router路由重定向（登录成功后跳转到首页）</a></p>
-<p><a href="https://www.cnblogs.com/xiaoyaoweb/p/13025011.html">react 国际化 react-i18next</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/45204328">react route跳转+传参的简单demo</a></p>
-<p><a href="https://blog.csdn.net/wei1273356078/article/details/106332444">webpack配置-source-map（让错误无处可逃）_wei1273356078的博客-CSDN博客</a></p>
-]]></content>
-      <categories>
-        <category>React</category>
       </categories>
   </entry>
   <entry>
@@ -171,20 +150,20 @@
       </categories>
   </entry>
   <entry>
-    <title>NewbieGuide新手引导库</title>
-    <url>/github/NewbieGuideX/</url>
-    <content><![CDATA[<h3 id="Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"><a href="#Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示" class="headerlink" title="Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"></a>Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示</h3><p>github地址：<a href="https://github.com/huburt-Hu/NewbieGuide">https://github.com/huburt-Hu/NewbieGuide</a></p>
-<p>使用说明：<a href="https://www.jianshu.com/p/9609e547c128">https://www.jianshu.com/p/9609e547c128</a></p>
+    <title>跑马灯库</title>
+    <url>/github/MarqueeViewX/</url>
+    <content><![CDATA[<p>俗名：可垂直跑、可水平跑的跑马灯<br>学名：可垂直翻、可水平翻的翻页公告</p>
+<p>github地址：<a href="https://github.com/sunfusheng/MarqueeView/">https://github.com/sunfusheng/MarqueeView/</a></p>
 ]]></content>
       <categories>
         <category>github常用框架</category>
       </categories>
   </entry>
   <entry>
-    <title>跑马灯库</title>
-    <url>/github/MarqueeViewX/</url>
-    <content><![CDATA[<p>俗名：可垂直跑、可水平跑的跑马灯<br>学名：可垂直翻、可水平翻的翻页公告</p>
-<p>github地址：<a href="https://github.com/sunfusheng/MarqueeView/">https://github.com/sunfusheng/MarqueeView/</a></p>
+    <title>NewbieGuide新手引导库</title>
+    <url>/github/NewbieGuideX/</url>
+    <content><![CDATA[<h3 id="Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"><a href="#Android-快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示" class="headerlink" title="Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示"></a>Android 快速实现新手引导层的库，通过简洁链式调用，一行代码实现引导层的显示</h3><p>github地址：<a href="https://github.com/huburt-Hu/NewbieGuide">https://github.com/huburt-Hu/NewbieGuide</a></p>
+<p>使用说明：<a href="https://www.jianshu.com/p/9609e547c128">https://www.jianshu.com/p/9609e547c128</a></p>
 ]]></content>
       <categories>
         <category>github常用框架</category>
@@ -232,6 +211,27 @@
       </categories>
   </entry>
   <entry>
+    <title>React学习记录</title>
+    <url>/react/react%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/q1ngqingsky/article/details/106579219">http-server在本地测试react/vue项目</a></p>
+<p><a href="https://ant.design/docs/react/introduce-cn">Ant Design</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/151286410">React 本地存储localStorage用法</a></p>
+<p><a href="https://blog.csdn.net/liwusen/article/details/86482467">React优化长列表</a></p>
+<p><a href="https://www.runoob.com/react/react-tutorial.html">React 教程 | 菜鸟教程</a></p>
+<p><a href="https://github.com/brickspert/blog/issues/1#init">从零搭建React全家桶框架教程</a></p>
+<p>[<a href="https://www.cnblogs.com/minnie-huang/p/12812562.html">webpack]zsh: command not found: webpack</a></p>
+<p><a href="https://blog.csdn.net/weixin_42280089/article/details/88937175">Mac下git配置及与VScode配合使用</a></p>
+<p><a href="https://blog.csdn.net/weixin_43788115/article/details/107006719">React中使用echarts（折线图）</a></p>
+<p><a href="https://blog.csdn.net/qq_42817227/article/details/86150176">react中react-router路由重定向（登录成功后跳转到首页）</a></p>
+<p><a href="https://www.cnblogs.com/xiaoyaoweb/p/13025011.html">react 国际化 react-i18next</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/45204328">react route跳转+传参的简单demo</a></p>
+<p><a href="https://blog.csdn.net/wei1273356078/article/details/106332444">webpack配置-source-map（让错误无处可逃）_wei1273356078的博客-CSDN博客</a></p>
+]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hexo部署</title>
     <url>/hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h4 id="修改网站基本信息："><a href="#修改网站基本信息：" class="headerlink" title="修改网站基本信息："></a>修改网站基本信息：</h4><p>参考文档：<a href="https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc">https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc</a></p>
@@ -251,18 +251,18 @@
       </categories>
   </entry>
   <entry>
-    <title>Hexo最全搭建教程</title>
-    <url>/hexo/hexo%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
+    <title>Hexo撰写文章</title>
+    <url>/hexo/hexo%E5%86%99%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/wsmrzx/article/details/81478945">https://blog.csdn.net/wsmrzx/article/details/81478945</a></p>
 ]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
   </entry>
   <entry>
-    <title>Hexo撰写文章</title>
-    <url>/hexo/hexo%E5%86%99%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/wsmrzx/article/details/81478945">https://blog.csdn.net/wsmrzx/article/details/81478945</a></p>
+    <title>Hexo最全搭建教程</title>
+    <url>/hexo/hexo%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -348,6 +348,16 @@
       </categories>
   </entry>
   <entry>
+    <title>纯色运维工程师求职简约简历word模板</title>
+    <url>/resume/resume_4/</url>
+    <content><![CDATA[<p><img src="../../images/resume/resume_4.png"></p>
+<p><a href="/download/resume/4%E7%BA%AF%E8%89%B2%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E7%BA%A6%E7%AE%80%E5%8E%86word%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
+]]></content>
+      <categories>
+        <category>简历模版</category>
+      </categories>
+  </entry>
+  <entry>
     <title>彩色时间轴产品运营求职简历word简历模板</title>
     <url>/resume/resume_2/</url>
     <content><![CDATA[<p><img src="../../images/resume/resume_2.png"></p>
@@ -362,16 +372,6 @@
     <url>/resume/resume_3/</url>
     <content><![CDATA[<p><img src="../../images/resume/resume_3.png"></p>
 <p><a href="/download/resume/3%E7%BA%AF%E8%89%B2%E7%AE%80%E7%BA%A6%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%88%90%E5%A5%97%E7%AE%80%E5%8E%86word%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
-]]></content>
-      <categories>
-        <category>简历模版</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>纯色运维工程师求职简约简历word模板</title>
-    <url>/resume/resume_4/</url>
-    <content><![CDATA[<p><img src="../../images/resume/resume_4.png"></p>
-<p><a href="/download/resume/4%E7%BA%AF%E8%89%B2%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%B1%82%E8%81%8C%E7%AE%80%E7%BA%A6%E7%AE%80%E5%8E%86word%E6%A8%A1%E6%9D%BF.docx" title="简历模版">点击下载</a></p>
 ]]></content>
       <categories>
         <category>简历模版</category>
@@ -471,6 +471,24 @@
       </categories>
   </entry>
   <entry>
+    <title>Monkey 命令行工具</title>
+    <url>/test/Monkey%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<p><a href="https://wiki.jikexueyuan.com/project/android-test-course/monkey-commond-tools.html">https://wiki.jikexueyuan.com/project/android-test-course/monkey-commond-tools.html</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>bilibili测试学习视频</title>
+    <url>/test/bilibili%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/</url>
+    <content><![CDATA[<p><a href="https://space.bilibili.com/448016348?spm_id_from=333.788.b_765f7570696e666f.1">https://space.bilibili.com/448016348?spm_id_from=333.788.b_765f7570696e666f.1</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+  <entry>
     <title>APng图片展示</title>
     <url>/study/APng%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/</url>
     <content><![CDATA[<p><a href="https://github.com/penfeizhou/APNG4Android">https://github.com/penfeizhou/APNG4Android</a></p>
@@ -508,19 +526,19 @@
       </categories>
   </entry>
   <entry>
-    <title>Android 生成自己的implementation依赖</title>
-    <url>/study/Android%20%E7%94%9F%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84implementation%E4%BE%9D%E8%B5%96/</url>
-    <content><![CDATA[<p><a href="https://blog.csdn.net/qianxiangsen/article/details/107683275">https://blog.csdn.net/qianxiangsen/article/details/107683275</a></p>
-<p><a href="https://jitpack.io/#SunMengLong/NewbieGuide/v1.0">https://jitpack.io/#SunMengLong/NewbieGuide/v1.0</a></p>
+    <title>Android SDK版本名和API level对照表</title>
+    <url>/study/AndroidSDK%E7%89%88%E6%9C%AC%E5%90%8D%E5%92%8CAPIlevel%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
+    <content><![CDATA[<p><a href="https://www.jianshu.com/p/2ed9c0cc214e">https://www.jianshu.com/p/2ed9c0cc214e</a></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
   </entry>
   <entry>
-    <title>Android SDK版本名和API level对照表</title>
-    <url>/study/AndroidSDK%E7%89%88%E6%9C%AC%E5%90%8D%E5%92%8CAPIlevel%E5%AF%B9%E7%85%A7%E8%A1%A8/</url>
-    <content><![CDATA[<p><a href="https://www.jianshu.com/p/2ed9c0cc214e">https://www.jianshu.com/p/2ed9c0cc214e</a></p>
+    <title>Android 生成自己的implementation依赖</title>
+    <url>/study/Android%20%E7%94%9F%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84implementation%E4%BE%9D%E8%B5%96/</url>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/qianxiangsen/article/details/107683275">https://blog.csdn.net/qianxiangsen/article/details/107683275</a></p>
+<p><a href="https://jitpack.io/#SunMengLong/NewbieGuide/v1.0">https://jitpack.io/#SunMengLong/NewbieGuide/v1.0</a></p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
@@ -689,24 +707,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Monkey 命令行工具</title>
-    <url>/test/Monkey%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<p><a href="https://wiki.jikexueyuan.com/project/android-test-course/monkey-commond-tools.html">https://wiki.jikexueyuan.com/project/android-test-course/monkey-commond-tools.html</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>bilibili测试学习视频</title>
-    <url>/test/bilibili%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<p><a href="https://space.bilibili.com/448016348?spm_id_from=333.788.b_765f7570696e666f.1">https://space.bilibili.com/448016348?spm_id_from=333.788.b_765f7570696e666f.1</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-  </entry>
-  <entry>
     <title>弱网测试工具QNET</title>
     <url>/tool/Android%20%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7QNET/</url>
     <content><![CDATA[<h3 id="工具下载地址："><a href="#工具下载地址：" class="headerlink" title="工具下载地址："></a>工具下载地址：</h3><p>链接: <a href="https://pan.baidu.com/s/1kU2rHDZNj4Eiqyy-R318hw">https://pan.baidu.com/s/1kU2rHDZNj4Eiqyy-R318hw</a>  密码: tckh</p>
@@ -718,18 +718,18 @@
       </categories>
   </entry>
   <entry>
-    <title>UI库QMUI</title>
-    <url>/tool/UI%E5%BA%93QMUI/</url>
-    <content><![CDATA[<p><a href="https://qmuiteam.com/">https://qmuiteam.com/</a></p>
+    <title>Android开发者网站</title>
+    <url>/tool/Android%E5%BC%80%E5%8F%91%E8%80%85%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p><a href="https://developer.android.google.cn/">https://developer.android.google.cn/</a></p>
 ]]></content>
       <categories>
         <category>开发工具</category>
       </categories>
   </entry>
   <entry>
-    <title>Android开发者网站</title>
-    <url>/tool/Android%E5%BC%80%E5%8F%91%E8%80%85%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p><a href="https://developer.android.google.cn/">https://developer.android.google.cn/</a></p>
+    <title>UI库QMUI</title>
+    <url>/tool/UI%E5%BA%93QMUI/</url>
+    <content><![CDATA[<p><a href="https://qmuiteam.com/">https://qmuiteam.com/</a></p>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -769,22 +769,22 @@
       </categories>
   </entry>
   <entry>
-    <title>阿里巴巴图标网站</title>
-    <url>/tool/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%9B%BE%E6%A0%87%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>阿里巴巴图标网站：</p>
-<p><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
-<p><img  src="../../images/tool/alibaba_icon.png"  ><span class="image-caption">image-20210731154453704</span></p>
+    <title>时间戳转换网站</title>
+    <url>/tool/%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>时间戳转换网站：</p>
+<p><a href="https://tool.lu/timestamp/">https://tool.lu/timestamp/</a></p>
+<p><img  src="../../images/tool/time_stamp.png"  ><span class="image-caption">image-20210731154453704</span></p>
 ]]></content>
       <categories>
         <category>开发工具</category>
       </categories>
   </entry>
   <entry>
-    <title>时间戳转换网站</title>
-    <url>/tool/%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>时间戳转换网站：</p>
-<p><a href="https://tool.lu/timestamp/">https://tool.lu/timestamp/</a></p>
-<p><img  src="../../images/tool/time_stamp.png"  ><span class="image-caption">image-20210731154453704</span></p>
+    <title>阿里巴巴图标网站</title>
+    <url>/tool/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%9B%BE%E6%A0%87%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>阿里巴巴图标网站：</p>
+<p><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
+<p><img  src="../../images/tool/alibaba_icon.png"  ><span class="image-caption">image-20210731154453704</span></p>
 ]]></content>
       <categories>
         <category>开发工具</category>
