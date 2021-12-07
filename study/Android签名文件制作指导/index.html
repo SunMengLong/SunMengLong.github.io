@@ -11,7 +11,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="https://blog.csdn.net/zzhou...">
+  <meta name="description" content="JDK中keytool 常用命令:-genkey   ...">
   <meta name="author" content="MengLong Sun">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -187,13 +187,59 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 24, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>56</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2253</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zzhou910/article/details/76422248">https://blog.csdn.net/zzhou910/article/details/76422248</a></p>
+        <h2 id="JDK中keytool-常用命令"><a href="#JDK中keytool-常用命令" class="headerlink" title="JDK中keytool 常用命令:"></a>JDK中keytool 常用命令:</h2><p>-genkey   在用户主目录中创建一个默认文件”.keystore”,还会产生一个mykey的别名，mykey中包含用户的公钥、私钥和证书</p>
+<p>(在没有指定生成位置的情况下,keystore会存在用户系统默认目录，如：对于window xp系统，会生成在系统的C:/Documents and Settings/UserName/文件名为“.keystore”)</p>
+<p>-alias  产生别名</p>
+<p>-keystore  指定密钥库的名称(产生的各类信息将不在.keystore文件中)</p>
+<p>-keyalg  指定密钥的算法 (如 RSA DSA（如果不指定默认采用DSA）)</p>
+<p>-validity  指定创建的证书有效期多少天</p>
+<p>-keysize  指定密钥长度</p>
+<p>-storepass  指定密钥库的密码(获取keystore信息所需的密码)</p>
+<p>-keypass  指定别名条目的密码(私钥的密码)</p>
+<p>-dname  指定密钥库拥有者信息</p>
+<p>-list  显示密钥库中的证书信息  -v参数显示详细信息</p>
+<p>-export  将别名指定的证书导出到文件 </p>
+<p>-file  参数指定导出到文件的文件名</p>
+<p>-delete  删除密钥库中某条目</p>
+<p>-printcert  查看导出的证书信息</p>
+<p>-keypasswd  修改密钥库中指定别名的密码</p>
+<p>-storepasswd  修改密钥库的密码</p>
+<p>-import  将已签名数字证书导入密钥库</p>
+<p>下面是各选项的缺省值。 </p>
+<p>-alias “mykey”</p>
+<p>-keyalg “DSA”</p>
+<p>-keysize 1024</p>
+<p>-validity 90</p>
+<p>-keystore 用户宿主目录中名为 .keystore 的文件</p>
+<p>-file 读时为标准输入，写时为标准输出</p>
+<h2 id="1-keystore的生成："><a href="#1-keystore的生成：" class="headerlink" title="1. keystore的生成："></a>1. keystore的生成：</h2><p>分阶段生成：</p>
+<p> keytool -genkey-alias xxx(别名) -keypass xxx(别名密码) -keyalg RSA(算法) -keysize 1024(密钥长度) -validity 365(有效期，单位：天) -keystore x:/xxx.keystore(指定生成密钥库的位置和密钥库名称) -storepass 123456(密钥库密码)；回车输入相关信息即可；</p>
+<p>一次性生成：</p>
+<p> keytool -genkey-alias xxx -keypass xxx -keyalg RSA -keysize 1024 -validity 365 -keystore x:/xxx.keystore -storepass 123456 -dname “CN=(名字与姓氏), OU=(组织单位名称), O=(组织名称), L=(城市或区域名称), ST=(州或省份名称), C=(单位的两字母国家代码)”;(中英文即可)</p>
+<p><img    class="lazyload" data-original="../../images/20170731110635735.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
+<h2 id="2-keystore信息的查看："><a href="#2-keystore信息的查看：" class="headerlink" title="2. keystore信息的查看："></a>2. keystore信息的查看：</h2><p>keytool -list -v-keystore x:/xxx/xxx.keystore -storepass 123456</p>
+<p>显示内容：</p>
+<p><img    class="lazyload" data-original="../../images/20170731110933930.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
+<p>缺省情况下，-list 命令打印证书的 MD5 指纹。而如果指定了 -v 选项，将以可读格式打印证书，如果指定了 -rfc 选项，将以可打印的编码格式输出证书。</p>
+<p>keytool -list -rfc-keystore x:/xxx.keystore -storepass 123456</p>
+<p>显示内容：</p>
+<p> <img    class="lazyload" data-original="../../images/20170731111016098.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
+<h2 id="3-证书的导出："><a href="#3-证书的导出：" class="headerlink" title="3. 证书的导出："></a>3. 证书的导出：</h2><p>keytool -export -aliasxxx -keystore x:/xxx.keystore -file x:/xxx.crt(指定导出的证书位置及证书名称) -storepass 123456</p>
+<p><img    class="lazyload" data-original="../../images/20170731111045957.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
+<h2 id="4-查看导出的证书信息"><a href="#4-查看导出的证书信息" class="headerlink" title="4. 查看导出的证书信息"></a>4. 查看导出的证书信息</h2><p>keytool -printcert-file xxx.crt</p>
+<p>在windows下可以双击xxx.crt查看</p>
+<h2 id="5-证书的导入："><a href="#5-证书的导入：" class="headerlink" title="5. 证书的导入："></a>5. 证书的导入：</h2><p>现在将xxx.crt 加入到xxx.keystore中：</p>
+<p>keytool -import-alias xxx(指定导入证书的别名，如果不指定默认为mykey，别名唯一，否则导入出错) -file x:/xxx.crt -keystore x:/xxx.keystore -storepass 123456</p>
+<h2 id="6-别名删除："><a href="#6-别名删除：" class="headerlink" title="6. 别名删除："></a>6. 别名删除：</h2><p> keytool -delete -alias xxx(指定需删除的别名) -keystore xxx.keystore -storepass 123456</p>
+<h2 id="7-别名密码的修改："><a href="#7-别名密码的修改：" class="headerlink" title="7. 别名密码的修改："></a>7. 别名密码的修改：</h2><p>keytool -keypasswd -aliasxxx(需要修改密码的别名) -keypass xxx(原始密码) -new 123456(别名的新密码) -keystore x:/xxx.keystore -storepass 123456</p>
+<h2 id="8-Keystore密码的修改："><a href="#8-Keystore密码的修改：" class="headerlink" title="8. Keystore密码的修改："></a>8. Keystore密码的修改：</h2><p> keytool-storepasswd -keystore x:/xxx.keystore(需修改密码的keystore) -storepass 123456(原始密码) -new xxx(新密码)</p>
+<h2 id="9-修改keystore中别名为xxx的信息"><a href="#9-修改keystore中别名为xxx的信息" class="headerlink" title="9. 修改keystore中别名为xxx的信息"></a>9. 修改keystore中别名为xxx的信息</h2><p>keytool -selfcert -alias xxx-keypass xxx -keystore x:/xxx.keystore -storepass 123456 -dname “cn=xxx,ou=xxx,o=xxx,c=cn”</p>
 
       </section>
       <section class="extra">
@@ -220,7 +266,7 @@
         
         
   <nav class="nav">
-    <a href="/study/Activity%E9%80%80%E5%87%BA%E5%88%B0%E5%90%8E%E5%8F%B0/"><i class="iconfont iconleft"></i>Activity退出到后台，主页返回到桌面</a>
+    <a href="/study/%E4%BB%BF%E5%BE%AE%E4%BF%A1@%E5%A5%BD%E5%8F%8B%E5%8A%9F%E8%83%BD%20%E8%BC%B8%E5%85%A5@%E8%B7%B3%E8%BD%AC%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B4%E5%9D%97/"><i class="iconfont iconleft"></i>仿微信@好友功能 輸入@跳转、删除整块</a>
     <a href="/study/%E5%BC%B9%E7%AA%97%E9%A3%8E%E6%A0%BC%E7%9A%84Activity/">弹窗风格的 Activity<i class="iconfont iconright"></i></a>
   </nav>
 
@@ -234,7 +280,7 @@
           
   <aside class="toc-wrap">
     <h3 class="toc-title">文章目录：</h3>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK%E4%B8%ADkeytool-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">JDK中keytool 常用命令:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-keystore%E7%9A%84%E7%94%9F%E6%88%90%EF%BC%9A"><span class="toc-text">1. keystore的生成：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-keystore%E4%BF%A1%E6%81%AF%E7%9A%84%E6%9F%A5%E7%9C%8B%EF%BC%9A"><span class="toc-text">2. keystore信息的查看：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AF%81%E4%B9%A6%E7%9A%84%E5%AF%BC%E5%87%BA%EF%BC%9A"><span class="toc-text">3. 证书的导出：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%9F%A5%E7%9C%8B%E5%AF%BC%E5%87%BA%E7%9A%84%E8%AF%81%E4%B9%A6%E4%BF%A1%E6%81%AF"><span class="toc-text">4. 查看导出的证书信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%AF%81%E4%B9%A6%E7%9A%84%E5%AF%BC%E5%85%A5%EF%BC%9A"><span class="toc-text">5. 证书的导入：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%88%AB%E5%90%8D%E5%88%A0%E9%99%A4%EF%BC%9A"><span class="toc-text">6. 别名删除：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%88%AB%E5%90%8D%E5%AF%86%E7%A0%81%E7%9A%84%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="toc-text">7. 别名密码的修改：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Keystore%E5%AF%86%E7%A0%81%E7%9A%84%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="toc-text">8. Keystore密码的修改：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E4%BF%AE%E6%94%B9keystore%E4%B8%AD%E5%88%AB%E5%90%8D%E4%B8%BAxxx%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-text">9. 修改keystore中别名为xxx的信息</span></a></li></ol>
   </aside>
 
         

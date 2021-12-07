@@ -11,7 +11,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="https://blog.csdn.net/lyh12...">
+  <meta name="description" content="直奔主题吧，也不会扯皮，哈哈哈。
+首先很多人从Imag...">
   <meta name="author" content="MengLong Sun">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -187,13 +188,21 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 24, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>61</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>381</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lyh1299259684/article/details/80276396">https://blog.csdn.net/lyh1299259684/article/details/80276396</a></p>
+        <p>直奔主题吧，也不会扯皮，哈哈哈。</p>
+<p>首先很多人从ImageView中获取Bitmap首选的方案可能是这样的：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">Bitmap </span><span class="hljs-keyword">bitmap </span>= ((<span class="hljs-keyword">BitmapDrawable) </span>mImageView.getBackground()).getBitmap();<br></code></pre></td></tr></table></figure>
+
+<p>这样获取那，相信大家都会遇到一个疑惑的问题，就是为什么有时候会获取成功，但是有时候却会报类型转换异常。本人是小菜鸟其实也不知道原因，这里给出解决方案。</p>
+<p>解决方案：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">mImageView.set<span class="hljs-constructor">DrawingCacheEnabled(<span class="hljs-params">true</span>)</span>;<br>Bitmap bitmap = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Bitmap</span>.</span></span>create<span class="hljs-constructor">Bitmap(<span class="hljs-params">mImageView</span>.<span class="hljs-params">getDrawingCache</span>()</span>);<br>mImageView.set<span class="hljs-constructor">DrawingCacheEnabled(<span class="hljs-params">false</span>)</span>;<br></code></pre></td></tr></table></figure>
+
+<p>只需要这三行代码即可轻松搞定。</p>
 
       </section>
       <section class="extra">

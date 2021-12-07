@@ -11,7 +11,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="https://blog.csdn.net/u0110...">
+  <meta name="description" content="1最近在做聊天功能的时候，有一个需求是仿照微信做@好友...">
   <meta name="author" content="MengLong Sun">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -187,13 +187,127 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 24, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>258</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>5195</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011077027/article/details/78391840?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">https://blog.csdn.net/u011077027/article/details/78391840?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control</a></p>
+        <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">最近在做聊天功能的时候，有一个需求是仿照微信做<span class="hljs-meta">@好友的功能，本来以为挺简单，但是做到这块的时候，发现和想象的有点不一样，什么整块删除，块可编辑，总之，加个</span><span class="hljs-meta">@的功能很简单，但是要做和微信的一样还是费了一些功夫，下面是一个demo仅供参考，防止遗忘</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="先上个效果图"><a href="#先上个效果图" class="headerlink" title="先上个效果图"></a>先上个效果图</h4><p><img    class="lazyload" data-original="../../images/SouthEast.gif" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">这里写图片描述</span></p>
+<p>就是这么个功能</p>
+<p>我又照着做了这个，仅供参考</p>
+<p><img    class="lazyload" data-original="../../images/SouthEast.gif" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">这里写图片描述</span></p>
+<ol>
+<li>分析需求<br>输入@跳转到联系人界面，选中一个或者多个好友返回到当前界面<br>按退格键删除整块内容<br>块内的内容可编辑，编辑完了之后将不附带@功能，只是单纯的文字</li>
+<li>开始编码<br>既然是文本输入首先继承EditText自定义一个控件</li>
+</ol>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs scala">public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MsgEditText</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatEditText</span> </span>&#123;<br>    public <span class="hljs-type">MsgEditText</span>(<span class="hljs-type">Context</span> context) &#123;<br>        <span class="hljs-keyword">super</span>(context);<br>    &#125;<br>    <br>    public <span class="hljs-type">MsgEditText</span>(<span class="hljs-type">Context</span> context, <span class="hljs-type">AttributeSet</span> attrs) &#123;<br>        <span class="hljs-keyword">super</span>(context, attrs);<br>    &#125;<br>    <br>    public <span class="hljs-type">MsgEditText</span>(<span class="hljs-type">Context</span> context, <span class="hljs-type">AttributeSet</span> attrs, int defStyleAttr) &#123;<br>        <span class="hljs-keyword">super</span>(context, attrs, defStyleAttr);<br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>到底从哪里开始入手呢，首先完成变成块的需求，<br>无意中看到这个项目<a target="_blank" rel="noopener" href="https://github.com/g707175425/CloudEditText">https://github.com/g707175425/CloudEditText</a> ，他是这么写的</p>
+<p> private void generateOneSpan(Spannable spannableString, UnSpanText unSpanText) {<br>        //生成一个TextView<br>        View spanView = getSpanView(getContext(),      unSpanText.showText.toString(), getMeasuredWidth());<br>        //再将TextView转换为一个图片<br>        BitmapDrawable bitmpaDrawable = (BitmapDrawable) UIUtils.convertViewToDrawable(spanView);<br>        bitmpaDrawable.setBounds(0, 0, bitmpaDrawable.getIntrinsicWidth(), bitmpaDrawable.getIntrinsicHeight());<br>        //最后将这个图片放到Span里，<br>        MyImageSpan what = new MyImageSpan(bitmpaDrawable, unSpanText.showText.toString(),unSpanText.returnText);<br>        final int start = unSpanText.start;<br>        final int end = unSpanText.end;<br>        spannableString.setSpan(what, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);<br>        //设置一个Span<br>        spannableString.setSpan(touchableSpan, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);<br>    }</p>
+<p>看到这里我们就记得了一个关于SpanableString的用法，它可以设置图片，可以随意的设置文字的背景的前景，等等一系列比较酷炫的效果，而且只需要一个TextView，如果需要深入了解Span，可自行百度和Google，我看的是这篇博客<a target="_blank" rel="noopener" href="http://blog.csdn.net/u012422440/article/details/52155924%EF%BC%8C%E5%85%B3%E4%BA%8ESpan%E7%9A%84%E8%BF%9B%E9%98%B6%E7%94%A8%E6%B3%95%EF%BC%8C%E4%BA%8E%E6%98%AF%E5%B0%B1%E6%9C%89%E4%BA%86%E4%B8%8B%E9%9D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0">http://blog.csdn.net/u012422440/article/details/52155924，关于Span的进阶用法，于是就有了下面的实现</a></p>
+<pre><code>//这个是需要成块删除的内容
+private class MyTextSpan extends MetricAffectingSpan &#123;
+    private String showText;
+    private long userId;
+
+    //userId是为了适应需求，如果不需要请自行去掉
+    public MyTextSpan(String showText, long userId) &#123;
+        this.showText = showText;
+        this.userId = userId;
+    &#125;
+
+
+    public String getShowText() &#123;
+        return showText;
+    &#125;
+
+    public long getUserId() &#123;
+        return userId;
+    &#125;
+
+    @Override
+    public void updateMeasureState(TextPaint p) &#123;
+
+    &#125;
+
+    @Override
+    public void updateDrawState(TextPaint tp) &#123;
+
+    &#125;
+&#125;
+
+//这个是非整块删除的内容，当然你如果想也是可以删除的
+private class UnSpanText &#123;
+    int start;
+    int end;
+    String returnText;
+
+    UnSpanText(int start, int end, String returnText) &#123;
+        this.start = start;
+        this.end = end;
+        this.returnText = returnText;
+    &#125;
+&#125;
+</code></pre>
+<p>刚开始我是这么写的</p>
+<pre><code>//外部调用一个增加Span的方法
+public void addSpan(String showText, String returnText, long userId) &#123;
+    getText().append(showText);
+    SpannableString spannableString = new SpannableString(getText());
+    makeSpan(spannableString, new UnSpanText(spannableString.length() - showText.length(), spannableString.length(), showText, returnText), userId);
+    setText(spannableString);
+    setSelection(spannableString.length());
+&#125;
+
+
+//生成一个需要整体删除的Span
+private void makeSpan(Spannable sps, UnSpanText unSpanText, long userId) &#123;
+    MyTextSpan what = new MyTextSpan(unSpanText.returnText, userId);
+    int start = unSpanText.start;
+    int end = unSpanText.end;
+    sps.setSpan(what, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+&#125;
+</code></pre>
+<p>写到现在这个整块添加已经做好了，下面开始做整块删除，刚开始的时候我是模仿上面的CloudEditText写的，但我发现好像会用各种问题，于是想了一种方法</p>
+<pre><code>@Override
+protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) &#123;
+    super.onTextChanged(text, start, lengthBefore, lengthAfter);
+    //向前删除一个字符，@后的内容必须大于一个字符，可以在后面加一个空格
+    if (lengthBefore == 1 &amp;&amp; lengthAfter == 0) &#123;
+        MyTextSpan[] spans = getText().getSpans(0, getText().length(), MyTextSpan.class);
+        for (MyTextSpan myImageSpan : spans) &#123;
+            if (getText().getSpanEnd(myImageSpan) == start &amp;&amp; !text.toString().endsWith(myImageSpan.getShowText())) &#123;
+                getText().delete(getText().getSpanStart(myImageSpan), getText().getSpanEnd(myImageSpan));
+                break;
+            &#125;
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+<p>上面的意思就是，如果你在EditText中执行删除一个字符的时候，判断前面一个是否是一个Span，如果是自定义的Span就把Span一同删除，关于这个，我可是测试可各种操作才定为这样的</p>
+<p>最后是获取需要@的人员名单</p>
+<pre><code>//获取用户Id列表,这只是个参考，可根据需求修改
+public String getUserIdString() &#123;
+    MyTextSpan[] spans = getText().getSpans(0, getText().length(), MyTextSpan.class);
+    StringBuilder builder = new StringBuilder();
+    for (MyTextSpan myTextSpan : spans) &#123;
+        String realText = getText().toString().substring(getText().getSpanStart(myTextSpan), getText().getSpanEnd(myTextSpan));
+        String showText = myTextSpan.getShowText();
+        if (realText.equals(showText)) &#123;
+            builder.append(myTextSpan.getUserId()).append(&quot;,&quot;);
+        &#125;
+    &#125;
+    if (!TextUtils.isEmpty(builder.toString())) &#123;
+        builder.deleteCharAt(builder.length() - 1);
+    &#125;
+    return builder.toString();
+&#125;
+</code></pre>
+<p>最后我就大方的放个地址你们自己看吧<br><a target="_blank" rel="noopener" href="https://github.com/ddssingsong/AtFriend">https://github.com/ddssingsong/AtFriend</a></p>
 
       </section>
       <section class="extra">
@@ -221,7 +335,7 @@
         
   <nav class="nav">
     <a href="/study/ImageView%E8%8E%B7%E5%8F%96Bitmap/"><i class="iconfont iconleft"></i>ImageView获取Bitmap</a>
-    <a href="/study/Activity%E9%80%80%E5%87%BA%E5%88%B0%E5%90%8E%E5%8F%B0/">Activity退出到后台，主页返回到桌面<i class="iconfont iconright"></i></a>
+    <a href="/study/Android%E7%AD%BE%E5%90%8D%E6%96%87%E4%BB%B6%E5%88%B6%E4%BD%9C%E6%8C%87%E5%AF%BC/">Android签名文件制作指导<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>
