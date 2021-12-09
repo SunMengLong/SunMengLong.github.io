@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关于SVN状态图标不显示的解决办法(史上最全) - Android高级工程师</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="转自: https://www.jianshu.com...">
+  <meta name="author" content="MengLong Sun">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: false,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: true,
+        path: 'search.xml'
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
+      
+    </div>
+    <div class="center">关于SVN状态图标不显示的解决办法(史上最全)</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a><p><a target="_blank" href="https://beian.miit.gov.cn/">京ICP备20023327号-1</a></p></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/../../images/cover/cover_15.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">关于SVN状态图标不显示的解决办法(史上最全)</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 09, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3041</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <p>转自: <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/92e8e1f345c0">https://www.jianshu.com/p/92e8e1f345c0</a></p>
+<p>以下非原创，如有侵权请联系告知。</p>
+<p>关于图标的说明：<br>Windows Explorer Shell 支持 Overlay Icon 最多15个，Windows 自身已经使用了4个，所以就只剩下了11个 供我们使用。如果你之前安装了例如Groove这样的软件，那么可能我们可利用的就更少了，轮不到Tortoise了。像这样的情况，我们可以调整 Tortoise图标名称的字母顺序，来提高Tortoise的优先位置，因为Windows 内部就是安装名称的字母顺序来优先显示的。</p>
+<p>对于有强迫症的开发人员来说，svn状态图标不显示是在是痛苦不堪啊，根据网上的办法加上自己亲测总结大概有以下几种情况：</p>
+<h4 id="解决方法一（失败）："><a href="#解决方法一（失败）：" class="headerlink" title="解决方法一（失败）："></a>解决方法一（失败）：</h4><p>升级最新版本的svn</p>
+<h4 id="解决方法二（失败）：（常用、便捷）"><a href="#解决方法二（失败）：（常用、便捷）" class="headerlink" title="解决方法二（失败）：（常用、便捷）"></a>解决方法二（失败）：（常用、便捷）</h4><p>右键-&gt;TortoiseSVN-&gt;setting-&gt;Icon Overlays-&gt;Status cache-&gt;default/Shell。<br>或者 右键-&gt;TortoiseSVN-&gt;setting-&gt;Icon Overlays-&gt;Drive Types&gt;fixed Drives</p>
+<h4 id="解决方法三（失败）："><a href="#解决方法三（失败）：" class="headerlink" title="解决方法三（失败）："></a>解决方法三（失败）：</h4><p>修复或者卸载重装</p>
+<h4 id="解决方法四（成功）："><a href="#解决方法四（成功）：" class="headerlink" title="解决方法四（成功）："></a>解决方法四（成功）：</h4><p>1.Win+R输入 regedit 进入注册表，</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xl">HKEY_LOCAL_MACHINE-&gt;SOFTWARE-&gt;M<span class="hljs-function"><span class="hljs-title">icrosoft</span>-&gt;</span>W<span class="hljs-function"><span class="hljs-title">indows</span>-&gt;</span>C<span class="hljs-function"><span class="hljs-title">urrentVersion</span>-&gt;</span>E<span class="hljs-function"><span class="hljs-title">xplorer</span>-&gt;</span>ShellIconOverlayIdentifiers<br></code></pre></td></tr></table></figure>
+
+<p>打开后发现Tortoise 系列（1TortoiseNormal，2TortoiseAdded等）前面有好多项的话，<strong>重命名Tortoise 系列以z开头即可</strong>，然后转到3。</p>
+<p><img    class="lazyload" data-original="../../images/1681638-136e20fa0cfc94b5.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
+<p>Paste_Image.png</p>
+<p>2.进入注册表若没有Tortoise 系列可能是被360等流氓软件删除了，需要新建注册表并导入了，具体操作<strong>复制粘贴如下内容到记事本并重命名为reg后缀文件，然后右键reg文件-&gt;注册表编辑器</strong>，即可导入注册表。导入后如上图所示。</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript"> Windows Registry Editor Version 5.00<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers]<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\1</span>TortoiseNormal]<br><br>@=&quot;&#123;C5994560-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\2</span>TortoiseModified]<br><br>@=&quot;&#123;C5994561-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\3</span>TortoiseConflict]<br><br>@=&quot;&#123;C5994562-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\4</span>TortoiseLocked]<br><br>@=&quot;&#123;C5994563-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\5</span>TortoiseReadOnly]<br><br>@=&quot;&#123;C5994564-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\6</span>TortoiseDeleted]<br><br>@=&quot;&#123;C5994565-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\7</span>TortoiseAdded]<br><br>@=&quot;&#123;C5994566-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\8</span>TortoiseIgnored]<br><br>@=&quot;&#123;C5994567-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\9</span>TortoiseUnversioned]<br><br>@=&quot;&#123;C5994568-53D9-4125-87C9-F193FC689CB2&#125;&quot;<br><br>[HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\M</span>icrosoft<span class="hljs-symbol">\W</span>indows<span class="hljs-symbol">\C</span>urrentVersion<span class="hljs-symbol">\E</span>xplorer<span class="hljs-symbol">\S</span>hellIconOverlayIdentifiers<span class="hljs-symbol">\O</span>ffline Files]<br><br>@=&quot;&#123;750fdf0e-2a26-11d1-a3ea-080036587f03&#125;&quot;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>3.打开任务管理器，<strong>在进程里找到explorer.exe右键结束进程，然后执行 文件-新建任务 输入 explorer.exe 回车</strong>即可</p>
+<p>以上就是svn状态图标不显示的解决办法，如有错误请指正，谢谢</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>MengLong Sun</li>
+    <li><strong>本文链接：</strong><a href="http://www.jianzhioffer.com/tool/SVN%E7%8A%B6%E6%80%81%E5%9B%BE%E6%A0%87%E4%B8%8D%E6%98%BE%E7%A4%BA/index.html" title="http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;tool&#x2F;SVN%E7%8A%B6%E6%80%81%E5%9B%BE%E6%A0%87%E4%B8%8D%E6%98%BE%E7%A4%BA&#x2F;index.html">http:&#x2F;&#x2F;www.jianzhioffer.com&#x2F;tool&#x2F;SVN%E7%8A%B6%E6%80%81%E5%9B%BE%E6%A0%87%E4%B8%8D%E6%98%BE%E7%A4%BA&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/tool/BeyondCompare4%E5%AF%86%E9%92%A5%E8%BF%87%E6%9C%9F/"><i class="iconfont iconleft"></i>Beyond Compare 4密钥过期，解决办法，超实用</a>
+    <a href="/hexo/zhaoo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3%20-%20%E5%89%AF%E6%9C%AC/">zhaoo主题配置文档<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a><p><a target="_blank" href="https://beian.miit.gov.cn/">京ICP备20023327号-1</a></p></p></div>
+  
+</footer>
+  
+  
+  
+  
+    <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
